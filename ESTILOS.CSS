@@ -1,0 +1,126 @@
+body{
+    margin : 0;
+    padding: 0;
+    font-family: 'Montserrat';
+
+}
+
+.contenedor{
+    width: 90%;
+    max-width : 1280px;
+    margin: auto;
+}
+
+li{
+    list-style : none;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    background: url(IMG/FONDO1.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header ul{
+    display: flex;
+}
+
+header li{
+    margin: 0 20px
+}
+
+header a{
+    color: 	#fff;
+}
+
+.titular{
+    text-align: center;
+    margin-top: 40vh;
+    color: 	#fff;
+}
+
+
+h1{
+    font-size: 80px;
+    font-style: italic;
+}
+
+h2{
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.titular a{
+    background :#000;
+    color: #ff8800;
+    padding: 20px 30px;
+}
+
+.contenedor2{
+    background: #ecebeb;
+}
+
+table{
+    width: 60%;
+    text-align: center;
+}
+
+.blanco, th{
+    background: #fff;
+}
+
+th{
+    padding: 20px 0;
+    font-style: italic;
+}
+.gris{
+    background: #e2e1e1;
+}
+
+section{
+    padding-left: 7%;
+    width: 60%;
+    float: left;
+}
+
+aside{
+    padding-right: 7%;
+    width: 25%;
+    float: left; 
+}
+
+.horario{
+    font-style: italic;
+
+}
+
+h3{
+    text-align: left;
+    font-size: 55px;
+}
+
+h4{
+    text-align: right;
+    font-size: 40px;
+
+}
+
+.contenedor3{
+    
+    margin-top: 2vh;
+    padding:10px 30px;
+    text-align:left;
+    display:grid;
+}
