@@ -12,7 +12,7 @@ html {
     box-sizing: inherit;
 }
 
-
+/*Header*/
 body{
     margin : 0;
     padding: 0;
@@ -40,6 +40,7 @@ header{
     height: 100vh;
 }
 
+/*Navegación*/
 .menu{
     display: flex;
     align-items: center;
@@ -99,6 +100,8 @@ th{
 .gris{
     background: rgb(143, 143, 143);
 }
+
+/*Main*/
 
 section{
     background-color: rgb(214, 214, 214);
@@ -211,3 +214,6 @@ h7{
     width: 30%;
     padding-block-end: 0rem;
 }
+/*Sections*/
+/*Aside*/
+/*Footer*/
