@@ -1,0 +1,30 @@
+header{
+    background: rgb(126, 125, 125);
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    font-weight:bold;
+}
+
+.row1{
+    background: rgb(228, 227, 227);
+    margin-left:10%;
+    width:80%;
+}
+.fila1{
+    display: flex;
+}
+.column1{
+    width:200px;
+}
+.column2{
+    width:200px;
+    margin-left: 5%;
+}
+.column3{
+    width:200px;
+    margin-left:5%;
+}
+input{
+    width:100%;
+}

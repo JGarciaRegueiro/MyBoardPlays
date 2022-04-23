@@ -6,7 +6,7 @@ body{
 }
 
 .contenedor{
-    width: 90%;
+    width: 100%;
     max-width : 1280px;
     margin: auto;
 }
@@ -49,7 +49,6 @@ header a{
     color: 	#fff;
 }
 
-
 h1{
     font-size: 80px;
     font-style: italic;
@@ -68,12 +67,9 @@ h2{
     padding: 20px 30px;
 }
 
-.contenedor2{
-    background: #ecebeb;
-}
-
 table{
-    width: 60%;
+    margin: 30px;
+    width: 90%;
     text-align: center;
 }
 
@@ -86,18 +82,20 @@ th{
     font-style: italic;
 }
 .gris{
-    background: #e2e1e1;
+    background: rgb(143, 143, 143);
 }
 
 section{
-    padding-left: 7%;
+    background-color: rgb(214, 214, 214);
     width: 60%;
+    height: 60vh;
     float: left;
 }
 
 aside{
-    padding-right: 7%;
-    width: 25%;
+    background:rgb(214, 214, 214);
+    width: 40%;
+    height:60vh;
     float: left; 
 }
 
@@ -107,20 +105,94 @@ aside{
 }
 
 h3{
-    text-align: left;
-    font-size: 55px;
+    text-align: center;
+    font-size: 70px;
 }
 
 h4{
-    text-align: right;
+    margin: 5vh;
+    text-align: center;
     font-size: 40px;
-
+}
+label{
+    color:#ff8800;
+    font-size: large;
 }
 
-.contenedor3{
+h5{
+    text-align:center;
+}
+
+footer{
+    width:100%;
+    background: rgb(143, 143, 143);
+    color: #000;
+}
+.contenedor-footer-all{
+    width: 100%;
+    display: flex;
+}
+
+.contenedor-body-footer{
+    display: flex;
+}
+
+.column1{
+    width: 40%;
+}
+
+h7{
     
-    margin-top: 2vh;
-    padding:10px 30px;
-    text-align:left;
-    display:grid;
+    font-size: 30px;
+}
+
+.column1 p{
+    font-size: 14px;
+    color:#000;
+    margin-top: 20px;
+}
+
+.column2{
+    width: 40%;
+    margin-left: 120px;
+}
+
+.row{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img{
+    width: 36px;
+    height: 36px;
+}
+.row label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color:rgb(214, 214, 214);
+}
+
+.column3{
+    width: 30%;
+    margin-left:-160px;
+}
+
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+.row2 img{
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color:rgb(214, 214, 214);
+}
+.container-footer{
+    justify-content: right;
+    width: 30%;
+    padding-block-end: 0rem;
 }
