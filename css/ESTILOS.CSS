@@ -1,3 +1,18 @@
+/* Globales */
+html {
+    box-sizing: border-box;
+    /* Hack para que las cajas ocupan el espacio definido teniendo en cuenta los padding, margin, etc...*/
+    font-size: 62.5%;
+    /* Lo usamos para igualar 1rem a 10px*/
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
 body{
     margin : 0;
     padding: 0;
