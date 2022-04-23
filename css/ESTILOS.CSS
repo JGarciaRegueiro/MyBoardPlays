@@ -230,3 +230,8 @@ footer{
     width: 30%;
     padding-block-end: 0rem;
 }
+
+.copyright {
+    text-align: center;
+    padding: 2rem;
+}
