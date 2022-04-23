@@ -35,7 +35,7 @@ h1 {
 h2 {
     font-size: 20px;
     text-align: center;
-    color: #fff;
+    color: var(--blanco);
     margin-bottom: 30px;
 }
 
@@ -92,23 +92,23 @@ header ul{
 }
 
 header li{
-    margin: 0 20px
+    margin: 0 20px;
 }
 
 header a{
-    color: 	#fff;
+    color: var(--blanco);
 }
 
 
 .titular{
     text-align: center;
     margin-top: 40vh;
-    color: 	#fff;
+    color: var(--blanco);
 }
 
 .titular a{
-    background :#000;
-    color: #ff8800;
+    background: var(--negro);
+    color: var(--naranja);
     padding: 20px 30px;
 }
 
@@ -116,7 +116,7 @@ header a{
 
 /*Section*/
 section{
-    background-color: rgb(214, 214, 214);
+    background-color: var(--grisClaro);
     width: 60%;
     height: 60vh;
     float: left;
@@ -124,7 +124,7 @@ section{
 
 /*Aside*/
 aside{
-    background:rgb(214, 214, 214);
+    background:var(--grisClaro);
     width: 40%;
     height:60vh;
     float: left; 
@@ -136,7 +136,7 @@ aside{
 }
 
 label{
-    color:#ff8800;
+    color: var(--naranja);
     font-size: large;
 }
 
@@ -148,7 +148,7 @@ table {
 
 .blanco,
 th {
-    background: #fff;
+    background: var(--blanco);
 }
 
 th {
@@ -157,15 +157,15 @@ th {
 }
 
 .gris {
-    background: rgb(143, 143, 143);
+    background: var(--gris);
 }
 
 
 /*Footer*/
 footer{
     width:100%;
-    background: rgb(143, 143, 143);
-    color: #000;
+    background: var(--gris);
+    color: var(--negro);
 }
 .contenedor-footer-all{
     width: 100%;
@@ -182,7 +182,7 @@ footer{
 
 .column1 p{
     font-size: 14px;
-    color:#000;
+    color:var(--negro);
     margin-top: 20px;
 }
 
@@ -203,7 +203,7 @@ footer{
 .row label{
     margin-top: 10px;
     margin-left: 20px;
-    color:rgb(214, 214, 214);
+    color: var(--grisClaro);
 }
 
 .column3{
@@ -223,7 +223,7 @@ footer{
 .row2 label{
     margin-top: 10px;
     margin-left: 20px;
-    color:rgb(214, 214, 214);
+    color:var(--grisClaro);
 }
 .container-footer{
     justify-content: right;
