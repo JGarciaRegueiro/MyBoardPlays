@@ -35,8 +35,9 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 30px;
     color: var(--blanco);
+    align-items: center;
 }
 
 h3 {
@@ -76,8 +77,39 @@ h7 {
     background-color: var(--negro);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-around;
     margin: 0;
+    height :10vh;
+    font-size:2rem;
+}
+
+.menu li a{
+    color: var(--blanco);
+    text-decoration: none;
+    display: block;
+}
+
+.menu > li {
+    float:left;
+}
+
+.menu li a:hover{
+    background-color: var(--naranja);
+
+}
+.menu li:hover > ul{
+    display:block;
+}
+
+.menu li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.menu li ul li a{
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -86,8 +118,10 @@ h7 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         margin: 0;
+        color:var(--blanco);
+        
     }
 }
 
@@ -113,8 +147,8 @@ header a{
 
 /*Cover*/
 .titular{
-    height: 40rem;
-    background-image: url(/IMG/FONDO1.jpg);
+    height: 65rem;
+    background: url(../IMG/FONDO1.jpg);
     background-size: cover;
     display: flex;
     flex-direction: column;
