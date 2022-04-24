@@ -28,15 +28,15 @@ body{
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 60px;
     font-style: italic;
+    color: var(--blanco);
+    margin: 0;
 }
 
 h2 {
     font-size: 20px;
-    text-align: center;
     color: var(--blanco);
-    margin-bottom: 30px;
 }
 
 h3 {
@@ -59,23 +59,25 @@ h7 {
 }
 
 /*Header*/
-.contenedor{
-    width: 100%;
-    max-width : 1280px;
-    margin: auto;
+.header {
+    background-color: var(--negro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header{
-    background: url(/IMG/FONDO1.jpg);
-    background-size: cover;
-    height: 100vh;
+.logo {
+    width: 10rem;
+    height: 10rem;
 }
 
 /*Navegación*/
 .menu{
+    background-color: var(--negro);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0;
 }
 
 li {
@@ -98,10 +100,15 @@ header a{
     color: var(--blanco);
 }
 
-
+/*Cover*/
 .titular{
-    text-align: center;
-    margin-top: 20rem;
+    height: 40rem;
+    background-image: url(/IMG/FONDO1.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: var(--blanco);
 }
 
@@ -110,8 +117,6 @@ header a{
     color: var(--naranja);
     padding: 20px 30px;
 }
-
-
 
 /*Section*/
 section{
