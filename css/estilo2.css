@@ -1,30 +1,117 @@
-header{
-    background: rgb(126, 125, 125);
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    font-weight:bold;
+*,
+::before,
+::after{
+box-sizing: border-box;
 }
 
-.row1{
-    background: rgb(228, 227, 227);
-    margin-left:10%;
-    width:80%;
+.formulario{
+    font-family: var(--font-family);
+    font-weight: 400;
+    line-height: 1.6;
+    background: linear-gradient(to right, rgba(61, 61, 70, 0.8), rgba(123, 123, 164, 0.7));
+    background-size: cover;
+    color: #ece9e9;
+    margin:0;
 }
-.fila1{
+
+button,
+textarea,
+input,
+select{
+    font-family: inherit;
+}
+
+.contenido{
+    margin: 3.12em auto;
+}
+
+.texto-centrado{
+    text-align: center;
+    color: black;
+    
+}
+
+.descripcion{
+ font-size: 1.125em;
+ margin: 1rem auto;
+}
+
+header{
+    padding: 2rem 1rem 1rem 1rem;
+    
+    font-weight: bold;
+}
+
+h1{
+    font-weight:700;
+    line-height: 1.2;
+    margin: 0; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+form{
+    background:var(--color-azuloscuro);
+    padding: 2.5rem 0.7rem;
+    border-radius: 0.4rem;
+    width: 60%;
+    margin: auto;
+}
+
+.form-groupo{
     display: flex;
+    flex-direction: column;
+    margin: 2rem;
 }
-.column1{
-    width:200px;
+
+.form-groupo p{
+    line-height: 1;
+    margin:0.5rem 0.1rem;
 }
-.column2{
-    width:200px;
-    margin-left: 5%;
+.form-groupo p:not(:nth-child(1)){
+    margin:0.5rem 0;
 }
-.column3{
-    width:200px;
-    margin-left:5%;
+
+.form-label{
+    font-size: 1.125rem;
 }
-input{
+
+.form-control{
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    height: 2.5rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.3rem;
+    border: 1px solid white;
+    margin-top: 0.4rem;
+}
+input[type="radio"],
+input[type="checkbox"]{
+    width:1rem;
+    height: 1rem;
+}
+input[type="checkbox"]{
+    margin-right: 0.5rem;
+}
+textarea{
+    font-size:1.2rem;
+    padding:0.375 rem 0.75rem;
     width:100%;
+    height: auto;
+    border:none;
+    margin: 0.5rem 0;
+}
+
+button{
+    background-color: rgb(253, 176, 32);
+    border:none;
+    cursor:pointer;
+    text-align: center;
+    color:rgb(37, 34, 34);
+    padding: 0.70rem;
+    font-size:20px;
+    font-weight: bold; 
+    transition: 0.8s; 
+    position: relative;
+    overflow: hidden;
 }
