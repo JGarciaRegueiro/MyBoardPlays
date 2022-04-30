@@ -57,17 +57,17 @@ form{
     margin: auto;
 }
 
-.form-groupo{
+.form-grupo{
     display: flex;
     flex-direction: column;
     margin: 2rem;
 }
 
-.form-groupo p{
+.form-grupo p{
     line-height: 1;
     margin:0.5rem 0.1rem;
 }
-.form-groupo p:not(:nth-child(1)){
+.form-grupo p:not(:nth-child(1)){
     margin:0.5rem 0;
 }
 
