@@ -50,7 +50,7 @@ h1{
 }
 
 form{
-    background:var(--color-azuloscuro);
+    background:rgba(27,27,50,0.8);
     padding: 2.5rem 0.7rem;
     border-radius: 0.4rem;
     width: 60%;
