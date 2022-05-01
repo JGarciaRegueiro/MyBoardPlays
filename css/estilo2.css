@@ -115,3 +115,18 @@ button{
     position: relative;
     overflow: hidden;
 }
+.reset-form{
+    cursor:pointer;
+    text-align: center;
+    background-color:rgb(231, 203, 151);
+    transition: background-color .5s;
+    border-radius: 12px;
+    color:rgb(37, 34, 34);
+    width: 37%;  
+    position: relative;
+   left: 140px;
+   bottom: 10px;
+}
+.reset-form:hover{
+    background-color: gold;
+}
