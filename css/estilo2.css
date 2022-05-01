@@ -124,8 +124,8 @@ button{
     color:rgb(37, 34, 34);
     width: 37%;  
     position: relative;
-   left: 140px;
-   bottom: 10px;
+    left: 460px;
+    bottom: 10px;
 }
 .reset-form:hover{
     background-color: gold;
