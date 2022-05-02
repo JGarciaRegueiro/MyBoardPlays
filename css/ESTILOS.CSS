@@ -248,6 +248,9 @@ label{
 
 
 /*Footer*/
+.parrafo-info{
+    line-height: 1.4em;
+}
 .rrss{
     margin-top: 20px;
     display: flex;
