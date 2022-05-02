@@ -34,7 +34,7 @@
         </div>
         
         <div class="form-grupo">
-            <label for="email" id="email.etiqueta">Correo electrónico</label> 
+            <label for="email" id="email-etiqueta">Correo electrónico</label> 
               <input
                 type="text"
                 id="email"
@@ -44,13 +44,13 @@
                 />
         </div>
         <div class="form-grupo">
-            <label for="number" id="number.etiqueta">Edad (opcional)</label>
+            <label for="number" id="number-etiqueta">Edad (opcional)</label>
                <input type="number" name="edad" id="number" min="16" max="90" placeholder="Introduce tu edad" class="form-control"/>   
           </div>
         
      <div class="form-grupo">
         <label for="desplegable">
-               ¿A que clase te quieres apuntar? 
+             <p>¿A que clase te quieres apuntar? </p>  
         </label>
         <select name="desplegable" id="despegable" class="form-control" required>
             <option disabled>Escoja una clase </option>
@@ -63,7 +63,7 @@
     </div>
         
          <div class="form-grupo">
-             <p>¿Quiere probar nuestra rutina de entrenamiento y nutrición?</p>
+             <p main="parrafo-main">¿Quiere probar nuestra rutina de entrenamiento y nutrición?</p>
              <p>
                  <label>
                      <input type="radio" name="responde" id="si"  value="si" checked>
@@ -84,7 +84,7 @@
             </p>
          </div>
     <div class="form-grupo">
-        <p> ¿Que clases quieres que incluyamos proximamente?</p>  
+        <p class="parrafo-main"> ¿Que clases quieres que incluyamos proximamente?</p>  
              <p>
                 <label>
                     <input type="checkbox" name="checkbox" value="mantenimiento">
@@ -123,7 +123,7 @@
             </p>
     </div>
         <div class="form-grupo">
-            <p>Otros comentarios o sugerencias:</p>
+            <p class="parrafo-main">Otros comentarios o sugerencias:</p>
             <textarea name="comentarios" id="comentarios" cols="50" rows="6" placeholder="Introduzca su comentario aqui" required></textarea>
         </div>
         
