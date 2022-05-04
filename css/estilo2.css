@@ -120,7 +120,7 @@ textarea{
 }
 
 /*boton entregar*/
-#entregar{
+.submit-form{
     background-color: rgb(253, 176, 32);
     border:none;
     cursor:pointer;
