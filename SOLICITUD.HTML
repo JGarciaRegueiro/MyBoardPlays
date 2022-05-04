@@ -18,15 +18,15 @@
             <header class="texto-centrado">
                <h1 id="title">HOJA DE INSCRIPCIÓN</h1>
                <p id="description">
-                   <em>*Recuerde abonar el importe de la matricula en recepción</em>
+                   <em>*Recuerde adjuntar el justificante del pago al final del formulario</em>
                </p>
             </header>
 
-     <!-- Comienzo del formulario. Dentro de la etiqueta <form>. 
+       <!-- Comienzo del formulario. Dentro de la etiqueta <form>. 
          Atributo action determina donde se envían los datos recopilados, una vez que se pulse al boton submit -->   
     <form action="#" id="solicitud" class="form-label">
         <div class="form-grupo">
-            
+
         <!-- <label> etiqueta estatica asociada con un elemento de campo que se identifica mediante el atributo for-->
             <label for="name" id="nombre-etiqueta">Nombre y apellidos</label>
 
@@ -59,11 +59,34 @@
               />
         </div>
         <div class="form-grupo">
+            <label for="password" id="pass-etiqueta">Contraseña: deberá contener 6 o más carácteres.</label> 
+              <input
+                type="password"
+                id="pass"
+                class="form-control"
+                placeholder="Introduce una contraseña"
+                pattern=".{6,}"
+                required
+              />
+        </div>
+        <div class="form-grupo">
+            <label for="tele.</label> fono" id="tel-etiqueta">Teléfono de contacto
+              <input
+                type="tel"
+                id="telefono"
+                class="form-control"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="Formato: 123-456-7890"
+                required
+              />
+        </div>
+
+        <div class="form-grupo">
             <label for="number" id="number-etiqueta">Edad (opcional)</label>
                <input type="number" name="edad" id="number" min="16" max="90" placeholder="Introduce tu edad" class="form-control"/>   
         </div>
 
-      <!--<SELECT> (etiqueta representa lista desplegable) definidas por medio de etiquetas <OPTION>. Cada option con su VALUE (el valor irá a la BBDD) SELECTED (opción preseleccionada)-->  
+      <!--<SELECT> (etiqueta representa lista desplegable) definidas por medio de etiquetas <OPTION>. Cada option con su VALUE (el valor irá a la BBDD) SELECTED (opción preseleccionada) DISABLED (control deshabilitado, en color gris, el usuario no puede interactuar con él)-->  
      <div class="form-grupo">
         <label for="desplegable">
              <p>¿A que clase te quieres apuntar? </p>  
@@ -113,13 +136,7 @@
             <p>
                 <label>
                     <input type="checkbox" name="checkbox" value="hit">
-                    Hiit
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input type="checkbox" name="checkbox" value="training">
-                    Cross Training
+                    Hiit y Cross Training
                 </label>
             </p>
             <p>
@@ -158,7 +175,11 @@
             <div class="form-groupo">
                 <input class="reset-form" type="reset" value="Limpiar formulario">
             </div>
-
+     <!--Input type file: seleccion de archivos, con un boton de "examinar" para cargar archivos. Atributo multiple (permite seleccionar varios archivos)-->       
+            <div class="form-groupo">
+                <label form="fichero">Justificante de Pago</label>
+                <input class="file-form" type="file" name="img" multiple>
+            </div>
           </form>
         </div>
     </body>
