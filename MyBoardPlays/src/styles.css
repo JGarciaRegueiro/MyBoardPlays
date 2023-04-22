@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --colorBaseBlanco: #fff;
+  --colorBaseNegro: #000;
+  --colorBaseGris: #a7a9a6;
+  --colorFondoNaranja: #fb8822;
+  --colorFondoNaranjaMid: #f9b375;
+  --colorFondoNaranjaLow: #ffddbe;
+  --colorFondoVerde: #9ae47d;
+  --colorFondoVerdeMid: #b0ea99;
+  --colorFondoVerdeLow: #e2fbda;
+  --colorContraste: #060165;
+  --colorContrasteMid: #4741b5;
+  --colorContrasteLow: #7887e6;
+}
+
+/* Globales */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,*:before,*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--colorBaseBlanco);
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 32px;
+}
