@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { ErrorGeneralComponent } from './error-general/error-general.component';
+import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    AcercaDeComponent
+    AcercaDeComponent,
+    ErrorGeneralComponent,
+    MiCuentaComponent
   ],
   imports: [
     BrowserModule,
