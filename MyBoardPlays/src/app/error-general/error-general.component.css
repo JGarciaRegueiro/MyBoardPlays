@@ -1,21 +1,43 @@
+.titulo{
+    font-size: 8rem;
+
+}
 .contenedor-404{
+
     display:flex;
-    flex-direction: row;
-    padding: 4rem;
-    justify-content: space-evenly;
-    align-items: flex-end;
+    align-items: center;
+    padding: 108px;
+    
 }
 
-.contenedor-imagen-robot{
-  width:100%;
-  height:100%;
-}
 .contenedor-mensaje404{
-    margin-top: 2rem;
-    
+    width: 100%;
+    height: 100%;
 }
 
 .mensaje-404{
     font-size: 8rem;
-    margin-bottom: 1rem;
+    text-align: right;
+}
+
+.button__primario {
+    background-color: var(--colorContrasteLow);
+    color: var(--colorBaseBlanco);
+    text-decoration: none;
+    font-size: 7rem;
+    border-radius: 15px;
+    padding:3rem;
+
+
+  }
+  .contenedor-imagen-robot{
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width : 2068px) {
+    .contenedor-404 {
+        display: flex;
+        flex-direction: column;
+    }
 }
