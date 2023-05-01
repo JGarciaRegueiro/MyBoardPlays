@@ -39,3 +39,14 @@ h3 {
   font-size: 32px;
 }
 
+/*Form*/
+.form {
+  padding: 1rem;
+  font-size: 1.6rem;
+  display: grid;
+  justify-content: center;
+}
+
+fieldset {
+  border: none;
+}
