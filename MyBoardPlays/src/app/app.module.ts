@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { ErrorGeneralComponent } from './error-general/error-general.component';
+import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
 import { MisjuegosComponent } from './misjuegos/misjuegos.component';
 import { ListajuegosComponent } from './listajuegos/listajuegos.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +22,8 @@ import { JuegoDetallesComponent } from './juego-detalles/juego-detalles.componen
     HeaderComponent,
     FooterComponent,
     AcercaDeComponent,
+    ErrorGeneralComponent,
+    MiCuentaComponent,
     MisjuegosComponent,
     ListajuegosComponent,
     NuevoJuegoComponent,
