@@ -1,8 +1,8 @@
-<div class = "contenedor--acercaDe">
-    <div class = "faqs">
+<div class = "contenedor__acercaDe">
+    <div class = "contenedor__acercaDe--contenido">
         <div class = "mensaje-faqs">
-        <h1>MY BOARD PLAYS</h1>
-        <h2>FAQs</h2>
+        <h1 class="acerca">MY BOARD PLAYS</h1>
+        <h2 class="acerca2">FAQs</h2>
         <b><p class = "p1">-¿Cómo puedo crear una partida en la aplicación?</p></b>
         <p class = "p2">-Registrándote en el apartado de Mis Juegos/Mis partidas en el botón Crear Partida.</p>
         <br>
@@ -30,57 +30,58 @@
         </div>
 
         <div class = contenedor__imagen>
-            <img src= "assets/img/faqs.png" alt="imagen404">
+            <img src= "assets/img/faqs2.png" alt="faqs2">
         </div>
     </div>
-    <div class = "sobreNos">
+    <div class = "contenedor__acercaDe--contenido">
         <div class = contenedor__imagen>
-            <img src= "assets/img/sobreNos.png" alt="imagen404">
+            <img src= "assets/img/sobreNos.png" alt="sobreNos">
         </div>
 
         <div class = "mensaje-sobreNos">
-        <h1>SOBRE NOSOSTROS</h1>
-        <h2>La empresa</h2>
-        <p class = "p3">Bienvenidos a nuestro sitio web. Somos una pequeña empresa compuesta por
-                        un equipo de tres personas, que estamos dedicados a la creación de una
-                        aplicación web para juegos de mesa. Nuestra plataforma permite a los
-                        usuarios crear y registrar partidas, visualizar rankings y crear nuevos juegos.
-                    </p><br>
+        <h1 class="acerca">SOBRE NOSOTROS</h1>
+        <h2 class="acerca2">La empresa</h2>
+        <p class = "p3">Bienvenidos a nuestro sitio web. Somos una pequeña empresa compuesta por<br>
+                        un equipo de tres personas, que estamos dedicados a la creación de una<br>
+                        aplicación web para juegos de mesa. Nuestra plataforma permite a los<br>
+                        usuarios crear y registrar partidas, visualizar rankings y crear nuevos juegos.<br>
+                    </p>
 
-        <p class = "p3">Nos enorgullecemos de nuestro enfoque en la calidad y la innovación y
-                        trabajamos incansablemenete para asegurarnos de que nuestros usuarios
-                        tengan la mejor experiencia posible. Entendemos la importancia de unir a las
-                        personas a través del entretenimiento, y es por eso que nuestra aplicación
-                        está diseñada para brindar una experencia social y emocionante para todos 
+        <p class = "p3">Nos enorgullecemos de nuestro enfoque en la calidad y la innovación y<br>
+                        trabajamos incansablemenete para asegurarnos de que nuestros usuarios<br>
+                        tengan la mejor experiencia posible. Entendemos la importancia de unir a las<br>
+                        personas a través del entretenimiento, y es por eso que nuestra aplicación<br>
+                        está diseñada para brindar una experencia social y emocionante para todos <br>
                         los usuarios.
-                    </p><br>
+                    </p>
 
-        <p class = "p3">En nuestra empresa, valoramos la creatividad y la colaboración, y creemos que
-                        estas cualidade son fundamentales para ofrecer un producto de calidad.
-                        Nos comprometemos a continuar mejorando nuestra plataforma para ofrecer 
-                        a nuestros usuarios una experiencia cada vez más completa y satisfactoria. Si
-                        tiene alguna pregunta o sugerencia, no dude en contactarnos. 
-                        ¡Gracias por visitar nuestro sitio web!
+        <p class = "p3">En nuestra empresa, valoramos la creatividad y la colaboración, y creemos que<br>
+                        estas cualidade son fundamentales para ofrecer un producto de calidad.<br>
+                        Nos comprometemos a continuar mejorando nuestra plataforma para ofrecer <br>
+                        a nuestros usuarios una experiencia cada vez más completa y satisfactoria. Si<br>
+                        tiene alguna pregunta o sugerencia, no dude en contactarnos. <br>
+                        ¡Gracias por visitar nuestro sitio web!<br>
                     </p><br>
         </div>  
     </div>
 
-    <div class = "contactanos">
-        <div class = "mensaje-faqs">
-            <h1>CONTACTA CON NOSOTROS</h1>
-            <h2>Formulario de contacto</h2>
+    <div class = "contenedor__acercaDe--contenido">
+        <div class = "mensaje-contactanos">
+            <h1 class="acerca">CONTACTA CON NOSOTROS</h1>
+            <h2 class="acerca2">Formulario de contacto</h2>
             <form action=# method="POST">
                 <fieldset class="form">
-                    <input class="form__inputs" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
-                    <input class="form__inputs" type="email" name="Email" placeholder="Email*" required>
-                    <textarea class="form__inputs" name="comentario" placeholder="Comentario:"></textarea>
+                    <input class="form__input" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
+                    <input class="form__input" type="email" name="Email" placeholder="Email*" required>
+                    <label for="coment" class="comentario">Comentario:</label>
+                    <textarea class="form__input2" name="comentario"></textarea>
                     <p><input class="button button__action" type="submit" value="Enviar"></p>
                 </fieldset>           
             </form>
         </div>
 
         <div class = contenedor__imagen>
-            <img src= "assets/img/contactanos.png" alt="imagen404">
+            <img src= "assets/img/contactanos.png" alt="contactanos">
         </div>
     </div>
 
