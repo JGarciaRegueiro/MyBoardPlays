@@ -1,1 +1,27 @@
-<p>mi-cuenta works!</p>
+<div class = "contenedor__miCuenta--contenido">
+    <div class = contenedor__imagen>
+        <img src= "assets/img/upload-image.png" alt="upload-image">
+        <ul class="menu">
+            <li><a href="miCuentaDatos.html">Editar Perfil</a></li><br>
+            <li><a href="#">Mis Juegos</a></li><br>
+            <li><a href="#">Mis Partidas</a></li><br>
+            <li><a href="#">Mis Estadísticas</a></li><br>
+            <li><a href="#">Mis Estadísticas</a></li><br>
+            <li class = "hidden"><a href="#">Eliminar Cuenta</a></li><br>
+            <li class = "hidden"><a href="#">Cerrar Sesión</a></li><br>
+        </ul>
+    </div>
+    <div class = "formulario_editar-perfil">
+        <form action=# method="POST">
+            <fieldset class="form">
+                <h1>EDITAR PERFIL</h1>
+                <input class="form__input" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
+                <input class="form__input" type="email" name="Email" placeholder="Email*" required>
+                <label for="coment" class="comentario">Comentario:</label>
+                <textarea class="form__input2" name="comentario"></textarea>
+                <p><input class="button button__action" type="submit" value="Enviar"></p>
+            </fieldset>           
+        </form>
+    </div>
+
+</div>

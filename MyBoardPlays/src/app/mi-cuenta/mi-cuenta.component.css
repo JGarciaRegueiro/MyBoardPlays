@@ -1,0 +1,60 @@
+.contenedor__miCuenta--contenido{
+    display:flex;
+    align-items: center;
+    width:100%;
+    height:100%;
+
+}
+
+img{
+    padding: 48px;
+}   
+
+ul {
+	list-style-type:none;
+	padding: 48px;;
+}
+a{
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+.menu{
+    text-align: center;
+}
+.contenedor__imagen{
+    width: 100%;
+    height:100%;
+    justify-content: center;
+    display:grid;
+
+}
+
+.form__input {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 1.6rem;
+}
+
+.comentario{
+    width: 100%;
+    margin-left: 2rem;
+    margin-top: 1.6rem;
+
+}
+.form__input2{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 6rem;
+    margin: 1.6rem;
+
+}
+
+.formulario_editar-perfil{
+    width: 100%;
+    height: 100%;
+    padding: 96px;
+
+}
