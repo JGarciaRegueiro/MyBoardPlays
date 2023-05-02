@@ -1,0 +1,57 @@
+<div class="col-md-3 mx-auto">
+  <h3 class="text-center">Nuevo Juego</h3>
+  <p>¡Registra nuevos juegos! Aquí podrás añadir un nuevo juego a tu biblioteca. Simplemente rellena el formulario y sube la imagen que prefieras.</p>
+  <p>¡No te preocupes si aún no tienes todas las ideas claras! Siempre puedes volver más tarde editar la información.</p>
+  <form (ngSubmit)="onSumit()">
+    <div class="form-group">
+      <label>Nombre:</label>
+      <input type="text"
+      class="form-control"
+      id="nombre"
+      [(ngModel)] ="juego.nombre"
+      name="nombre"
+      required
+      maxlength="50"
+      placeholder="Introduzca nombre del juego">
+
+      <label>Descripción:</label>
+      <input type="text"
+      class="form-control"
+      id="descripcion"
+      [(ngModel)] ="juego.descripcion"
+      name="descripcion"
+      required
+      maxlength="500"
+      placeholder="Introduzca una breve descripción, ej: tipo temática">
+
+      <label>Min-Participantes:</label>
+      <input type="number"
+      class="form-control"
+      id="minParticipantes"
+      [(ngModel)] ="juego.minParticipantes"
+      name="minParticipantes"
+      required
+      placeholder="Indique mínimo de jugadores">
+
+      <label>Max-Participantes:</label>
+      <input type="number"
+      class="form-control"
+      id="maxParticipantes"
+      [(ngModel)] ="juego.maxParticipantes"
+      name="maxParticipantes"
+      required
+      placeholder="Indique máximo de jugadores">
+
+      <label>Dificultad:</label>
+      <input type="text"
+      class="form-control"
+      id="dificultad"
+      [(ngModel)] ="juego.dificultad"
+      name="dificultad"
+      required
+      placeholder="Indique dificultad: facil, media o alta">
+
+    </div>
+   <button type="submit" class="btn btn-primary">Guardar Juego</button>
+  </form>
+</div>

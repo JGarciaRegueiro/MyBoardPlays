@@ -1,0 +1,31 @@
+<div class="container">
+<h3>Lista de todos los juegos</h3>
+<table class="table table-striped">
+  <thead class="table-dark"> <!--Cabecera de la tabla-->
+    <tr class="justify-content-center">
+      <th class="text-center">ID</th>
+      <th class="text-center">NOMBRE</th>
+      <th class="text-center">DESCRIPCIÓN</th>
+      <th class="text-center">MIN JUGADORES</th>
+      <th class="text-center">MÁX JUGADORES</th>
+      <th class="text-center">DIFICULTAD</th>
+      <th class="text-center">ACCIONES</th>
+    </tr>
+  </thead>
+  <tbody class="justify-content-center"> <!--cuerpo de la tabla-->
+    <tr *ngFor="let juego of juegos" > <!--recorremos la lista de juegos y después llamamos a esos datos-->
+      <td class="text-center">{{juego.id}}</td>
+      <td class="text-center">{{juego.nombre}}</td>
+      <td class="text-center">{{juego.descripcion}}</td>
+      <td class="text-center">{{juego.minParticipantes}}</td>
+      <td class="text-center">{{juego.maxParticipantes}}</td>
+      <td class="text-center">{{juego.dificultad}}</td>
+      <td class="text-center">
+        <button (click)="verDetallesJuego(juego.id)" class="btn btn-success">DETALLES</button>
+        <button (click)="editarJuego" class="btn btn-warning text-center" style="margin-left: 10px">EDITAR</button>
+        <button (click)="eliminarJuego(juego.id)" class="btn btn-danger text-center" style="margin-left: 10px">ELIMINAR</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
