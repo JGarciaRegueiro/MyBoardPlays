@@ -14,12 +14,40 @@
     <div class = "formulario_editar-perfil">
         <form action=# method="POST">
             <fieldset class="form">
-                <h1>EDITAR PERFIL</h1>
-                <input class="form__input" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
-                <input class="form__input" type="email" name="Email" placeholder="Email*" required>
-                <label for="coment" class="comentario">Comentario:</label>
-                <textarea class="form__input2" name="comentario"></textarea>
-                <p><input class="button button__action" type="submit" value="Enviar"></p>
+                <legend>EDITAR PERFIL</legend>
+                <br><br><br><br><br><br><br><br><br>
+                <div class="row">
+                <label for="nombre">Nombre</label>
+                <input class="form__input" type="text" name="nombre" placeholder="Nombre y apellidos" required>
+                </div>
+                <div class="row">
+                    <label for="email">Email</label>
+                    <input class="form__input" type="text" name="email" placeholder="Email" required>
+                </div>
+                <div class="row">
+                    <label for="usuario">Usuario</label>
+                    <input class="form__input" type="text" name="usuario" placeholder="Nombre de usuario" required>
+                </div>
+                <div class="row">
+                    <label for="tlf">Número de teléfono</label>
+                    <input class="form__input" type="text" name="tlf" placeholder="Nº de Teléfono" required>
+                </div>
+                <div class="row">
+                    <label for="genero">Género</label>
+                    <select name="genero" class="form__input">
+                        <option selected disabled value=""></option>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="cumpleaños">Cumpleaños</label>
+                    <input class="form__input" type="date" name="cumpleaños" placeholder="Cumpleaños" required>
+                </div>
+                <div class="row">
+                <label for="descripcion">Biografía</label>
+                <textarea class="form__input2" name="descripcion"></textarea>
+                </div>
             </fieldset>           
         </form>
     </div>
