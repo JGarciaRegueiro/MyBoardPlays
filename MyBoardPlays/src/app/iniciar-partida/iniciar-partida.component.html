@@ -1,0 +1,25 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<div class=contenedor-iniciarPartida>
+    <div class=contenedor__imagen>
+        <img src="assets/img/iniciarPartida.png" alt="iniciarPartida">
+    </div>
+    <div class="contenedor__iniciarPartida--contenido">
+            <form action=# method="POST">
+                <fieldset class="form">
+                    <div class="input-group">
+                    <input type="text" class="form--control" placeholder="Selecciona un juego"/>
+                    <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                    </span>
+                </div>
+                    <input class="form__input" type="text" name="participantes" placeholder="Número de participantes" required>
+                    <label for="addPart" class="addParticipantes">Añade a los participantes:</label>
+                    <input class="form__input" type="text" name="email" placeholder="Email 1" required>
+                    <p>falta botón añadir email</p>
+                </fieldset>
+                <p><input class="button button__action" type="submit" value="!Empieza ya¡"></p>
+            </form>
+    </div>
+</div>

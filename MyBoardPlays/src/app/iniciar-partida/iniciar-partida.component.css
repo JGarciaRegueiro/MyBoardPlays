@@ -1,0 +1,82 @@
+.contenedor-iniciarPartida{
+
+    display:flex;
+    align-items: center;
+    padding: 108px;
+    
+}
+
+.contenedor__imagen{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+.contenedor__iniciarPartida--contenido{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+.form{
+    font-size: 3rem;
+    text-align: center;
+
+    
+}
+.form__input {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+ 
+    
+}
+.button__action{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1rem;
+    
+    background-color: var(--colorContrasteLow);
+    color: var(--colorBaseBlanco);
+    font-size: 3rem;
+    text-align: center;
+    justify-content: center;
+
+}
+.form--control{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    
+
+}
+
+.inner-addon {
+    position: relative;
+    border-radius: 1rem;
+  }
+  .inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    
+  }
+
+  .left-addon .glyphicon {
+    left: 0px;
+    
+  }
+  .right-addon .glyphicon {
+    right: 0px;
+    
+  }
+  .left-addon input {
+    padding-left: 30px;
+  }
+  .right-addon input {
+    padding-right: 30px;
+  }

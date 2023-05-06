@@ -15,6 +15,8 @@ import { NuevoJuegoComponent } from './nuevo-juego/nuevo-juego.component';
 import { FormsModule } from '@angular/forms';
 import { EditarJuegoComponent } from './editar-juego/editar-juego.component';
 import { JuegoDetallesComponent } from './juego-detalles/juego-detalles.component';
+import { IniciarPartidaComponent } from './iniciar-partida/iniciar-partida.component';
+import { MiPartidaComponent } from './mi-partida/mi-partida.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { JuegoDetallesComponent } from './juego-detalles/juego-detalles.componen
     ListajuegosComponent,
     NuevoJuegoComponent,
     EditarJuegoComponent,
-    JuegoDetallesComponent
+    JuegoDetallesComponent,
+    IniciarPartidaComponent,
+    MiPartidaComponent
   ],
   imports: [
     BrowserModule,
