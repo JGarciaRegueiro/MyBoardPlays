@@ -12,7 +12,7 @@ import { MisjuegosComponent } from './misjuegos/misjuegos.component';
 import { ListajuegosComponent } from './listajuegos/listajuegos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NuevoJuegoComponent } from './nuevo-juego/nuevo-juego.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarJuegoComponent } from './editar-juego/editar-juego.component';
 import { JuegoDetallesComponent } from './juego-detalles/juego-detalles.component';
 import { IniciarPartidaComponent } from './iniciar-partida/iniciar-partida.component';
@@ -32,13 +32,14 @@ import { MiPartidaComponent } from './mi-partida/mi-partida.component';
     EditarJuegoComponent,
     JuegoDetallesComponent,
     IniciarPartidaComponent,
-    MiPartidaComponent
+    MiPartidaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
