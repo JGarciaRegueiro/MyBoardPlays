@@ -1,7 +1,7 @@
-<div class="container">
-<h3>Lista de todos los juegos</h3>
-<table class="table table-striped">
-  <thead class="table-dark"> <!--Cabecera de la tabla-->
+<div class="container table-responsive">
+<h3 class="text-lg-start">Lista de todos los juegos</h3>
+<table class="table table-hover table-striped align-middle shadow p-3 mb-5 bg-body rounded">
+  <thead class="table fs-5"> <!--Cabecera de la tabla-->
     <tr class="justify-content-center">
       <th class="text-center">ID</th>
       <th class="text-center">NOMBRE</th>
@@ -21,9 +21,9 @@
       <td class="text-center">{{juego.maxParticipantes}}</td>
       <td class="text-center">{{juego.dificultad}}</td>
       <td class="text-center">
-        <button (click)="verDetallesJuego(juego.id)" class="btn btn-success">DETALLES</button>
-        <button (click)="editarJuego" class="btn btn-warning text-center" style="margin-left: 10px">EDITAR</button>
-        <button (click)="eliminarJuego(juego.id)" class="btn btn-danger text-center" style="margin-left: 10px">ELIMINAR</button>
+        <button (click)="verDetallesJuego(juego.id)" class="btn btn-success ">DETALLES</button>
+        <button (click)="editarJuego" class="btn btn-warning text-center ms-3">EDITAR</button>
+        <button (click)="eliminarJuego(juego.id)" class="btn btn-danger text-center ms-3">ELIMINAR</button>
       </td>
     </tr>
   </tbody>
