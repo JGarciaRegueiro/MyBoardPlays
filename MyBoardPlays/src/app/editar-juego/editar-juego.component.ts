@@ -10,10 +10,6 @@ import { JuegosService } from '../juegos.service';
 })
 export class EditarJuegoComponent implements OnInit {
 
-  id:number;
-  juego:Juego;
-
-  constructor(private route:ActivatedRoute, private juegoServicio:JuegosService){}
 
   ngOnInit():void{
 
