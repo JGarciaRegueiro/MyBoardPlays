@@ -1,1 +1,76 @@
-<p>mi-partida works!</p>
+<div class="contenedor-mipartida">
+    <h1>MI PARTIDA</h1>
+    <br>
+    <table class="tabla">
+        <tr>
+            <td>
+            <p><label for="name" disabled>Nombre del Juego:</label>
+            <input type="text" id="name" name="nombreJuego" placeholder="Nombre del juego seleccionado"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <label for="creador"  disabled>Creador de la partida: </label>
+            <input type="text"  id="creador" name="creadorPartida" placeholder="Nombre del usuario que iniciado la sesión">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <label for="ubicacion"  disabled>Ubicación de la partida: </label>
+            <input type="text"  id="ubicacion" name="ubicacionPartida" placeholder="Donde se disputa la partida">
+            <label for="fecha"  disabled>  Fecha: </label>
+            <input type="date" id="fecha" name="fechaPartida">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table class="tabla2">
+        <tr>
+            <td>
+            <label for="participantes" class="form__input" disabled>Número de participantes: </label>
+            <input type="text" class="form__input" id="participantes" name="numParticipantes" placeholder="Número de participantes">
+            </td>
+            <td>
+                <label for="orden" disabled>Sorteo de orden </label>
+                <button type="button" > <img src="assets/img/orden.png" /></button>        
+            </td>
+        </tr>
+    </table>
+
+
+    <h2>Lista de jugadores:</h2>
+    <div class=añadir-jugador>
+    <label for="orden" disabled>Sorteo de orden </label>
+    <button type="button" > <img src="assets/img/orden.png" /></button> 
+    </div>
+    <table id="tabla">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Ganador</th>
+        </tr>
+        </thead>
+        <tbody>
+           <!--{{ generarTabla('participantes') }}--> 
+        </tbody>
+    </table>
+    <br>
+    <h2>Puntuaciones:</h2>
+    <table id="tabla">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Orden</th>
+            <th>Puntuaciones</th>
+        </tr>
+        </thead>
+        <tbody>
+           <!--{{ generarTabla('participantes') }}--> 
+        </tbody>
+    </table>
+    <p><input class="button button__action" type="submit" value="Guardar Partida"></p>
+
+</div>
