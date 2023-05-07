@@ -20,7 +20,6 @@ export class MiPartidaComponent implements OnInit {
         this.participantes = participantes;
       }
   }
-} 
-}
+} }
 
   
