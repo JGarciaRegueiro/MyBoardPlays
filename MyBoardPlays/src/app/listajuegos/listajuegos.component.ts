@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegosService } from '../juegos.service';
 import { Juego } from '../juego';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listajuegos',
@@ -138,11 +139,33 @@ export class ListajuegosComponent implements OnInit{
     });
    }
    eliminarJuego(id:number){
+    /*
+    swal({
+      title: '¿Estas seguro?',
+      text: "Confirma si deseas eliminar el juego",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor:'#3085d6',
+      cancelButtonColor:'#d33',
+      cancelButtonText: 'Si, elimínalo',
+      cancelButtonText: 'No, cancelar',
+      confirmButtonClass: 'btn btn-success',
+      buttonsStyling:true
+    }).then((result)) =>{
+      if(result.value){
     this.juegosServicio.eliminarJuego(id).subscribe(dato =>{
       console.log(dato);
       this.obtenerJuegos();
-    });
-  }
+      swal(
+        'Juego eliminado',
+        'El juego ha sido eliminado con exito',
+        'success'
+      )
+    })
+    }
+  })
+  */
+}
 
    verDetallesJuego(id:number){
 

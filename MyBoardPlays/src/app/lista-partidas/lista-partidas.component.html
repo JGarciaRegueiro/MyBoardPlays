@@ -1,0 +1,31 @@
+<div class="container table-responsive">
+  <h3 class="text-lg-start">Lista de todas las partidas</h3>
+  <table class="table table-hover table-striped align-middle shadow p-3 mb-5 bg-body rounded">
+    <thead class="table fs-5"> <!--Cabecera de la tabla-->
+      <tr class="justify-content-center">
+        <th class="text-center">ID</th>
+        <th class="text-center">CREADOR</th>
+        <th class="text-center">UBICACIÓN</th>
+        <th class="text-center">FECHA</th>
+        <th class="text-center">ID JUEGO</th>
+        <th class="text-center">DURACIÓN</th>
+        <th class="text-center">ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody class="justify-content-center"> <!--cuerpo de la tabla-->
+      <tr> <!--recorremos la lista de juegos y después llamamos a esos datos-->
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center">
+          <button (click)="verDetallesPartida" class="btn btn-success ">DETALLES</button>
+          <button (click)="editarPartida" class="btn btn-warning text-center ms-3">EDITAR</button>
+          <button (click)="eliminarPartida" class="btn btn-danger text-center ms-3">ELIMINAR</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

@@ -17,6 +17,7 @@ import { EditarJuegoComponent } from './editar-juego/editar-juego.component';
 import { JuegoDetallesComponent } from './juego-detalles/juego-detalles.component';
 import { IniciarPartidaComponent } from './iniciar-partida/iniciar-partida.component';
 import { MiPartidaComponent } from './mi-partida/mi-partida.component';
+import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MiPartidaComponent } from './mi-partida/mi-partida.component';
     JuegoDetallesComponent,
     IniciarPartidaComponent,
     MiPartidaComponent,
+    ListaPartidasComponent,
   ],
   imports: [
     BrowserModule,
