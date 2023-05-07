@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListajuegosComponent } from './listajuegos/listajuegos.component';
 import { NuevoJuegoComponent } from './nuevo-juego/nuevo-juego.component';
 import { MisjuegosComponent } from './misjuegos/misjuegos.component';
+import { IniciarPartidaComponent } from './iniciar-partida/iniciar-partida.component';
+import { MiPartidaComponent } from './mi-partida/mi-partida.component';
 
 const routes: Routes = [
   {path: 'mis-juegos', component:MisjuegosComponent},
   {path: 'juegos', component: ListajuegosComponent},
-  {path : 'nuevo-juego',component : NuevoJuegoComponent}
+  {path : 'nuevo-juego',component : NuevoJuegoComponent},
+  { path: '', component: IniciarPartidaComponent },
+  { path: 'partida/:participantes', component: MiPartidaComponent },
 ];
 
 @NgModule({

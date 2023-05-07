@@ -19,7 +19,8 @@
                     <input class="form__input" type="text" name="email" placeholder="Email 1" required>
                     <p>falta botón añadir email</p>
                 </fieldset>
-                <p><input class="button button__action" type="submit" value="!Empieza ya¡"></p>
+                    <input [(ngModel)]="participantes" type="number">
+                    <button (click)="iniciarPartida()">Iniciar partida</button>`,
             </form>
     </div>
 </div>
