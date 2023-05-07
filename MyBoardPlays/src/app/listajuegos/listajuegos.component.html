@@ -1,6 +1,31 @@
 <div class="container table-responsive">
-<h3 class="text-lg-start">Lista de todos los juegos</h3>
-<table class="table table-hover table-striped align-middle shadow p-3 mb-5 bg-body rounded">
+<h3 class="text-lg-start mb-5">Lista de todos los juegos</h3>
+<div class="row">
+  <div class="col">
+    <div class="form-group filter">
+      <input type="text" class="form-control mb-3" name="filterJuegos" placeholder="Buscar por nombre de juego...."[(ngModel)]="filterJuegos">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  </div>
+</div>
+  <div class="row">
+      <div class="col mt-2">
+        <select class="form-select" [(ngModel)] ="parameter1">
+          <option selected> Ordenar por...</option>
+          <option value="nombre">Nombre</option>
+          <option value="dificultad">Dificultad</option>
+          <option value="descripcion">Descripción</option>
+        </select>
+      </div>
+      <div class="col mt-2">
+        <select class="form-select" [(ngModel)] ="parameter2">
+          <option> ASC / DESC </option>
+          <option value="asc" selected>ASC</option>
+          <option value="desc">DESC</option>
+        </select>
+      </div>
+  </div>
+<table class="table table-hover table-striped align-middle shadow p-3 mt-4 bg-body rounded">
   <thead class="table fs-5"> <!--Cabecera de la tabla-->
     <tr class="justify-content-center">
       <th class="text-center">ID</th>
@@ -13,7 +38,7 @@
     </tr>
   </thead>
   <tbody class="justify-content-center"> <!--cuerpo de la tabla-->
-    <tr *ngFor="let juego of juegos" > <!--recorremos la lista de juegos y después llamamos a esos datos-->
+    <tr *ngFor="let juego of juegos | filter:filterJuegos | orderByJuegos: parameter1 : parameter2"> <!--recorremos la lista de juegos y después llamamos a esos datos-->
       <td class="text-center">{{juego.id}}</td>
       <td class="text-center">{{juego.nombre}}</td>
       <td class="text-center">{{juego.descripcion}}</td>

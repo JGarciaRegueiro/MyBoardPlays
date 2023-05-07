@@ -18,6 +18,8 @@ import { JuegoDetallesComponent } from './juego-detalles/juego-detalles.componen
 import { IniciarPartidaComponent } from './iniciar-partida/iniciar-partida.component';
 import { MiPartidaComponent } from './mi-partida/mi-partida.component';
 import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { OrderByJuegosPipe } from './pipes/order-by-juegos.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { ListaPartidasComponent } from './lista-partidas/lista-partidas.componen
     IniciarPartidaComponent,
     MiPartidaComponent,
     ListaPartidasComponent,
+    FilterPipe,
+    OrderByJuegosPipe,
   ],
   imports: [
     BrowserModule,

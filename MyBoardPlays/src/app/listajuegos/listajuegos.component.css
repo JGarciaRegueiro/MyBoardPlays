@@ -2,3 +2,18 @@ thead{
   background-color: var(--colorFondoNaranjaMid);
 }
 
+.filter{
+  position: relative;
+}
+
+.filter input {
+  padding-left: 30px; /* Ajusta el espacio para que el icono no se solape con el texto */
+}
+
+.filter i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+

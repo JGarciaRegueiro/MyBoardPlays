@@ -14,12 +14,19 @@ export class ListajuegosComponent implements OnInit{
 
   constructor(private juegosServicio:JuegosService){ }
 
+  filterJuegos: String = '';
+
+  parameter1= 'nombre';
+  parameter2 = 'asc';
+
   ngOnInit():void{
 
     this.obtenerJuegos(); // llamamos al método para que se ejecute una vez
 
     //Array de juegos e inicializado los datos para poder añadir ngFor (antes de tener el servicio)
-   this.juegos =[
+
+
+    this.juegos =[
     {
       "id":1,
       "nombre":"Catan",
