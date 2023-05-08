@@ -1,17 +1,17 @@
 <div class="col-md-3 mx-auto">
   <h2 class="text-center">Nuevo Juego</h2>
 
-    <div class="">
-      <p class="lh-lg fs-4 ">
-        <span style="color:#fb8822; font-weight: bold;">¡Registra nuevos juegos!</span> Aquí podrás añadir un nuevo juego
-        a tu biblioteca, simplemente rellena el formulario.
-      </p>
-      <p class="lh-lg fs-4">
-        ¡No te preocupes si aún no lo tienes claro!
-        Siempre puedes volver más tarde a editar la información.
-      </p>
-    </div>
-    <div class="card shadow p-3 mb-5 bg-body rounded">
+  <div class="">
+    <p class="lh-lg fs-4">
+      <span style="color: #fb8822; font-weight: bold"
+        >¡Registra nuevos juegos a tu biblioteca!</span
+      >
+    </p>
+    <p class="lh-lg fs-4">
+      Si no lo tienes claro, puedes editarlo más tarde.
+    </p>
+  </div>
+  <div class="card shadow p-3 mb-5 bg-body rounded">
     <div class="card-body">
       <form [formGroup]="formJuego" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -27,7 +27,7 @@
             placeholder="Introduzca nombre del juego"
           />
           <div
-            class="alert alert-danger mt-2"
+            class="text-danger mt-2"
             [hidden]="nombre.valid || nombre.pristine"
           >
             El nombre es obligatorio
@@ -47,11 +47,11 @@
             placeholder="Introduzca una breve descripción, ej: tipo temática"
           />
           <div
-            class="alert alert-danger mt-2"
+            class="text-danger mt-2"
             [hidden]="descripcion.valid || descripcion.pristine"
           >
             <span *ngIf="descripcion.errors?.['required']">
-              La descripción es obligatorio
+              La descripción es obligatoria
             </span>
             <span *ngIf="descripcion.errors?.['minlength']">
               Mínimo de caracteres 10
@@ -72,7 +72,7 @@
             placeholder="Indique mínimo de jugadores"
           />
           <div
-            class="alert alert-danger mt-2"
+            class="text-danger mt-2"
             [hidden]="minParticipantes.valid || minParticipantes.pristine"
           >
             Número mínimo de participantes es obligatorio
@@ -92,7 +92,7 @@
             placeholder="Indique máximo de jugadores"
           />
           <div
-            class="alert alert-danger mt-2"
+            class="text-danger mt-2"
             [hidden]="maxParticipantes.valid || maxParticipantes.pristine"
           >
             Número máximo de participantes es obligatorio
@@ -111,19 +111,29 @@
             placeholder="Indique dificultad: facil, media o alta"
           />
           <div
-            class="alert alert-danger mt-2"
+            class="text-danger mt-2"
             [hidden]="dificultad.valid || dificultad.pristine"
           >
             La dificultad es obligatoria
           </div>
         </div>
-        <button
-          class="btn btn-guardarjuego mt-4"
-          [disabled]="formJuego.invalid"
-        >
-          Guardar Juego
-          <i class="fa-solid fa-greater-than" style="color: #fafafa"></i>
-        </button>
+        <div class="mt-3">
+          <button
+            type="text"
+            class="btn m btn-secondary btn-lg"
+            routerLink="/lista-juegos"
+          >
+            Volver
+          </button>
+          <button
+            type="submit"
+            class="btn btn-guardarjuego btn-lg"
+            [disabled]="formJuego.invalid"
+          >
+            Guardar
+          </button>
+
+        </div>
       </form>
     </div>
   </div>

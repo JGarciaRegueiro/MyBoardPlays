@@ -2,8 +2,10 @@
   background-color: var(--colorContrasteLow);
   color:var(--colorBaseBlanco);
   font-weight: bold;
+  /*
   font-size:medium;
   width: 154px;
   height:48px;
   border-radius: 16px;
+  */
 }

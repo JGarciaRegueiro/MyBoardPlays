@@ -7,8 +7,7 @@ import { IniciarPartidaComponent } from './iniciar-partida/iniciar-partida.compo
 import { MiPartidaComponent } from './mi-partida/mi-partida.component';
 
 const routes: Routes = [
-  {path: 'mis-juegos', component:MisjuegosComponent},
-  {path: 'juegos', component: ListajuegosComponent},
+  {path: 'lista-juegos', component: ListajuegosComponent},
   {path : 'nuevo-juego',component : NuevoJuegoComponent},
   { path: '', component: IniciarPartidaComponent },
   { path: 'partida/:participantes', component: MiPartidaComponent },
