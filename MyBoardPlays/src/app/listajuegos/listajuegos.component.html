@@ -48,9 +48,16 @@
       <td class="text-center">{{juego.maxParticipantes}}</td>
       <td class="text-center">{{juego.dificultad}}</td>
       <td class="text-center">
-        <button (click)="verDetallesJuego(juego.id)" class="btn btn-success ">DETALLES</button>
-        <button (click)="editarJuego" class="btn btn-warning text-center ms-3">EDITAR</button>
-        <button (click)="eliminarJuego(juego.id)" class="btn btn-danger text-center ms-3">ELIMINAR</button>
+        <button (click)="verDetallesJuego(juego.id)" class="btn btn-sm btn-success" [routerLink]="['/detalles-juego/',juego.id]">
+          <i class="fa-solid fa-info fa-xs" style="color: #ffffff;"></i>
+          DETALLES</button>
+        <button (click)="editarJuego" class="btn btn-sm btn-warning text-center ms-3" [routerLink]="['/editar-juego/',juego.id]">
+          <i class="fa-solid fa-pen-to-square fa-xs" style="color: #ffffff;"></i>
+          EDITAR
+        </button>
+        <button (click)="eliminarJuego(juego.id)" class="btn btn-sm btn-danger text-center ms-3">
+          <i class="fa-solid fa-trash-can fa-xs" style="color: #ffffff;"></i>
+          ELIMINAR</button>
       </td>
     </tr>
   </tbody>

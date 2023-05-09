@@ -1,14 +1,11 @@
-<div class="col-md-3 mx-auto">
-  <h2 class="text-center">Nuevo Juego</h2>
-
-  <div class="">
+<div class="container-sm col-md-3 mx-auto">
+  <h2>Nuevo Juego</h2>
+  <div *ngIf="loading"class="spinner-border float-end" role="status"></div>
+  <div class="p-2">
     <p class="lh-lg fs-4">
       <span style="color: #fb8822; font-weight: bold"
         >¡Registra nuevos juegos a tu biblioteca!</span
       >
-    </p>
-    <p class="lh-lg fs-4">
-      Si no lo tienes claro, puedes editarlo más tarde.
     </p>
   </div>
   <div class="card shadow p-3 mb-5 bg-body rounded">
@@ -117,11 +114,12 @@
             La dificultad es obligatoria
           </div>
         </div>
-        <div class="mt-3">
+        <div class="mt-4 text-center">
           <button
             type="text"
-            class="btn m btn-secondary btn-lg"
+            class="btn btn-secondary btn-lg me-3"
             routerLink="/lista-juegos"
+            style="font-weight: bold;"
           >
             Volver
           </button>

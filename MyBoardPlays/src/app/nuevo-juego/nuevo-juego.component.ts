@@ -11,6 +11,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class NuevoJuegoComponent  implements OnInit{
 
+  //Spinner
+  loading = false;
+
   constructor( private fb:FormBuilder){}
 
   get nombre(){

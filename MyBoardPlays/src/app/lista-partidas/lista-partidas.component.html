@@ -45,9 +45,16 @@
         <td class="text-center"></td>
         <td class="text-center"></td>
         <td class="text-center">
-          <button (click)="verDetallesPartida" class="btn btn-success ">DETALLES</button>
-          <button (click)="editarPartida" class="btn btn-warning text-center ms-3">EDITAR</button>
-          <button (click)="eliminarPartida" class="btn btn-danger text-center ms-3">ELIMINAR</button>
+          <button (click)="eliminarPartida" class="btn btn-sm btn-success ">
+            <i class="fa-solid fa-info fa-xs" style="color: #ffffff;"></i>
+            DETALLES</button>
+          <button (click)="eliminarPartida" class="btn btn-sm btn-warning text-center ms-3" [routerLink]="['//',]">
+            <i class="fa-solid fa-pen-to-square fa-xs" style="color: #ffffff;"></i>
+            EDITAR
+          </button>
+          <button (click)="eliminarPartida" class="btn btn-sm btn-danger text-center ms-3">
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ffffff;"></i>
+            ELIMINAR</button>
         </td>
       </tr>
     </tbody>

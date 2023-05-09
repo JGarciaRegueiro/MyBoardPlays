@@ -146,6 +146,8 @@ export class ListajuegosComponent implements OnInit{
     });
    }
    eliminarJuego(id:number){
+
+
     /*
     swal({
       title: '¿Estas seguro?',
