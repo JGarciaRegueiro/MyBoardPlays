@@ -10,6 +10,7 @@ import swal from 'sweetalert2';
 })
 export class ListajuegosComponent implements OnInit{
 
+  pageActual:number =1;
   juegos:Juego[];
 
   constructor(private juegosServicio:JuegosService){ }
@@ -82,7 +83,7 @@ export class ListajuegosComponent implements OnInit{
       "descripcion":"Construcción de mazos con tablero",
       "minParticipantes":1,
       "maxParticipantes":4,
-      "dificultad":"media",
+      "dificultad":"baja",
     }
     ,
     {
@@ -96,11 +97,11 @@ export class ListajuegosComponent implements OnInit{
     ,
     {
       "id":3,
-      "nombre":"Dune Imperium",
+      "nombre":"Monopoly",
       "descripcion":"Construcción de mazos con tablero",
       "minParticipantes":1,
       "maxParticipantes":4,
-      "dificultad":"media",
+      "dificultad":"alta",
     },
     {
       "id":3,
@@ -116,7 +117,7 @@ export class ListajuegosComponent implements OnInit{
       "descripcion":"Construcción de mazos con tablero",
       "minParticipantes":1,
       "maxParticipantes":4,
-      "dificultad":"media",
+      "dificultad":"baja",
     },
     {
       "id":3,

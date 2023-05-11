@@ -26,4 +26,16 @@ thead{
   height:48px;
   border-radius: 16px;
 }
+.my-pagination ::ng-deep .ngx-pagination .current{
+  background-color: #4741b5;
+  width: 32px;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .paginate{
+  background-color: #4741b5;
+  width: 40px;
+}
+
+
+
 

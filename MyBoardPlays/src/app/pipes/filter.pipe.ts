@@ -9,7 +9,8 @@ export class FilterPipe implements PipeTransform {
     if(arg === '' || arg.length < 2) return value;
     const resultJuegos =[];
     for(const juegos of value){
-      if(juegos.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1){
+      if(juegos.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
+      juegos.dificultad.toLowerCase().indexOf(arg.toLowerCase()) > -1 || juegos.descripcion.toLowerCase().indexOf(arg.toLowerCase()) > -1 ){
         resultJuegos.push(juegos);
       };
     };

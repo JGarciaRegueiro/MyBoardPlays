@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,7 @@ import { MiPartidaComponent } from './mi-partida/mi-partida.component';
 import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderByJuegosPipe } from './pipes/order-by-juegos.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,11 @@ import { OrderByJuegosPipe } from './pipes/order-by-juegos.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
+  ],
+  schemas: [
+  CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [],
   bootstrap: [AppComponent]

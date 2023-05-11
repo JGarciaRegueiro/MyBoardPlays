@@ -1,67 +1,106 @@
 <div class="container table-responsive">
-<h3 class="text-lg-start mb-5">Lista de todos los juegos</h3>
-<button class="btn btn-juego btn mb-3" routerLink="/nuevo-juego">
-  <i class="fa-sharp fa-regular fa-circle-down" style="color: #fcfcfd;"></i> NUEVO JUEGO
-</button>
-<div class="row mt-3">
-  <div class="col">
-    <div class="form-group filter">
-      <input type="text" class="form-control mb-3" name="filterJuegos" placeholder="Buscar por nombre de juego...."[(ngModel)]="filterJuegos">
-      <i class="fa-solid fa-magnifying-glass"></i>
+  <h3 class="text-lg-start mb-5">Lista de todos los juegos</h3>
+  <button class="btn btn-juego btn mb-3" routerLink="/nuevo-juego">
+    <i class="fa-sharp fa-regular fa-circle-down" style="color: #fcfcfd"></i>
+    NUEVO JUEGO
+  </button>
+  <div class="row mt-3">
+    <div class="col">
+      <div class="form-group filter">
+        <input
+          type="text"
+          class="form-control mb-3"
+          name="filterJuegos"
+          placeholder="Buscar por (nombre, dificultad o descripción)"
+          [(ngModel)]="filterJuegos"
+        />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
     </div>
   </div>
-</div>
   <div class="row">
-      <div class="col mt-2">
-        <select class="form-select" [(ngModel)] ="parameter1">
-          <option selected> Ordenar por...</option>
-          <option value="nombre">Nombre</option>
-          <option value="dificultad">Dificultad</option>
-          <option value="descripcion">Descripción</option>
-        </select>
-      </div>
-      <div class="col mt-2">
-        <select class="form-select" [(ngModel)] ="parameter2">
-          <option value="asc" selected>ASC</option>
-          <option value="desc">DESC</option>
-        </select>
-      </div>
+    <div class="col mt-2">
+      <select class="form-select" [(ngModel)]="parameter1">
+        <option selected>Ordenar por...</option>
+        <option value="nombre">Nombre</option>
+        <option value="dificultad">Dificultad</option>
+        <option value="descripcion">Descripción</option>
+      </select>
+    </div>
+    <div class="col mt-2">
+      <select class="form-select" [(ngModel)]="parameter2">
+        <option value="asc" selected>ASC</option>
+        <option value="desc">DESC</option>
+      </select>
+    </div>
   </div>
-<table class="table table-hover table-striped align-middle shadow p-3 mt-4 bg-body rounded">
-  <thead class="table fs-5"> <!--Cabecera de la tabla-->
-    <tr class="justify-content-center">
-      <th class="text-center">ID</th>
-      <th class="text-center">NOMBRE</th>
-      <th class="text-center">DESCRIPCIÓN</th>
-      <th class="text-center">MIN JUGADORES</th>
-      <th class="text-center">MÁX JUGADORES</th>
-      <th class="text-center">DIFICULTAD</th>
-      <th class="text-center">ACCIONES</th>
-    </tr>
-  </thead>
-  <tbody class="justify-content-center"> <!--cuerpo de la tabla-->
-    <tr *ngFor="let juego of juegos | filter:filterJuegos | orderByJuegos: parameter1 : parameter2"> <!--recorremos la lista de juegos y después llamamos a esos datos-->
-      <td class="text-center">{{juego.id}}</td>
-      <td class="text-center">{{juego.nombre}}</td>
-      <td class="text-center">{{juego.descripcion}}</td>
-      <td class="text-center">{{juego.minParticipantes}}</td>
-      <td class="text-center">{{juego.maxParticipantes}}</td>
-      <td class="text-center">{{juego.dificultad}}</td>
-      <td class="text-center">
-        <button (click)="verDetallesJuego(juego.id)" class="btn btn-sm btn-success" [routerLink]="['/detalles-juego/',juego.id]">
-          <i class="fa-solid fa-info fa-xs" style="color: #ffffff;"></i>
-          DETALLES</button>
-        <button (click)="editarJuego" class="btn btn-sm btn-warning text-center ms-3" [routerLink]="['/editar-juego/',juego.id]">
-          <i class="fa-solid fa-pen-to-square fa-xs" style="color: #ffffff;"></i>
-          EDITAR
-        </button>
-        <button (click)="eliminarJuego(juego.id)" class="btn btn-sm btn-danger text-center ms-3">
-          <i class="fa-solid fa-trash-can fa-xs" style="color: #ffffff;"></i>
-          ELIMINAR</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table
+    class="table table-hover table-striped align-middle shadow p-3 mt-4 bg-body rounded"
+  >
+    <thead class="table fs-5">
+      <!--Cabecera de la tabla-->
+      <tr class="justify-content-center">
+        <th class="text-center">ID</th>
+        <th class="text-center">NOMBRE</th>
+        <th class="text-center">DESCRIPCIÓN</th>
+        <th class="text-center">MIN JUGADORES</th>
+        <th class="text-center">MÁX JUGADORES</th>
+        <th class="text-center">DIFICULTAD</th>
+        <th class="text-center">ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody class="justify-content-center">
+      <!--cuerpo de la tabla-->
+      <tr
+        *ngFor="
+          let juego of juegos
+            | filter : filterJuegos
+            | orderByJuegos : parameter1 : parameter2
+            | paginate : { itemsPerPage: 10, currentPage: pageActual }
+        "
+      >
+        <!--recorremos la lista de juegos y después llamamos a esos datos-->
+        <td class="text-center">{{ juego.id }}</td>
+        <td class="text-center">{{ juego.nombre }}</td>
+        <td class="text-center">{{ juego.descripcion }}</td>
+        <td class="text-center">{{ juego.minParticipantes }}</td>
+        <td class="text-center">{{ juego.maxParticipantes }}</td>
+        <td class="text-center">{{ juego.dificultad }}</td>
+        <td class="text-center">
+          <button
+            (click)="verDetallesJuego(juego.id)"
+            class="btn btn-sm btn-success"
+            [routerLink]="['/detalles-juego/', juego.id]"
+          >
+            <i class="fa-solid fa-info fa-xs" style="color: #ffffff"></i>
+            DETALLES
+          </button>
+          <button
+            (click)="(editarJuego)"
+            class="btn btn-sm btn-warning text-center ms-3"
+            [routerLink]="['/editar-juego/', juego.id]"
+          >
+            <i
+              class="fa-solid fa-pen-to-square fa-xs"
+              style="color: #ffffff"
+            ></i>
+            EDITAR
+          </button>
+          <button
+            (click)="eliminarJuego(juego.id)"
+            class="btn btn-sm btn-danger text-center ms-3"
+          >
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ffffff"></i>
+            ELIMINAR
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="mt-5 py-5 text-center">
+    <pagination-controls class="my-pagination"
+      (pageChange)="pageActual = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+  </div>
 </div>
 
 <!--[routerLink]="['/editEmpleado/', empleado.id]-->
