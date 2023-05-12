@@ -20,15 +20,19 @@ export class JuegosService {
   obtenerListaDeJuegos():Observable<Juego[]>{
    return this.httpClient.get<Juego[]>(`${this.listaJuegosURL}`);
   }
-
   //Método para registrar un nuevo juego
   crearNuevoJuego(juego:Juego) : Observable<Object>{
     return this.httpClient.post(`${this.listaJuegosURL}`,juego);
   }
-
-  editarJuego(){
-
+  //Método para actualizar un juego
+  editarJuego(id:number, juego:Juego) : Observable<Object>{
+    return this.httpClient.put(`${this.listaJuegosURL}/${id}`,juego);
   }
+  //Obtener un juego por Id
+  obtenerJuegoPorId(id:number): Observable<Juego>{
+    return this.httpClient.get<Juego>(`${this.listaJuegosURL}/${id}`);
+  }
+  //Método para eliminar un Juego
   eliminarJuego(id:number):Observable<Object>{
     return this.httpClient.delete(`${this.listaJuegosURL}/${id}`);
   }

@@ -146,6 +146,11 @@ export class ListajuegosComponent implements OnInit{
       this.juegos = dato;
     });
    }
+
+   editarJuego(id:number){
+
+   }
+
    eliminarJuego(id:number){
 
 
@@ -178,10 +183,6 @@ export class ListajuegosComponent implements OnInit{
 }
 
    verDetallesJuego(id:number){
-
-   }
-
-   editarJuego(){
 
    }
   }
