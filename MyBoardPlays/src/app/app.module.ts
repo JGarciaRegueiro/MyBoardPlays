@@ -10,7 +10,7 @@ import { ErrorGeneralComponent } from './error-general/error-general.component';
 import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
 import { MisjuegosComponent } from './misjuegos/misjuegos.component';
 import { ListajuegosComponent } from './listajuegos/listajuegos.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NuevoJuegoComponent } from './nuevo-juego/nuevo-juego.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarJuegoComponent } from './editar-juego/editar-juego.component';
@@ -21,6 +21,9 @@ import { ListaPartidasComponent } from './lista-partidas/lista-partidas.componen
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderByJuegosPipe } from './pipes/order-by-juegos.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ListaPartidasComponent,
     FilterPipe,
     OrderByJuegosPipe,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
   schemas: [
   CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [],
+  providers: [
+    {
+      provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
