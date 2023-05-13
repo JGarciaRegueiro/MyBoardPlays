@@ -3,42 +3,52 @@
     <br>
     <table class="tabla">
         <tr>
-            <td>
-            <p><label for="name" disabled>Nombre del Juego:</label>
-            <input type="text" id="name" name="nombreJuego" placeholder="Nombre del juego seleccionado"></p>
+            <td class = "form-row">
+            <label for="name"  class ="form-text" disabled>Nombre del Juego:</label>
+            <input type="text" class="form-control" name="nombreJuego" placeholder="Nombre del juego seleccionado">
             </td>
         </tr>
         <tr>
-            <td>
-            <label for="creador"  disabled>Creador de la partida: </label>
-            <input type="text"  id="creador" name="creadorPartida" placeholder="Nombre del usuario que iniciado la sesión">
+            <td class = "form-row">
+            <label for="creador" class ="form-text"  disabled>Creador de la partida: </label>
+            <input type="text"  class="form-control" name="creadorPartida" placeholder="Nombre del usuario que iniciado la sesión">
             </td>
         </tr>
         <tr>
-            <td>
-            <label for="ubicacion"  disabled>Ubicación de la partida: </label>
-            <input type="text"  id="ubicacion" name="ubicacionPartida" placeholder="Donde se disputa la partida">
-            <label for="fecha"  disabled>  Fecha: </label>
-            <input type="date" id="fecha" name="fechaPartida">
+            <td class= "form-row">
+            <div class="separacion-elemento">
+            <label for="ubicacion" class ="form-text" disabled>Ubicación de la partida: </label>
+            <input type="text" class="form-control" id="forma" name="ubicacionPartida" placeholder="Donde se disputa la partida">
+            </div>
+            <div class="separacion-elemento">
+                <div class="separacion-elemento2">
+                <label for="fecha"  class ="form-text" disabled>  Fecha: </label>
+                <input type="date" class="form-control" id="form" name="fechaPartida">
+                </div>
+            </div>
             </td>
         </tr>
     </table>
-    <br>
-    <table class="tabla2">
+    <br><br><br>
+    <table class="tabla">
         <tr>
-            <td>
-            <label for="participantes" class="form__input" disabled>Número de participantes: </label>
-            <input type="text" class="form__input" id="participantes" name="numParticipantes" placeholder="Número de participantes">
-            </td>
-            <td>
-                <label for="orden" disabled>Sorteo de orden </label>
-                <button type="button" > <img src="assets/img/orden.png" /></button>        
+            <td class= "form-row">
+            <div class="separacion-elemento">
+            <label for="participantes" class ="form-text" disabled>Número de participantes: </label>
+            <input type="text" class="form-control" id="participantes" name="numParticipantes" placeholder="Número de participantes">
+            </div>
+            <div class="separacion-elemento">
+                <div class="sorteo">
+                    <label for="orden" class ="form-text" disabled>Sorteo de orden </label>
+                    <button type="button" class="form-button"> <img src="assets/img/orden.png" /></button> 
+                </div>
+            </div>       
             </td>
         </tr>
     </table>
+    <br><br>
 
-
-    <h2>Lista de jugadores:</h2>
+    <h3>Lista de jugadores:</h3>
     <div class=añadir-jugador>
     <label for="orden" disabled>Sorteo de orden </label>
     <button type="button" > <img src="assets/img/orden.png" /></button> 

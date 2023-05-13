@@ -7,15 +7,16 @@
 
 .tabla{
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     border: 1px solid #000;
     display:grid;
 }
 
+
  th, td {
     width: 25%;
     text-align: left;
-    vertical-align: top;
+    
     border: 1px solid #000;
     border-collapse: collapse;
     padding: 0.3em;
@@ -25,3 +26,62 @@
  tr{
     width: 100%;
  }
+ .especial{
+    display:flex;
+    flex-direction: horizontal;
+    width: 100%
+ }
+ .form-row{
+    width:100%;
+    display:flex;
+ }
+
+ .separacion-elemento{
+    display: flex;
+    width: 100%;
+    align-items: center;
+ }
+ 
+ .separacion-elemento2{
+    display: flex;
+    width: 100%;
+    margin-left:20px;
+    align-items: center;
+ }
+ 
+  .form-control {
+    flex: 1 1 100%;
+    margin-left: 10px;
+    font-size: 2rem;
+    
+  }
+  
+  .form-text {
+    flex: 0 0 auto;
+    text-align: center;
+    align-items: center;
+  }
+
+
+ .sorteo{
+    margin-left: 20px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+ }
+  
+ 
+ .form-text {
+    flex: 0 0 auto;
+    text-align: center;
+    align-items: center;
+  }
+  
+.form-button{
+    margin-left: 20px;
+    width:20%;
+    height: auto;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background-color: var(--colorBaseBlanco);
+}

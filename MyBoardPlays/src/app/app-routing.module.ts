@@ -12,8 +12,8 @@ const routes: Routes = [
   {path : 'nuevo-juego',component : NuevoJuegoComponent},
   {path : 'editar-juego/:id',component : NuevoJuegoComponent},
   {path : 'detalles-juego/:id', component:JuegoDetallesComponent},
-  { path: '', component: IniciarPartidaComponent },
-  { path: 'partida/:participantes', component: MiPartidaComponent },
+  { path: 'iniciar-partida/:iniciar', component: IniciarPartidaComponent },
+  { path: '', component: MiPartidaComponent },
 ];
 
 @NgModule({
