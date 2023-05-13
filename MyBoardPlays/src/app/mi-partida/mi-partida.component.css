@@ -12,8 +12,14 @@
     display:grid;
 }
 
+.tabla2{
+    width: 70%;
+    font-size: 2rem;
+    border: none;
+    display:grid;
+}
 
- th, td {
+ th, td{
     width: 25%;
     text-align: left;
     
@@ -23,9 +29,41 @@
     caption-side: bottom;
     
  }
+
+ thead{
+    display:flex;
+    width: 100%;
+ }
+
+
+ .th1{
+    
+    text-align: center;
+    border: none;
+    padding: 1rem;
+    caption-side: bottom;
+ }
+
+
+ .tr1{
+    display:flex;
+    width: 100%;
+    text-align: center;
+    border: none;
+    padding: 1rem;
+    caption-side: bottom;
+ }
+
  tr{
     width: 100%;
  }
+
+ .celda{
+    border:none;
+    text-align: center;
+    font-weight: bold;
+ }
+
  .especial{
     display:flex;
     flex-direction: horizontal;
@@ -35,6 +73,7 @@
     width:100%;
     display:flex;
  }
+
 
  .separacion-elemento{
     display: flex;
@@ -79,9 +118,40 @@
   
 .form-button{
     margin-left: 20px;
-    width:20%;
     height: auto;
-    border: 1px solid #000;
-    border-radius: 20px;
+    border: bold #000;
+    border-radius: 10px;
     background-color: var(--colorBaseBlanco);
 }
+
+.form-button2{
+    background-color: var(--colorBaseBlanco);
+    border:none;
+    margin-top: 5rem;
+
+}
+
+fieldset{
+    border-color: var(--colorBaseNegro);
+    border-width: bold;
+    border-style: solid;
+    padding: 5rem;
+}
+
+.mas-jugadores{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    font-size: 2rem;
+    align-items: baseline;
+}
+
+.button__primario {
+    background-color: var(--colorContrasteLow);
+    color: var(--colorBaseBlanco);
+    text-decoration: none;
+    font-size: 3rem;
+    border-radius: 15px;
+    padding:1rem;
+
+  }

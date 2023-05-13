@@ -49,38 +49,102 @@
     <br><br>
 
     <h3>Lista de jugadores:</h3>
-    <div class=añadir-jugador>
-    <label for="orden" disabled>Sorteo de orden </label>
-    <button type="button" > <img src="assets/img/orden.png" /></button> 
-    </div>
-    <table id="tabla">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Ganador</th>
-        </tr>
-        </thead>
-        <tbody>
-           <!--{{ generarTabla('participantes') }}--> 
-        </tbody>
-    </table>
-    <br>
-    <h2>Puntuaciones:</h2>
-    <table id="tabla">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Nombre</th>
-            <th>Orden</th>
-            <th>Puntuaciones</th>
-        </tr>
-        </thead>
-        <tbody>
-           <!--{{ generarTabla('participantes') }}--> 
-        </tbody>
-    </table>
-    <p><input class="button button__action" type="submit" value="Guardar Partida"></p>
 
+    <fieldset>
+        <div class="separacion-elemento">
+            <div class="mas-jugadores">
+                <button type="button" class="form-button2"> <img src="assets/img/mas.png" /></button> 
+                <p class ="form-text">Añadir un jugador </p>
+            </div>
+        </div> 
+    <table class="tabla2">
+        <thead>
+            <th class="th1"></th>
+            <th class="th1">Nombre</th>
+            <th class="th1">Email</th>
+            <th class="th1">Ganador</th>
+        </thead>
+        <tbody>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador1" class="form-text" >Jugador 1</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre1"></td>
+                <td class = "celda"><input type="text" class="form-control" name="email1" ></td>
+                <td class = "celda"><input type="checkbox" name="ganador" value="1" ></td>
+            </tr>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador2" class="form-text" >Jugador 2</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre2"></td>
+                <td class = "celda"><input type="text" class="form-control" name="email2" ></td>
+                <td class = "celda"><input type="checkbox" name="ganador" value="2" ></td>
+            </tr>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador" class="form-text" >Jugador 3</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre3"></td>
+                <td class = "celda"><input type="text" class="form-control" name="email3" ></td>
+                <td class = "celda"><input type="checkbox" name="ganador" value="3" ></td>
+            </tr>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador" class="form-text" >Jugador 4</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre4"></td>
+                <td class = "celda"><input type="text" class="form-control" name="email4" ></td>
+                <td class = "celda"><input type="checkbox" name="ganador" value="4" ></td>
+            </tr>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador" class="form-text" >Jugador 5</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre5"></td>
+                <td class = "celda"><input type="text" class="form-control" name="email5" ></td>
+                <td class = "celda"><input type="checkbox" name="ganador" value="5" ></td>
+            </tr>
+           <!--{{ generarTabla('participantes') }}--> 
+        </tbody>
+    </table>
+    </fieldset>
+    <br>
+    <h3>Puntuaciones:</h3>
+    <fieldset>
+    <table class="tabla2">
+        <thead>
+            <th class="th1"></th>
+            <th class="th1">Nombre</th>
+            <th class="th1">Orden</th>
+            <th class="th1">Puntuaciones</th>
+        </thead>
+        <tbody>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador1" class="form-text" >Jugador 1</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre1"></td>
+                <td class = "celda"><input type="text" class="form-control" name="orden1" ></td>
+                <td class = "celda"><input type="text" class="form-control" name="puntuacion1" ></td>
+            </tr>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador2" class="form-text" >Jugador 2</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre2"></td>
+                <td class = "celda"><input type="text" class="form-control" name="orden2" ></td>
+                <td class = "celda"><input type="text" class="form-control" name="puntuacion2" ></td>            
+            </tr>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador" class="form-text" >Jugador 3</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre3"></td>
+                <td class = "celda"><input type="text" class="form-control" name="orden3" ></td>
+                <td class = "celda"><input type="text" class="form-control" name="puntuacion3" ></td>           
+             </tr>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador" class="form-text" >Jugador 4</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre4"></td>
+                <td class = "celda"><input type="text" class="form-control" name="orden4" ></td>
+                <td class = "celda"><input type="text" class="form-control" name="puntuacion4" ></td>            
+            </tr>
+            <tr class="tr1">
+                <td class = "celda"><label for="jugador" class="form-text" >Jugador 5</label></td>
+                <td class = "celda"><input type="text" class="form-control" name="nombre5"></td>
+                <td class = "celda"><input type="text" class="form-control" name="orden5" ></td>
+                <td class = "celda"><input type="text" class="form-control" name="puntuacion5" ></td>            
+            </tr>
+           <!--{{ generarTabla('participantes') }}--> 
+        </tbody>
+    </table>
+    </fieldset>
+    <div class="mas-jugadores" >
+    <p class ="form-button2"><input class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
+    </div>
 </div>
