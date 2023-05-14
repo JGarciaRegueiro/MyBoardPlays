@@ -24,6 +24,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     OrderByJuegosPipe,
     LoginComponent,
     HomeComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

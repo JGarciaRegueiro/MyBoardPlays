@@ -9,9 +9,11 @@ import { JuegoDetallesComponent } from './juego-detalles/juego-detalles.componen
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
   {path: 'lista-juegos', component: ListajuegosComponent, canActivate: [AuthGuard]},
   {path: 'nuevo-juego',component : NuevoJuegoComponent},
   {path: 'editar-juego/:id',component : NuevoJuegoComponent},
