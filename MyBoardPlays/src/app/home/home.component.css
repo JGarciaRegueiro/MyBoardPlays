@@ -6,6 +6,7 @@ main {
 .home--section__1 {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .section--bloque__1 {
@@ -59,6 +60,7 @@ p {
 /*Bloque 3*/
 .home--section__3{
   display: flex;
+  justify-content: center;
   align-items: center;
   margin: 96px 0;
 }
