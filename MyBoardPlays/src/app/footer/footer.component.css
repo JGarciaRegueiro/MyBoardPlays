@@ -49,3 +49,20 @@
 .footer__element--title {
   font-size: 1.2rem;
 }
+
+a {
+  color: var(--colorBaseNegro);
+}
+
+p {
+  font-size: 16px;
+}
+
+.bloque--logo__footer {
+  display: flex;
+  align-items: center;
+}
+
+.logo--footer{
+  height: 100px;
+}
