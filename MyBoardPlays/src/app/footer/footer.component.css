@@ -3,8 +3,8 @@
   background-color: var(--colorFondoNaranjaMid);
   display: grid;
   grid-template-rows: 1fr;
-  padding: 2rem 9.6rem;
-  margin-top: 4rem;
+  padding: 20px 96px;
+  margin-top: 40px;
 }
 
 @media (min-width : 768px) {
@@ -47,7 +47,7 @@
 }
 
 .footer__element--title {
-  font-size: 1.2rem;
+  font-size: 16px;
 }
 
 a {
