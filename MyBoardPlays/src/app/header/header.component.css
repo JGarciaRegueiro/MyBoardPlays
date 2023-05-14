@@ -1,29 +1,32 @@
-HTML CSS JSResult Skip Results Iframe
-EDIT ON
 nav {
   padding: 5px 20px;
 }
+
 ul {
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
+  color: var(--colorBaseBlanco);
 }
-a:hover {
-  text-decoration: underline;
-}
+
 .logo a:hover {
   text-decoration: none;
 }
+
 .menu li {
   font-size: 16px;
-  padding: 15px 5px;
+  padding: 16px;
+  margin: 0 12px;
   white-space: nowrap;
 }
+
 .logo a,
 .toggle a {
   font-size: 20px;
 }
+
 .button.secondary {
   border-bottom: 1px #444 solid;
 }
@@ -111,9 +114,7 @@ a:hover {
   .button {
     order: 2;
   }
-  .menu li {
-    padding: 15px 10px;
-  }
+
   .menu li.button {
     padding-right: 0;
   }

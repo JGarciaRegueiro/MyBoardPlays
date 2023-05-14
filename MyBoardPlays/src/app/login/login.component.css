@@ -1,0 +1,35 @@
+.login--component {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.formulario--login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 400px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.62);
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 15px;
+  padding: 15px;
+}
+
+button {
+  font-size: 16px;
+  color: var(--colorBaseBlanco);
+  padding: 10px 16px;
+  margin-top: 30px;
+}
+
+a {
+  margin: 15px;
+  text-decoration: none;
+  color: var(--colorBaseNegro);
+}

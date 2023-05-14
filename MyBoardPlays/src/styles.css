@@ -50,3 +50,14 @@ h3 {
 fieldset {
   border: none;
 }
+
+.button-primary {
+  background-color: var(--colorContrasteMid);
+  border-radius: 8px;
+}
+
+.button-secondary {
+  background-color: var(--colorContrasteLow);
+  border-radius: 8px;
+  border-style: none;
+}
