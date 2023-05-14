@@ -2,12 +2,11 @@
 
   <img src="../../assets/img/signup.svg" alt="imagen página registro">
 
-  <form class="formulario--signup" #form="ngForm">
+  <form class="formulario--signup" #form="ngForm" (ngSubmit)="signup(form)">
 
-      <input type="nombre" name="nombre" id="nombre" placeholder="Nombre" required>
-      <input type="apellidos" name="apellidos" id="apeliidos" placeholder="Apellidos" required>
-      <input type="email" name="email" id="email"  placeholder="Email" required>
-      <input type="password" name="pass" id="pass" placeholder="Contraseña" required>
+      <input type="nombre" name="nombre" id="nombre" placeholder="Nombre" required [(ngModel)]="data.nombre">
+      <input type="email" name="email" id="email"  placeholder="Email" required [(ngModel)]="data.email">
+      <input type="password" name="pass" id="pass" placeholder="Contraseña" required [(ngModel)]="data.pass">
 
       <button class="button-secondary">Registrarme</button>
 

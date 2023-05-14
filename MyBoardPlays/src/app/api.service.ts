@@ -1,7 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { Credentials } from './model';
+import { Credentials, DataSignUp } from './model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,12 @@ export class ApiService {
 
   getToken() {
     return localStorage.getItem('token');
+  }
+
+  signup(data: DataSignUp){
+    return this.http.post('http://localhost:8087/apirest/usuario/alta', data, {
+      observe: 'response'
+    })
   }
 
 }
