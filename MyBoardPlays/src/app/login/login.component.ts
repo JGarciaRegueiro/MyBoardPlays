@@ -26,8 +26,6 @@ export class LoginComponent {
 
   login(form: NgForm){
 
-    console.log('form value', form.value);
-
     this.apiService.login(this.creds)
       .subscribe(response => {
         this.router.navigate(['/'])
