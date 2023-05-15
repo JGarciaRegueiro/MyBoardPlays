@@ -10,6 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { SignupComponent } from './signup/signup.component';
+import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { HerramientasComponent } from './herramientas/herramientas.component';
+import { ErrorGeneralComponent } from './error-general/error-general.component';
+
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -20,6 +24,9 @@ const routes: Routes = [
   {path: 'detalles-juego/:id', component:JuegoDetallesComponent},
   {path: 'iniciar-partida/:iniciar', component: IniciarPartidaComponent },
   {path: 'mi-partida', component: MiPartidaComponent },
+  {path: 'acerca-de', component: AcercaDeComponent },
+  {path: 'error-general', component: ErrorGeneralComponent },
+  {path: 'herramientas', component: HerramientasComponent },
   {path: '', component: HomeComponent },
 ];
 

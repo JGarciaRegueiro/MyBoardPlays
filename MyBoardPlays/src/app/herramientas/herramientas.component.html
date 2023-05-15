@@ -1,0 +1,66 @@
+<div class = "contenedor__herramientas">
+    <div class = "contenedor__herramientas--contenido">
+        <div class = "mensaje-dados">
+        <h1 class="herramientas1">DADOS VIRTUALES</h1>
+        
+        <br>
+        <p class ="tamaño">ELIGE LA CONFIGURACIÓN DE LOS DADOS.</p>
+        <form action=# method="POST">
+            <fieldset>
+                <select class="form__input" id="dados" ngModel="num_dados" 
+                required>
+                    <option value="0">Número de dados</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <input class="form__input" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
+                <input class="form__input" type="email" name="Email" placeholder="Email*" required>
+            </fieldset>
+        </form>
+
+        </div>
+
+        <div class = contenedor__imagen>
+            <img src= "../../assets/img/dados.jpg" class=imagen-dados alt="dados altura">
+        </div>
+    </div>
+    <div class = "contenedor__herramientas--contenido">
+        <div class = contenedor__imagen>
+            <img src= "../../assets/img/ruleta.jpg" alt="ruleta">
+        </div>
+
+        <div class = "mensaje-ruleta">
+        <h1 class="herramientas1">RULETA PARA ELEGIR GM</h1>
+        <br>
+        <p class ="tamaño">ELIGE LA CONFIGURACIÓN DE LA RULETA.</p>
+        <form action=# method="POST">
+            <fieldset class="form">
+                <input class="form__input" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
+                <input class="form__input" type="email" name="Email" placeholder="Email*" required>
+            </fieldset>
+        </form>
+        </div>  
+    </div>
+
+    <div class = "contenedor__herramientas--contenido">
+        <div class = "mensaje-timer">
+            <h1 class="herramientas1">TIMER</h1>
+            <br>
+            <p class ="tamaño">ELIGE EL TIEMPO PARA LA CUENTA ATRÁS.</p>
+            <form action=# method="POST">
+                <fieldset class="form">
+                    <input class="form__input" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
+                    <input class="form__input" type="email" name="Email" placeholder="Email*" required>
+                    <label for="coment" class="comentario">Comentario:</label>
+                    <textarea class="form__input2" name="comentario"></textarea>
+                    <p><input class="button button__action" type="submit" value="Enviar"></p>
+                </fieldset>           
+            </form>
+        </div>
+
+        <div class = contenedor__imagen>
+            <img src= "../../assets/img/timer.jpg" alt="timer">
+        </div>
+    </div>
+
+</div>

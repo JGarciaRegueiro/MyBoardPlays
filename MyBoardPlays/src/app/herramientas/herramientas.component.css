@@ -1,14 +1,14 @@
-.acerca {
+.herramientas1 {
     color: var(--colorFondoNaranja);
   }
-  
-.acerca2 {
-    color: var(--colorFondoNaranjaMid);
+
+
+.tamaño{
+    font-size: 20px;
+    font-weight: bold;
 }
-
-
 /*Contenido ventana principal*/
-.contenedor__acercaDe{
+.contenedor__herramientas{
     width: 100%;
     height:100%;
     padding: 96px;
@@ -16,7 +16,7 @@
 }
 
 /*Contenido de cada fila*/
-.contenedor__acercaDe--contenido{
+.contenedor__herramientas--contenido{
 
     display: flex;
     justify-content: space-evenly;
@@ -26,7 +26,7 @@
 
 }
 
-.mensaje-faqs{
+.mensaje-dados{
     font-size: 16px;
 }
 
