@@ -6,7 +6,13 @@
         <br>
         <p class ="tamaño">ELIGE LA CONFIGURACIÓN DE LOS DADOS.</p>
         <form action=# method="POST">
-            <fieldset class="form">
+            <fieldset>
+                <select class="form__input" id="dados" ngModel="num_dados" 
+                required>
+                    <option value="0">Número de dados</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
                 <input class="form__input" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
                 <input class="form__input" type="email" name="Email" placeholder="Email*" required>
             </fieldset>
