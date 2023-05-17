@@ -11,10 +11,27 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class NuevoJuegoComponent  implements OnInit{
 
-  //Spinner
+  nuevoJuego: Juego ={ id:0,
+    nombre: '',
+    descripcion:'',
+    minParticipantes:0,
+    maxParticipantes:0,
+    dificultad:'' };
+
+    constructor(private juegosServicio: JuegosService, private router:Router, private fb:FormBuilder) { }
+
+    ngOnInit(): void {
+
+    }
+
+    crearNuevoJuego(){
+      this.juegosServicio.guardarNuevoJuego
+    }
+
+   //Spinner
   loading = false;
 
-  constructor( private fb:FormBuilder){}
+
 
   get nombre(){
     return this.formJuego.get('nombre') as FormControl;
@@ -44,9 +61,7 @@ export class NuevoJuegoComponent  implements OnInit{
     console.log(this.formJuego.value);
   }
 
-  ngOnInit(): void {
 
-}
 
   /*
   juego: Juego = new Juego();

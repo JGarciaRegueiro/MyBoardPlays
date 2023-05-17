@@ -1,5 +1,4 @@
-export class Juego {
-  //Propiedades de mi clase juego
+export interface Juego{
   id:number;
   nombre: string;
   descripcion:string;
