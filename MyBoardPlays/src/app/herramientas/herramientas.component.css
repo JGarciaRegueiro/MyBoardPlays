@@ -3,10 +3,6 @@
   }
 
 
-.tamaño{
-    font-size: 20px;
-    font-weight: bold;
-}
 /*Contenido ventana principal*/
 .contenedor__herramientas{
     width: 100%;
@@ -44,7 +40,7 @@
     width: 100%;
     border-radius: 1rem;
     padding: 2rem;
-    margin: 1.6rem;
+    margin-bottom: 1.6rem;
 }
 
 .comentario{
@@ -56,8 +52,10 @@
 .form__input2{
     width: 100%;
     border-radius: 1rem;
-    padding: 6rem;
-    margin: 1.6rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
 
 }
 
@@ -66,10 +64,16 @@
     width: 100%;
     border-radius: 1rem;
     padding: 2rem;
-    margin: 1.6rem;
+    margin-top: 1.6rem;
     background-color: var(--colorContrasteLow);
     color: var(--colorBaseBlanco);
     font-size: 2rem;
     text-align: left;
 
+}
+
+.label--select {
+    width: 100%;
+    font-size: 3rem;
+    font-weight: bold;
 }
