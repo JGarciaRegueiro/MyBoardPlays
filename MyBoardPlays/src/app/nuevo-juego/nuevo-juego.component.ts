@@ -11,7 +11,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class NuevoJuegoComponent  implements OnInit{
 
-  nuevoJuego: Juego ={ id:0,
+    juego : Juego ={ id:0,
     nombre: '',
     descripcion:'',
     minParticipantes:0,
@@ -25,9 +25,15 @@ export class NuevoJuegoComponent  implements OnInit{
     }
 
     crearNuevoJuego(){
-      this.juegosServicio.guardarNuevoJuego
+      this.juegosServicio.guardarNuevoJuego(this.juego).subscribe(dato =>{
+        console.log(dato);
+        this.irListaJuegos();
+      },error => console.log(error));
     }
 
+    irListaJuegos(){
+      this.router.navigate(['/lista-juegos']);
+    }
    //Spinner
   loading = false;
 
@@ -58,6 +64,7 @@ export class NuevoJuegoComponent  implements OnInit{
   });
 
   onSubmit(){
+    this.crearNuevoJuego();
     console.log(this.formJuego.value);
   }
 

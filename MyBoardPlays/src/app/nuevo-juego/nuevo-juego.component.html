@@ -17,6 +17,7 @@
             type="text"
             class="form-control"
             id="nombre"
+            [(ngModel)]="juego.nombre"
             formControlName="nombre"
             name="nombre"
             required
@@ -38,6 +39,7 @@
             class="form-control"
             id="descripcion"
             formControlName="descripcion"
+            [(ngModel)]="juego.descripcion"
             name="descripcion"
             required
             minlength="10"
@@ -64,6 +66,7 @@
             class="form-control"
             id="minParticipantes"
             formControlName="minParticipantes"
+            [(ngModel)]="juego.minParticipantes"
             name="minParticipantes"
             required
             placeholder="Indique mínimo de jugadores"
@@ -84,6 +87,7 @@
             class="form-control"
             id="maxParticipantes"
             formControlName="maxParticipantes"
+            [(ngModel)]="juego.maxParticipantes"
             name="maxParticipantes"
             required
             placeholder="Indique máximo de jugadores"
@@ -103,6 +107,7 @@
             class="form-control"
             id="dificultad"
             formControlName="dificultad"
+            [(ngModel)]="juego.dificultad"
             name="dificultad"
             required
             placeholder="Indique dificultad: facil, media o alta"
