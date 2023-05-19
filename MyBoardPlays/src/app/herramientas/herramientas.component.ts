@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-herramientas',
   templateUrl: './herramientas.component.html',
@@ -18,7 +18,7 @@ export class HerramientasComponent {
   segundos: number;
   tiempo: string;
   intervalo: any;
-  
+
 
   lanzarDados() {
     let resultados = [];
@@ -45,17 +45,17 @@ export class HerramientasComponent {
       this.tiempo = '';
       this.intervalo = null;
     }
-  
+
     iniciarCronometro() {
       if (this.intervalo) {
         clearInterval(this.intervalo);
       }
-  
+
       this.intervalo = setInterval(() => {
         this.actualizarTiempo();
       }, 1000);
     }
-  
+
     actualizarTiempo() {
       if (this.segundos < 59) {
         this.segundos++;
@@ -68,7 +68,7 @@ export class HerramientasComponent {
           this.horas++;
         }
       }
-  
+
       this.tiempo = `${this.horas.toString().padStart(2, '0')}:
                      ${this.minutos.toString().padStart(2, '0')}:
                      ${this.segundos.toString().padStart(2, '0')}`;

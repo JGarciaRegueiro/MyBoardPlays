@@ -8,7 +8,8 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--colorBaseBlanco);
+  color: var(--colorBaseNegro);
+  font-weight: bold;
 }
 
 .logo a:hover {
@@ -27,8 +28,14 @@ a {
   font-size: 20px;
 }
 
-.button.secondary {
-  border-bottom: 1px #444 solid;
+.button-primary a {
+  color: var(--colorBaseBlanco);
+  font-weight: 600;
+}
+
+.button-secondary a {
+  color: var(--colorBaseBlanco);
+  font-weight: 600;
 }
 
 /* Mobile menu */
@@ -49,7 +56,9 @@ a {
   text-align: center;
   order: 3;
   display: none;
+  color: var(--colorBaseNegro);
 }
+
 .item.active {
   display: block;
 }

@@ -59,6 +59,7 @@ fieldset {
 
 .button-secondary {
   background-color: var(--colorContrasteLow);
+  color: var(--colorBaseBlanco);
   border-radius: 8px;
   border-style: none;
 }
