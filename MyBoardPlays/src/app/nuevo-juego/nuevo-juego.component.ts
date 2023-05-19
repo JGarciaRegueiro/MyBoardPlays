@@ -67,31 +67,4 @@ export class NuevoJuegoComponent  implements OnInit{
     this.crearNuevoJuego();
     console.log(this.formJuego.value);
   }
-
-
-
-  /*
-  juego: Juego = new Juego();
-
-  constructor(private juegoServicio:JuegosService, private router:Router){}
-
-  ngOnInit(): void {
-
-  }
-
-  guardarJuego(){
-    this.juegoServicio.crearNuevoJuego(this.juego).subscribe(dato =>{
-      console.log(dato);
-      this.irALaListaDeJuego();
-    },error => console.error());
-
-  }
-  irALaListaDeJuego(){
-    this.router.navigate(['/juegos']);
-  }
-  onSumit(){
-    this.guardarJuego();
-    console.log(this.juego);
-  }
-*/
 }
