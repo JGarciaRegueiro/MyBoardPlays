@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'mi-partida', component: MiPartidaComponent },
   {path: 'acerca-de', component: AcercaDeComponent },
   {path: 'error-general', component: ErrorGeneralComponent },
-  {path: 'herramientas', component: HerramientasComponent },
+  {path: 'herramientas', component: HerramientasComponent},
   {path: '', component: HomeComponent },
 ];
 

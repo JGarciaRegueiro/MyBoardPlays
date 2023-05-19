@@ -32,4 +32,10 @@ export class LoginComponent {
       })
   }
 
+  ngOnInit():void {
+    if(localStorage.getItem('token')){
+      this.router.navigate(['/'])
+    }
+  }
+
 }

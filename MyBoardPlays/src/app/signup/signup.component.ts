@@ -31,4 +31,11 @@ export class SignupComponent {
       this.router.navigate(['/'])
     })
   }
+
+  ngOnInit():void {
+    if(localStorage.getItem('token')){
+      this.router.navigate(['/'])
+    }
+  }
+
 }
