@@ -10,13 +10,14 @@ img{
     padding: 48px;
 }   
 
+.hidden{
+    color:var(--colorBaseGris);
+}
 ul {
 	list-style-type:none;
-	padding: 48px;
 }
 a{
     text-decoration: none;
-    font-size: 16px;
     
 }
 
@@ -29,6 +30,7 @@ a{
     align-items: center;
     display : flex;
     flex-direction: column ;
+    font-size: 2rem;
 
 }
 
@@ -47,6 +49,8 @@ a{
     padding:96px;
     border-color: var(--colorBaseGris);
     border-style: solid;
+    margin-left: 30rem;
+    margin-right: 30rem;
 
 }
 

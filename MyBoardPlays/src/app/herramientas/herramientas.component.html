@@ -8,14 +8,14 @@
         <form action=# method="POST">
             <fieldset>
                 <p class="label--select">-NÚMERO DE DADOS</p>
-                <select class="form__input" id="numDados"  required> <!--[(ngModel)]="num_dados"-->
-                    <option value="0">Número de dados</option>
+                <select class="form__input" name="numDados"[(ngModel)]="numeroDados" id="numDados">
+                    <option value="" disabled selected >Número de dados</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                 </select>
                 <p class="label--select">-NÚMERO DE CARAS</p>
-                <select class="form__input" id="numCaras" required><!--[(ngModel)]="num_caras"-->
-                    <option value="0">Número de caras</option>
+                <select class="form__input" name="numCaras"[(ngModel)]="numeroCaras" id="numCaras">
+                    <option value=""disabled selected>Número de caras</option>
                     <option value="6">6</option>
                     <option value="7">7</option>
                     <option value="8">8</option>
@@ -25,8 +25,8 @@
                     <option value="12">12</option>
                 </select>
                 <button class="button__action"(click)="ejecutarLanzamiento()">LANZA LOS DADOS</button>
-                <p class="label--select">TOTAL DE LA SUMA DE LOS DADOS: {{ sumaTotal }}</p>
-                <p class="label--select">NºDADO Y SU RESULTADO: {{ resultados.join(', ') }}</p>
+                <p class="label--select" *ngIf="resultados">TOTAL DE LA SUMA DE LOS DADOS: {{ sumaTotal }}</p>
+                <p class="label--select" *ngIf="resultados">RESULTADO DE CADA DADO: {{ resultados.join(', ') }}</p>
                 
             </fieldset>
         </form>
@@ -49,8 +49,8 @@
         <form action=# method="POST">
             <fieldset>
                 <p class="label--select">-NÚMERO DE PARTICIPANTES:</p>
-                <select class="form__input" [value]=numParticipantes  required> <!--[(ngModel)]="num_participantes"-->
-                    <option value="0">Número de participantes</option>
+                <select class="form__input" name="numDados"[(ngModel)]="numParticipantes">
+                    <option value=""disabled selected>Número de participantes</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -61,8 +61,8 @@
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
-                    <option value="10">11</option>
-                    <option value="10">12</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
                 </select>
                 <button class="button__action"(click)="ejecutarGiro()">GIRA LA RULETA</button>
                 <p class="label--select">LA RULETA HA ELEGIDO AL PARTICIPANTE Nº: {{ numPremiado }}</p>
