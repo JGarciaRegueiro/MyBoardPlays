@@ -1,57 +1,44 @@
-<div class = "contenedor__miCuenta--contenido">
-    <div class = contenedor__imagen>
-        <img src= "assets/img/upload-image.png" alt="upload-image">
+<div class="contenedor__miCuenta--contenido">
+    <div class=contenedor__imagen>
+        <img src="assets/img/upload-image.png" alt="upload-image">
         <ul class="menu">
             <li><a href="miCuentaDatos.html">Editar Perfil</a></li><br>
             <li><a href="lista-juegos">Mis Juegos</a></li><br>
             <li><a href="#">Mis Partidas</a></li><br>
             <li><a href="#">Mis Estadísticas</a></li><br>
-            <li class = "hidden"><a (click)="eliminarUsuario(usuario.id)">
-                Eliminar Cuenta
-            </a> </li><br>
-            <li class = "hidden"><a href="#">Cerrar Sesión</a></li><br>
+            <li class="hidden"><a (click)="eliminarUsuario(usuario.id)">
+                    Eliminar Cuenta
+                </a> </li><br>
+            <li class="hidden"><a href="#">Cerrar Sesión</a></li><br>
         </ul>
     </div>
-    <div class = "formulario_editar-perfil">
+    <div class=contenedor__imagen2>
         <form action=# method="POST">
-            <fieldset class="form">
-                <legend>EDITAR PERFIL</legend>
-                <br><br><br><br><br><br><br><br><br>
-                <div class="contenido--form">
+            <legend>EDITAR PERFIL</legend>
+            <br><br><br><br><br><br><br><br><br>
+            <div class="contenido--form">
                 <div class="row">
-                <label for="nombre">Nombre</label>
-                <input class="form__input" type="text" name="nombre" placeholder="Nombre y apellidos" required>
+                    <label for="id">Id:</label>
+                    <input class="form__input" type="text" name="id" placeholder="Id" required>
                 </div>
                 <div class="row">
-                    <label for="email">Email</label>
+                    <label for="nombre">Nombre:</label>
+                    <input class="form__input" type="text" name="nombre" placeholder="Nombre de usuario" required>
+                </div>
+                <div class="row">
+                    <label for="email">Email:</label>
                     <input class="form__input" type="text" name="email" placeholder="Email" required>
                 </div>
                 <div class="row">
-                    <label for="usuario">Usuario</label>
-                    <input class="form__input" type="text" name="usuario" placeholder="Nombre de usuario" required>
+                    <label for="pass">Password:</label>
+                    <input class="form__input" type="text" name="pass" placeholder="Password" required>
                 </div>
                 <div class="row">
-                    <label for="tlf">Número de teléfono</label>
-                    <input class="form__input" type="text" name="tlf" placeholder="Nº de Teléfono" required>
-                </div>
-                <div class="row">
-                    <label for="genero">Género</label>
-                    <select name="genero" class="form__input">
-                        <option selected disabled value=""></option>
-                        <option value="hombre">Hombre</option>
-                        <option value="mujer">Mujer</option>
-                    </select>
-                </div>
-                <div class="row">
-                    <label for="cumpleaños">Cumpleaños</label>
-                    <input class="form__input" type="date" name="cumpleaños" placeholder="Cumpleaños" required>
-                </div>
-                <div class="row">
-                <label for="descripcion">Biografía</label>
-                <textarea class="form__input2" name="descripcion"></textarea>
+                    <label for="fechaAlta">Fecha de Alta:</label>
+                    <input class="form__input" type="date" name="fechaAlta" placeholder="Fecha de Alta" required>
                 </div>
             </div>
-            </fieldset>           
+            <p><input class="button button__action" type="submit" value="Guardar"></p>
         </form>
     </div>
 
