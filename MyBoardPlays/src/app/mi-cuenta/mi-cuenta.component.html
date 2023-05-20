@@ -3,11 +3,12 @@
         <img src= "assets/img/upload-image.png" alt="upload-image">
         <ul class="menu">
             <li><a href="miCuentaDatos.html">Editar Perfil</a></li><br>
-            <li><a href="#">Mis Juegos</a></li><br>
+            <li><a href="lista-juegos">Mis Juegos</a></li><br>
             <li><a href="#">Mis Partidas</a></li><br>
             <li><a href="#">Mis Estadísticas</a></li><br>
-            <li><a href="#">Mis Estadísticas</a></li><br>
-            <li class = "hidden"><a href="#">Eliminar Cuenta</a></li><br>
+            <li class = "hidden"><a (click)="eliminarUsuario(usuario.id)">
+                Eliminar Cuenta
+            </a> </li><br>
             <li class = "hidden"><a href="#">Cerrar Sesión</a></li><br>
         </ul>
     </div>
@@ -16,6 +17,7 @@
             <fieldset class="form">
                 <legend>EDITAR PERFIL</legend>
                 <br><br><br><br><br><br><br><br><br>
+                <div class="contenido--form">
                 <div class="row">
                 <label for="nombre">Nombre</label>
                 <input class="form__input" type="text" name="nombre" placeholder="Nombre y apellidos" required>
@@ -48,6 +50,7 @@
                 <label for="descripcion">Biografía</label>
                 <textarea class="form__input2" name="descripcion"></textarea>
                 </div>
+            </div>
             </fieldset>           
         </form>
     </div>

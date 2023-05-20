@@ -1,7 +1,9 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Credentials, DataSignUp } from './model';
+import { Usuario } from './usuario';
+
 
 @Injectable({
   providedIn: 'root'
@@ -39,4 +41,9 @@ export class ApiService {
     })
   }
 
-}
+
+  eliminarUsuario(id:number):Observable<Object>{
+      return this.http.delete('http://localhost:8087/apirest/usuario/eliminar/'+id);
+    } 
+  }
+
