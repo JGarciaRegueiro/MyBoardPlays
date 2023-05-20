@@ -64,7 +64,7 @@
                         tiene alguna pregunta o sugerencia, no dude en contactarnos. <br>
                         ¡Gracias por visitar nuestro sitio web!<br>
                     </p><br>
-        </div>  
+        </div>
     </div>
 
     <div class = "contenedor__acercaDe--contenido">
@@ -72,14 +72,14 @@
             <h1 class="acerca">CONTACTA CON NOSOTROS</h1>
             <h2 class="acerca2">Formulario de contacto</h2>
             <br>
-            <form action=# method="POST">
-                <fieldset class="form">
-                    <input class="form__input" type="nombre" name="Nombre" placeholder="Nombre y apellidos*" required>
-                    <input class="form__input" type="email" name="Email" placeholder="Email*" required>
-                    <label for="coment" class="comentario">Comentario:</label>
-                    <textarea class="form__input2" name="comentario"></textarea>
-                    <p><input class="button button__action" type="submit" value="Enviar"></p>
-                </fieldset>           
+            <form action="https://formspree.io/f/mzbqwnno" method="POST">
+              <fieldset class="form">
+                    <input class="form__input" type="text" name="nombre" placeholder="Nombre y apellidos*" required>
+                    <input class="form__input" type="email" name="email" placeholder="Email*" required>
+                    <label for="comments" class="comentario">Comentario:</label>
+                    <textarea class="form__input2" id= "comments" name="comments"></textarea>
+                    <input class="button button__action" type="submit" value="Enviar">
+                  </fieldset>
             </form>
         </div>
 

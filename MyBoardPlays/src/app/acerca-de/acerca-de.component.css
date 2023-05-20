@@ -1,7 +1,7 @@
 .acerca {
     color: var(--colorFondoNaranja);
   }
-  
+
 .acerca2 {
     color: var(--colorFondoNaranjaMid);
 }
@@ -33,7 +33,7 @@
 .contenedor__imagen{
     max-height: 100%;
     max-width: 100%;
-    
+
 }
 
 .p3{
@@ -72,4 +72,12 @@
     font-size: 2rem;
     text-align: left;
 
+}
+
+.contenedor__imagen{
+  transition: transform 1s; /* Define la duración de la transición */
+
+}
+.contenedor__imagen:hover {
+  transform: scale(1.1); /* Aplica una escala del 120% a la imagen en el hover */
 }

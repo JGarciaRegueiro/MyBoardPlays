@@ -76,9 +76,8 @@
             DETALLES
           </button>
           <button
-            (click)="(editarJuego)"
+            (click)="editarJuego(juego.id)"
             class="btn btn-sm btn-warning text-center ms-3"
-            [routerLink]="['/editar-juego/', juego.id]" routerLinkActive=""
           >
             <i
               class="fa-solid fa-pen-to-square fa-xs"

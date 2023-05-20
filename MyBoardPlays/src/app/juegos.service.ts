@@ -23,8 +23,8 @@ export class JuegosService {
     return this.httpClient.post('http://localhost:8087/apirest/juego/alta',juego);
   }
  //Método para editar un nuevo juego
-  editarJuego(id:number, juego:Juego) : Observable<Object>{
-    return this.httpClient.put('http://localhost:8087/apirest/juego/consultar/'+id ,juego);
+  editarJuego(juego:Juego){
+    return this.httpClient.put<Juego>('http://localhost:8087/apirest/juego/consultar/'+juego.id ,juego);
   }
 
   //Obtener un juego por Id

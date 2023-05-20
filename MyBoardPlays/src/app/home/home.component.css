@@ -43,7 +43,6 @@ h3 {
   .home--section__1 img {
     width: 100%;
   }
-
 }
 
 /*Bloque 2*/
@@ -57,6 +56,11 @@ h3 {
 .section--2__bloque {
   text-align: center;
   margin: 30px;
+  transition: transform 1s
+}
+
+.section--2__bloque:hover {
+  transform: scale(1.1);
 }
 
 .section--2__bloque h3 {
@@ -106,6 +110,15 @@ p {
 
 li {
   font-size: 16px;
+}
+
+.manual{
+  transition: 0.4s;
+}
+
+.manual:hover{
+  transition: 0.4s;
+  transform: rotate(3deg) scale(1.1);
 }
 
 @media (max-width:1024px){

@@ -1,1 +1,138 @@
+<div class="container-sm col-md-3 mx-auto">
+  <h2>Editar Juego</h2>
+  <div class="spinner-border float-end" role="status"></div>
+  <div class="p-2">
+    <p class="lh-lg fs-4">
+      <span style="color: #fb8822; font-weight: bold"
+        >¡Puede modificar el juego y registrarlo correctamente!</span
+      >
+    </p>
+  </div>
+  <div class="card shadow p-3 mb-5 bg-body rounded">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label class="form-label fs-5"> <strong> Nombre: </strong></label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            [(ngModel)]="juego.nombre"
+            formControlName="nombre"
+            name="nombre"
+            required
+            maxlength="50"
+            placeholder="Introduzca nombre del juego"
+          />
+          <div
+            class="text-danger mt-2"
+
+          >
+            El nombre es obligatorio
+          </div>
+        </div>
+
+        <div class="form-group mt-4">
+          <label class="form-label fs-5"><strong> Descripción: </strong></label>
+          <input
+            type="text"
+            class="form-control"
+            id="descripcion"
+            formControlName="descripcion"
+            [(ngModel)]="juego.descripcion"
+            name="descripcion"
+            required
+            minlength="10"
+            placeholder="Introduzca una breve descripción, ej: tipo temática"
+          />
+          <div
+            class="text-danger mt-2"
+
+          >
+          </div>
+        </div>
+        <div class="form-group mt-4">
+          <label class="form-label fs-5"
+            ><strong> Mínimo de participantes: </strong></label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="minParticipantes"
+            formControlName="minParticipantes"
+            [(ngModel)]="juego.minParticipantes"
+            name="minParticipantes"
+            required
+            placeholder="Indique mínimo de jugadores"
+          />
+          <div
+            class="text-danger mt-2"
+
+          >
+            Número mínimo de participantes es obligatorio
+          </div>
+        </div>
+        <div class="form-group mt-4">
+          <label class="form-label fs-5"
+            ><strong> Máximo de participantes: </strong></label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="maxParticipantes"
+            formControlName="maxParticipantes"
+            [(ngModel)]="juego.maxParticipantes"
+            name="maxParticipantes"
+            required
+            placeholder="Indique máximo de jugadores"
+          />
+          <div
+            class="text-danger mt-2"
+
+          >
+            Número máximo de participantes es obligatorio
+          </div>
+        </div>
+
+        <div class="form-group mt-4">
+          <label class="form-label fs-5"><strong> Dificultad: </strong></label>
+          <input
+            type="text"
+            class="form-control"
+            id="dificultad"
+            formControlName="dificultad"
+            [(ngModel)]="juego.dificultad"
+            name="dificultad"
+            required
+            placeholder="Indique dificultad: facil, media o alta"
+          />
+          <div
+            class="text-danger mt-2"
+
+          >
+            La dificultad es obligatoria
+          </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button
+            type="text"
+            class="btn btn-secondary btn-lg me-3"
+            routerLink="/lista-juegos"
+            style="font-weight: bold;"
+          >
+            Volver
+          </button>
+          <button
+            class="btn btn-guardarjuego btn-lg"
+
+          >
+            Guardar
+          </button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 
