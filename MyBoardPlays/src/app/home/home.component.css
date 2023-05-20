@@ -5,6 +5,7 @@ main {
 /*Bloque 1*/
 .home--section__1 {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -27,6 +28,22 @@ button {
 h3 {
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+@media (max-width:1024px){
+
+  main {
+    padding: 0 28px;
+  }
+
+  .home--section__1{
+    flex-direction: column;
+  }
+
+  .home--section__1 img {
+    width: 100%;
+  }
+
 }
 
 /*Bloque 2*/
@@ -57,6 +74,19 @@ p {
   font-size: 16px;
 }
 
+@media (max-width:1024px){
+
+  main {
+    padding: 0 28px;
+  }
+
+  .home--section__2{
+    flex-direction: column;
+    padding: 0;
+  }
+
+}
+
 /*Bloque 3*/
 .home--section__3{
   display: flex;
@@ -76,4 +106,19 @@ p {
 
 li {
   font-size: 16px;
+}
+
+@media (max-width:1024px){
+  .home--section__3 img {
+    margin-bottom:100px;
+    width: 100%;
+  }
+
+  .home--section__3{
+    flex-direction: column;
+  }
+
+  .home--section__3 p,h3 {
+    text-align: center;
+  }
 }
