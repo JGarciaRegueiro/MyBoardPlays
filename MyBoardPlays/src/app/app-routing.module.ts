@@ -24,7 +24,6 @@ const routes: Routes = [
   {path: 'editar-juego/:id',component : NuevoJuegoComponent},
   {path: 'detalles-juego/:id', component:JuegoDetallesComponent},
   {path: 'iniciar-partida', component: IniciarPartidaComponent },
-  {path: 'inicia-partida', component: IniciarPartidaComponent },
   {path: 'mi-partida', component: MiPartidaComponent },
   {path: 'acerca-de', component: AcercaDeComponent },
   {path: 'error-general', component: ErrorGeneralComponent },
