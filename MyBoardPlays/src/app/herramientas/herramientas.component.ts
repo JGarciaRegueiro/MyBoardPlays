@@ -14,12 +14,15 @@ export class HerramientasComponent {
   sumaTotal: number;
   numParticipantes : number;
   numPremiado: number;
+  objetivoHoras:number;
+  objetivoMinutos:number;
+  objetivoSegundos:number;
   tiempo= '';
   horas = 0;
   minutos =0;
   segundos=0;
   intervalo: any;
-
+  mensaje ='';
 
   lanzarDados() {
     this.resultados = Array.from({ length: this.numeroDados }, () => Math.floor(Math.random() * this.numeroCaras) + 1);
@@ -41,6 +44,9 @@ export class HerramientasComponent {
 
     this.intervalo = setInterval(() => {
       this.actualizarTiempo();
+      if (this.horas === this.objetivoHoras && this.minutos === this.objetivoMinutos && this.segundos === this.objetivoSegundos) {
+        this.detenerCronometro();
+      }
     }, 1000);
   }
 
@@ -59,4 +65,10 @@ export class HerramientasComponent {
                    ${this.minutos.toString().padStart(2, '0')}:
                    ${this.segundos.toString().padStart(2, '0')}`;
   }
-}
+  detenerCronometro() {
+    clearInterval(this.intervalo);
+    this.intervalo = null;
+    this.mensaje="TIEMPO COMPLETADO, RECARGA LA PÁGINA";
+  }
+
+ }

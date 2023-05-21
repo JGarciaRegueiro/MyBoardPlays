@@ -8,13 +8,13 @@
         <form action=# method="POST">
             <fieldset>
                 <p class="label--select">-NÚMERO DE DADOS</p>
-                <select class="form__input" name="numDados"[(ngModel)]="numeroDados" id="numDados">
+                <select class="form__input2" name="numDados"[(ngModel)]="numeroDados" id="numDados">
                     <option value="" disabled selected >Número de dados</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                 </select>
                 <p class="label--select">-NÚMERO DE CARAS</p>
-                <select class="form__input" name="numCaras"[(ngModel)]="numeroCaras" id="numCaras">
+                <select class="form__input2" name="numCaras"[(ngModel)]="numeroCaras" id="numCaras">
                     <option value=""disabled selected>Número de caras</option>
                     <option value="6">6</option>
                     <option value="7">7</option>
@@ -49,7 +49,7 @@
         <form action=# method="POST">
             <fieldset>
                 <p class="label--select">-NÚMERO DE PARTICIPANTES:</p>
-                <select class="form__input" name="numDados"[(ngModel)]="numParticipantes">
+                <select class="form__input2" name="numDados"[(ngModel)]="numParticipantes">
                     <option value=""disabled selected>Número de participantes</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -65,7 +65,7 @@
                     <option value="12">12</option>
                 </select>
                 <button class="button__action"(click)="ejecutarGiro()">GIRA LA RULETA</button>
-                <p class="label--select">LA RULETA HA ELEGIDO AL PARTICIPANTE Nº: {{ numPremiado }}</p>
+                <p class="label--select"*ngIf="numPremiado">LA RULETA HA ELEGIDO AL PARTICIPANTE Nº: {{ numPremiado }}</p>
             </fieldset>
         </form>
         </div>  
@@ -76,16 +76,17 @@
             <h1 class="herramientas1">TIMER</h1>
             <br>
             <p class =label--select>ELIGE EL TIEMPO PARA LA CUENTA ATRÁS.</p>
-            <form action=# method="POST">
+            <form (ngSubmit)="iniciarCronometro()" #cronometroForm="ngForm" method="POST">
                 <fieldset>
                     <p class="label--select" >-HORAS:</p>
-                    <input type="number" [(ngModel)]="horas" class = "form__input2"  min="0" max=24 placeholder ="Horas">
+                    <input type="number" name="h"[(ngModel)]="objetivoHoras" class = "form__input2"  min="0" max=24 placeholder ="Horas"required>
                     <p class="label--select" >-MINUTOS:</p>
-                    <input type="number"[(ngModel)]="minutos" class = "form__input2"  min="0" max=60 placeholder ="Minutos">
+                    <input type="number" name="m"[(ngModel)]="objetivoMinutos" class = "form__input2"  min="0" max=60 placeholder ="Minutos"required>
                     <p class="label--select" >-SEGUNDOS:</p>
-                    <input type="number"[(ngModel)]="segundos" class = "form__input2"  min="0" max=60 placeholder ="Segundos">
-                    <button class="button__action"(click)="iniciarCronometro()">EMPEZAR</button>
-                    <p class="label--select">TIEMPO RESTANTE: {{ tiempo }}</p>
+                    <input type="number"name="s"[(ngModel)]="objetivoSegundos" class = "form__input2"  min="0" max=60 placeholder ="Segundos"required>
+                    <button class="button__action" type="submit" [disabled]="!cronometroForm.form.valid">PULSA EL TIMER</button>
+                    <p class="label--select"*ngIf="tiempo">TIEMPO RESTANTE: {{ tiempo }}</p>
+                    <p class="label--select"*ngIf="mensaje">{{ mensaje }}</p>
                 </fieldset>           
             </form>
         </div>
