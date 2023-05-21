@@ -14,6 +14,7 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { HerramientasComponent } from './herramientas/herramientas.component';
 import { ErrorGeneralComponent } from './error-general/error-general.component';
 import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
+import { EditarJuegoComponent } from './editar-juego/editar-juego.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'lista-juegos', component: ListajuegosComponent, canActivate: [AuthGuard]},
   {path: 'nuevo-juego',component : NuevoJuegoComponent},
-  {path: 'editar-juego/:id',component : NuevoJuegoComponent},
+  {path: 'editar-juego/:id',component : EditarJuegoComponent},
   {path: 'detalles-juego/:id', component:JuegoDetallesComponent},
   {path: 'iniciar-partida', component: IniciarPartidaComponent },
   {path: 'mi-partida', component: MiPartidaComponent },

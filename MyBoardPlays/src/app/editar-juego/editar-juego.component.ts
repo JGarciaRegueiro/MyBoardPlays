@@ -15,15 +15,10 @@ import swal from 'sweetalert2';
 export class EditarJuegoComponent implements OnInit {
 
   id:number;
+  juego : Juego = new Juego()
+loading: any;
 
-  juego : Juego ={ id:0,
-    nombre: '',
-    descripcion:'',
-    minParticipantes:0,
-    maxParticipantes:0,
-    dificultad:'' };
-
-  constructor(private juegoService:JuegosService,private router:Router,private route:ActivatedRoute) { }
+  constructor(private juegoService:JuegosService,private router:Router,private route:ActivatedRoute, private fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -31,16 +26,43 @@ export class EditarJuegoComponent implements OnInit {
       this.juego = dato;
     },error => console.log(error));
   }
+
   irAlaListaDeEmpleados(){
-    this.router.navigate(['/empleados']);
-    swal('Juego actualizado',`El juego ${this.juego.nombre} ha sido actualizado con exito`,`success`);
+    this.router.navigate(['/lista-juegos']);
+    swal('Juego actualizado',`El juego   ${this.juego.nombre} ha sido actualizado con exito`,`success`);
   }
 
+  get nombre(){
+    return this.formJuego.get("nombre") as FormControl;
+  }
+  get descripcion(){
+    return this.formJuego.get("descripcion") as FormControl;
+  }
+  get minParticipantes(){
+    return this.formJuego.get("minParticipantes") as FormControl;
+  }
+  get maxParticipantes(){
+    return this.formJuego.get("maxParticipantes") as FormControl;
+  }
+  get dificultad(){
+    return this.formJuego.get('dificultad') as FormControl;
+  }
+
+  formJuego= this.fb.group({
+    "nombre" : ['', Validators.required],
+    "descripcion" : ['', [Validators.required,Validators.minLength(10)]] ,
+    "minParticipantes" : ['', Validators.required],
+    "maxParticipantes" : ['', Validators.required],
+    "dificultad" : ['', Validators.required],
+  });
+
   onSubmit(){
-    this.juegoService.editarJuego(this.juego).subscribe(dato => {
+    this.juegoService.editarJuego(this.id,this.juego).subscribe(dato => {
       this.irAlaListaDeEmpleados();
     },error => console.log(error));
   }
-
 }
+
+
+
 

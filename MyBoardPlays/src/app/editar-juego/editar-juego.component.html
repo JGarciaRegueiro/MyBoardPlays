@@ -1,16 +1,16 @@
 <div class="container-sm col-md-3 mx-auto">
   <h2>Editar Juego</h2>
-  <div class="spinner-border float-end" role="status"></div>
+  <div *ngIf="loading"class="spinner-border float-end" role="status"></div>
   <div class="p-2">
     <p class="lh-lg fs-4">
       <span style="color: #fb8822; font-weight: bold"
-        >¡Puede modificar el juego y registrarlo correctamente!</span
+        >¡Modifica el juego y regístralo correctamente!</span
       >
     </p>
   </div>
   <div class="card shadow p-3 mb-5 bg-body rounded">
     <div class="card-body">
-      <form (ngSubmit)="onSubmit()">
+      <form [formGroup]="formJuego" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label class="form-label fs-5"> <strong> Nombre: </strong></label>
           <input
@@ -25,8 +25,8 @@
             placeholder="Introduzca nombre del juego"
           />
           <div
-            class="text-danger mt-2"
-
+            class="alert alert-danger"
+            [hidden]="nombre.valid || nombre.pristine"
           >
             El nombre es obligatorio
           </div>
@@ -47,8 +47,14 @@
           />
           <div
             class="text-danger mt-2"
-
+            [hidden]="descripcion.valid || descripcion.pristine"
           >
+            <span *ngIf="descripcion.errors?.['required']">
+              La descripción es obligatoria
+            </span>
+            <span *ngIf="descripcion.errors?.['minlength']">
+              Mínimo de caracteres 10
+            </span>
           </div>
         </div>
         <div class="form-group mt-4">
@@ -67,7 +73,7 @@
           />
           <div
             class="text-danger mt-2"
-
+            [hidden]="minParticipantes.valid || minParticipantes.pristine"
           >
             Número mínimo de participantes es obligatorio
           </div>
@@ -88,7 +94,7 @@
           />
           <div
             class="text-danger mt-2"
-
+            [hidden]="maxParticipantes.valid || maxParticipantes.pristine"
           >
             Número máximo de participantes es obligatorio
           </div>
@@ -108,7 +114,7 @@
           />
           <div
             class="text-danger mt-2"
-
+            [hidden]="dificultad.valid || dificultad.pristine"
           >
             La dificultad es obligatoria
           </div>
@@ -123,8 +129,9 @@
             Volver
           </button>
           <button
+            type="submit"
             class="btn btn-guardarjuego btn-lg"
-
+            [disabled]="formJuego.invalid"
           >
             Guardar
           </button>
@@ -134,5 +141,4 @@
     </div>
   </div>
 </div>
-
 
