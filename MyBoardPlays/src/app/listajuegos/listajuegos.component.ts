@@ -65,4 +65,12 @@ export class ListajuegosComponent implements OnInit {
     });
   }
   verDetallesJuego(id: number) {}
+/*
+  darkMode: boolean = false;
+
+  toggleDarkMode(): void {
+    this.darkMode = !this.darkMode;
+  }
+*/
 }
+

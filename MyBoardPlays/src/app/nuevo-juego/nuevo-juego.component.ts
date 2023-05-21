@@ -25,9 +25,11 @@ export class NuevoJuegoComponent  implements OnInit{
     }
 
     crearNuevoJuego(){
+      this.loading =true;
       this.juegosServicio.guardarNuevoJuego(this.juego).subscribe(dato =>{
         console.log(dato);
         this.irListaJuegos();
+        this.loading =false;
       },error => console.log(error));
     }
 
@@ -35,7 +37,7 @@ export class NuevoJuegoComponent  implements OnInit{
       this.router.navigate(['/lista-juegos']);
     }
    //Spinner
-  loading = false;
+  loading:boolean = false;
 
 
 

@@ -131,7 +131,7 @@
           <button
             type="submit"
             class="btn btn-guardarjuego btn-lg"
-            [disabled]="formJuego.invalid"
+            [disabled]="formJuego.invalid ||loading"
           >
             Guardar
           </button>

@@ -15,6 +15,7 @@ import { HerramientasComponent } from './herramientas/herramientas.component';
 import { ErrorGeneralComponent } from './error-general/error-general.component';
 import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
 import { EditarJuegoComponent } from './editar-juego/editar-juego.component';
+import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'herramientas', component: HerramientasComponent},
   {path: 'mi-cuenta', component: MiCuentaComponent},
   {path: '', component: HomeComponent },
+  {path: 'lista-partidas', component: ListaPartidasComponent},
 ];
 
 @NgModule({
