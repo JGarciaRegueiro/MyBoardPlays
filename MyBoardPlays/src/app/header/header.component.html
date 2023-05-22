@@ -7,7 +7,7 @@
       <li class="item" *ngIf="isLogged"><a routerLink="/mis-estadisticas" routerLinkActive="active">Mis Estadísticas</a></li>
       <li class="item" *ngIf="isLogged"><a routerLink="/herramientas" routerLinkActive="active">Tools</a></li>
       <li class="item" *ngIf="isLogged"><a routerLink="/mi-cuenta" routerLinkActive="active"><i class="fa-solid fa-user"></i></a></li>
-      <li class="item button-secondary" *ngIf="isLogged"><a href="">Iniciar Partida</a></li>
+      <li class="item button-secondary" *ngIf="isLogged"><a routerLink="/iniciar-partida" routerLinkActive="active">Iniciar Partida</a></li>
       <li class="item button-secondary" *ngIf="!isLogged"><a routerLink="/login" routerLinkActive="active">Iniciar sesión</a></li>
       <li class="item button-primary" *ngIf="!isLogged"><a routerLink="/signup" routerLinkActive="active">Regístrate</a></li>
       <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>

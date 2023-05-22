@@ -15,4 +15,9 @@ participantes: number;
     this.router.navigate(['/partida', this.participantes]);
   }
   
+  emails: string[] = ['']; // Array inicial con un elemento para el primer email
+
+  agregarCampoEmail() {
+  this.emails.push('');
+}
 }
