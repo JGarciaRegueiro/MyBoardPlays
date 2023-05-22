@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedDataService } from '../shared-data.service';
 
 @Component({
   selector: 'app-iniciar-partida',
@@ -7,17 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./iniciar-partida.component.css']
 })
 export class IniciarPartidaComponent {
-participantes: number;
+  participantes: number;
+  emails: string[];
 
-  constructor(private router: Router) { }
-
-  iniciarPartida(): void {
-    this.router.navigate(['/partida', this.participantes]);
+  constructor(private router: Router) {
+    this.emails = [];
   }
-  
-  emails: string[] = ['']; // Array inicial con un elemento para el primer email
 
   agregarCampoEmail() {
-  this.emails.push('');
+    this.emails.push('');
+  }
+
+  iniciarPartida() {
+    // Navega hacia el componente "MiPartida" y pasa el número de participantes como parámetro
+    this.router.navigate(['/mi-partida'], { queryParams: { participantes: this.participantes } });
+  }
 }
-}
+

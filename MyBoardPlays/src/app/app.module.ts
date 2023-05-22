@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { SignupComponent } from './signup/signup.component';
 import { HerramientasComponent } from './herramientas/herramientas.component';
+import { SharedDataService } from './shared-data.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { HerramientasComponent } from './herramientas/herramientas.component';
   schemas: [
   CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [
+  providers: [SharedDataService,
     {
       provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true
     }

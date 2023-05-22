@@ -1,29 +1,29 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<div class=contenedor-iniciarPartida>
-    <div class=contenedor__imagen>
+
+<div class="contenedor-iniciarPartida">
+    <div class="contenedor__imagen">
         <img src="assets/img/iniciarPartida.png" alt="iniciarPartida">
     </div>
     <div class="contenedor__iniciarPartida--contenido">
-            <form action=# method="POST">
-                <fieldset class="form">
-                    <div class="input-group">
-                    <input type="text" class="form--control" placeholder="Selecciona un juego"/>
+        <form (ngSubmit)="iniciarPartida()" #iniciarPartidaForm="ngForm">
+            <fieldset class="form">
+                <div class="input-group">
+                    <input type="text" class="form--control" placeholder="Selecciona un juego" />
                     <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-search"></i>
+                        <i class="glyphicon glyphicon-search"></i>
                     </span>
                 </div>
-                    <input [(ngModel)]="participantes" class = "form__input" type="number" min="1" placeholder ="Número de participantes">
-                    <br>
-                    <label for="addPart" class="addParticipantes">Añade a los participantes:</label>
-                    <div *ngFor="let email of emails; let i = index">
-                        <input type="email" [(ngModel)]="emails[i]"class="form__input" placeholder="Email {{ i + 1 }}"required="">
-                    </div>
-                    <button class="form-button2" (click)="agregarCampoEmail()"><img src="assets/img/mas.png">Añadir Email</button>
-                </fieldset>
-                    
-                    <button [routerLink]="['/mi-partida']" class="button__action">Iniciar partida</button>
-            </form>
+                <input [(ngModel)]="participantes" name="participantes" class="form__input" type="number" min="1" placeholder="Número de participantes" required>
+                <br>
+                <label for="addPart" class="addParticipantes">Añade a los participantes:</label>
+                <div *ngFor="let email of emails; let i = index">
+                    <input type="email" [(ngModel)]="emails[i]" name="emails" class="form__input" placeholder="Email {{ i + 1 }}" required>
+                </div>
+                <button type="button" class="form-button2" (click)="agregarCampoEmail()"><img src="assets/img/mas.png">Añadir Email</button>
+            </fieldset>
+            <button type="submit" [disabled]="!iniciarPartidaForm.valid" class="button__action">Iniciar partida</button>
+        </form>
     </div>
 </div>
