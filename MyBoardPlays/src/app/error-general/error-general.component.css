@@ -20,11 +20,11 @@
 }
 
 .mensaje-404{
-    
+
     font-size: 4rem;
     width: 80%;
     height: 100%;
-   
+
 }
 
 .button__primario {
@@ -48,6 +48,39 @@
     .contenedor-404 {
         flex-direction: column;
         padding:0;
-        
+
+    }
+  }
+
+  .imagen-robot {
+    animation: moverRobot 3s infinite alternate;
+  }
+
+  @keyframes moverRobot {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(18px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .titulo {
+    position: relative;
+    animation: caerLetras 1.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes caerLetras {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
