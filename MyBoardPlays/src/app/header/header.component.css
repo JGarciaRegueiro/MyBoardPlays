@@ -12,6 +12,10 @@ a {
   font-weight: bold;
 }
 
+a.active{
+  color: #7887e6;
+}
+
 .logo a:hover {
   text-decoration: none;
 }

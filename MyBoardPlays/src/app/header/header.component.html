@@ -2,14 +2,14 @@
   <nav>
     <ul class="menu">
       <li class="logo"><a href="index.html"><img class="logo" src="../../assets/img/Logo.png" alt="logo"></a></li>
-      <li class="item" *ngIf="isLogged"><a href="/lista-juegos">Mis Juegos</a></li>
-      <li class="item" *ngIf="isLogged"><a href="/lista-partidas">Mis Partidas</a></li>
-      <li class="item" *ngIf="isLogged"><a href="">Mis Estadísticas</a></li>
-      <li class="item" *ngIf="isLogged"><a href="/herramientas">Tools</a></li>
-      <li class="item" *ngIf="isLogged"><a href="/mi-cuenta"><i class="fa-sharp fa-solid fa-image-user"></i></a></li>
+      <li class="item" *ngIf="isLogged"><a routerLink="/lista-juegos" routerLinkActive="active">Mis Juegos</a></li>
+      <li class="item" *ngIf="isLogged"><a routerLink="/lista-partidas" routerLinkActive="active">Mis Partidas</a></li>
+      <li class="item" *ngIf="isLogged"><a routerLink="/mis-estadisticas" routerLinkActive="active">Mis Estadísticas</a></li>
+      <li class="item" *ngIf="isLogged"><a routerLink="/herramientas" routerLinkActive="active">Tools</a></li>
+      <li class="item" *ngIf="isLogged"><a routerLink="/mi-cuenta" routerLinkActive="active"><i class="fa-solid fa-user"></i></a></li>
       <li class="item button-secondary" *ngIf="isLogged"><a href="">Iniciar Partida</a></li>
-      <li class="item button-secondary" *ngIf="!isLogged"><a href="/login">Iniciar sesión</a></li>
-      <li class="item button-primary" *ngIf="!isLogged"><a href="/signup">Regístrate</a></li>
+      <li class="item button-secondary" *ngIf="!isLogged"><a routerLink="/login" routerLinkActive="active">Iniciar sesión</a></li>
+      <li class="item button-primary" *ngIf="!isLogged"><a routerLink="/signup" routerLinkActive="active">Regístrate</a></li>
       <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
     </ul>
   </nav>
