@@ -5,4 +5,3 @@ export interface Usuario{
     pass:string;
     fechaAlta:Date;
   }
-  

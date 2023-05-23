@@ -8,20 +8,20 @@ import { SharedDataService } from '../shared-data.service';
   styleUrls: ['./iniciar-partida.component.css']
 })
 export class IniciarPartidaComponent {
+  
   participantes: number;
-  emails: string[];
 
-  constructor(private router: Router) {
-    this.emails = [];
+
+  constructor(private router: Router, private sharedDataService: SharedDataService) {
   }
 
-  agregarCampoEmail() {
-    this.emails.push('');
-  }
 
   iniciarPartida() {
-    // Navega hacia el componente "MiPartida" y pasa el número de participantes como parámetro
-    this.router.navigate(['/mi-partida'], { queryParams: { participantes: this.participantes } });
-  }
+      // Guarda el número de participantes en el servicio SharedDataService
+      this.sharedDataService.setNumParticipantes(this.participantes);
+  
+      // Navega hacia el componente "MiPartida" y pasa el número de participantes como parámetro
+      this.router.navigate(['/mi-partida'], { queryParams: { participantes: this.participantes } });
+    
 }
-
+}

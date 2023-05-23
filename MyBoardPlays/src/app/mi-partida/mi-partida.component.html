@@ -5,13 +5,13 @@
         <tr>
             <td class = "form-row">
             <label for="name"  class ="form-text" disabled>Nombre del Juego:</label>
-            <input type="text" class="form-control" name="nombreJuego" placeholder="Nombre del juego seleccionado">
+            <input type="text" class="form-control" name="nombreJuego" placeholder="Nombre del juego">
             </td>
         </tr>
         <tr>
             <td class = "form-row">
             <label for="creador" class ="form-text"  disabled>Creador de la partida: </label>
-            <input type="text"  class="form-control" name="creadorPartida" placeholder="Nombre del usuario que iniciado la sesión">
+            <input type="text"  class="form-control" name="creadorPartida" placeholder="Nombre del creador de la partida">
             </td>
         </tr>
         <tr>
@@ -23,8 +23,8 @@
             <div class="separacion-elemento">
                 <div class="separacion-elemento2">
                 <label for="fecha"  class ="form-text" disabled>  Fecha: </label>
-                <input type="date" class="form-control" id="form" name="fechaPartida">
-                </div>
+                <input type="date" class="form-control" name="fechaActual">
+            </div>
             </div>
             </td>
         </tr>
@@ -37,12 +37,12 @@
             <label for="participantes" class ="form-text" disabled>Número de participantes: </label>
             <input type="text" class="form-control" id="participantes" name="numParticipantes" placeholder="Número de participantes">
             </div>
-            <div class="separacion-elemento">
+            <!--<div class="separacion-elemento">
                 <div class="sorteo">
                     <label for="orden" class ="form-text" disabled>Sorteo de orden </label>
                     <button type="button" class="form-button"> <img src="assets/img/orden.png" /></button> 
                 </div>
-            </div>       
+            </div>  -->     
             </td>
         </tr>
     </table>
@@ -95,36 +95,22 @@
             <th class="th1">Puntuaciones</th>
         </thead>
         <tbody>
-            <tr class="tr1">
-                <td class = "celda"><label for="jugador1" class="form-text" >Jugador 1</label></td>
-                <td class = "celda"><input type="text" class="form-control" name="nombre1"></td>
-                <td class = "celda"><input type="text" class="form-control" name="orden1" ></td>
-                <td class = "celda"><input type="text" class="form-control" name="puntuacion1" ></td>
-            </tr>
-            <tr class="tr1">
-                <td class = "celda"><label for="jugador2" class="form-text" >Jugador 2</label></td>
-                <td class = "celda"><input type="text" class="form-control" name="nombre2"></td>
-                <td class = "celda"><input type="text" class="form-control" name="orden2" ></td>
-                <td class = "celda"><input type="text" class="form-control" name="puntuacion2" ></td>            
-            </tr>
-            <tr class="tr1">
-                <td class = "celda"><label for="jugador" class="form-text" >Jugador 3</label></td>
-                <td class = "celda"><input type="text" class="form-control" name="nombre3"></td>
-                <td class = "celda"><input type="text" class="form-control" name="orden3" ></td>
-                <td class = "celda"><input type="text" class="form-control" name="puntuacion3" ></td>           
-             </tr>
-            <tr class="tr1">
-                <td class = "celda"><label for="jugador" class="form-text" >Jugador 4</label></td>
-                <td class = "celda"><input type="text" class="form-control" name="nombre4"></td>
-                <td class = "celda"><input type="text" class="form-control" name="orden4" ></td>
-                <td class = "celda"><input type="text" class="form-control" name="puntuacion4" ></td>            
-            </tr>
-            <tr class="tr1">
-                <td class = "celda"><label for="jugador" class="form-text" >Jugador 5</label></td>
-                <td class = "celda"><input type="text" class="form-control" name="nombre5"></td>
-                <td class = "celda"><input type="text" class="form-control" name="orden5" ></td>
-                <td class = "celda"><input type="text" class="form-control" name="puntuacion5" ></td>            
-            </tr>
+            <ng-container *ngFor="let jugador of jugadores; let i = index">
+                <tr class="tr1">
+                  <td class="celda">
+                    <label for="jugador{{ i }}" class="form-text">Jugador {{ i + 1 }}</label>
+                  </td>
+                  <td class="celda">
+                    <input type="text" class="form-control" [name]="'nombre' + i" [(ngModel)]="jugador.nombre" />
+                  </td>
+                  <td class="celda">
+                    <input type="text" class="form-control" [name]="'orden' + i" [(ngModel)]="jugador.email" />
+                  </td>
+                  <td class="celda">
+                    <input type="text" class="form-control" [name]="'puntuaciones' + i" [(ngModel)]="jugador.puntuaciones" />
+                  </td>
+                </tr>
+              </ng-container>
            <!--{{ generarTabla('participantes') }}--> 
         </tbody>
     </table>

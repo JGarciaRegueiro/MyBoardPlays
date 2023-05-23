@@ -9,19 +9,9 @@
     <div class="contenedor__iniciarPartida--contenido">
         <form (ngSubmit)="iniciarPartida()" #iniciarPartidaForm="ngForm">
             <fieldset class="form">
-                <div class="input-group">
-                    <input type="text" class="form--control" placeholder="Selecciona un juego" />
-                    <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </span>
-                </div>
-                <input [(ngModel)]="participantes" name="participantes" class="form__input" type="number" min="1" placeholder="Número de participantes" required>
+                <label for="addPart" class="addParticipantes">Elige el número de participantes:</label>
+                <input [(ngModel)]="participantes" name="participantes" class="form__input" type="number" min="1" max="12" placeholder="Número de participantes (1-12)" required>
                 <br>
-                <label for="addPart" class="addParticipantes">Añade a los participantes:</label>
-                <div *ngFor="let email of emails; let i = index">
-                    <input type="email" [(ngModel)]="emails[i]" name="emails" class="form__input" placeholder="Email {{ i + 1 }}" required>
-                </div>
-                <button type="button" class="form-button2" (click)="agregarCampoEmail()"><img src="assets/img/mas.png">Añadir Email</button>
             </fieldset>
             <button type="submit" [disabled]="!iniciarPartidaForm.valid" class="button__action">Iniciar partida</button>
         </form>

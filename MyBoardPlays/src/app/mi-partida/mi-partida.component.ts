@@ -11,7 +11,7 @@ export class MiPartidaComponent implements OnInit {
   
   participantes: number;
   jugadores: Jugador[] = [];
-
+  fechaActual = new Date().toISOString().split('T')[0];
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -20,6 +20,7 @@ export class MiPartidaComponent implements OnInit {
       this.generarFilas();
     });
   }
+  
 
   generarFilas() {
     this.jugadores = [];
@@ -27,14 +28,17 @@ export class MiPartidaComponent implements OnInit {
       const jugador = {
         nombre: '',
         email: '',
-        ganador: false
+        ganador: false,
+        puntuaciones:0,
+        orden:0,
       };
       this.jugadores.push(jugador);
     }
   }
 
   agregarJugador() {
-    this.jugadores.push({ nombre: '', email: '', ganador: false });
+    this.jugadores.push({ nombre: '', email: '', ganador: false , puntuaciones:0, orden:0});
   }
   
+
 }
