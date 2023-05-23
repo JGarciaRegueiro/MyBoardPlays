@@ -3,6 +3,8 @@ import { JuegosService } from '../juegos.service';
 import swal from 'sweetalert2';
 import { Juego } from '../juego';
 import { Router } from '@angular/router';
+import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-listajuegos',
@@ -63,6 +65,20 @@ export class ListajuegosComponent implements OnInit {
         });
       }
     });
+  }
+  exportExcel(): void {
+    const data: any[][] = [
+      ['ID', 'NOMBRE', 'DESCRIPCIÓN', 'MIN JUGADORES', 'MÁX JUGADORES', 'DIFICULTAD'],
+      // Agregar las filas de datos
+      ...this.juegos.map(juego => [juego.id, juego.nombre, juego.descripcion, juego.minParticipantes, juego.maxParticipantes, juego.dificultad])
+    ];
+
+    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(data);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Hoja1');
+
+    // Generar el archivo Excel
+    XLSX.writeFile(wb, 'lista_juegos.xlsx');
   }
   verDetallesJuego(id: number) {}
 /*
