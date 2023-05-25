@@ -1,15 +1,16 @@
 <div class="login--component">
-
   <img src="../../assets/img/login.svg" alt="imagen página login">
-
-  <form class="formulario--login" #form="ngForm" (ngSubmit)="login(form)">
-
-        <input type="email" name="email" id="email" class="" placeholder="Email" [(ngModel)]="creds.email">
-        <input type="password" name="pass" id="pass" class="" placeholder="Contraseña" [(ngModel)]="creds.pass">
-
-        <button class="button-secondary">Login</button>
-        <a href="/signup">No tengo cuenta - Registrarme</a>
-
+  <form class="formulario--login" (ngSubmit)="login()">
+    <input type="email" name="email" id="email" class="" placeholder="Email" [formControl]="emailControl">
+    <div *ngIf="emailControl.invalid && (emailControl.dirty || emailControl.touched)" class="text-danger">
+      <div *ngIf="emailControl.hasError('required')">Email es requerido.</div>
+  <div *ngIf="emailControl.hasError('email')">Email de tipo inválido.</div>
+    </div>
+    <input type="password" name="pass" id="pass" class="" placeholder="Contraseña" [formControl]="passControl">
+    <div *ngIf="passControl.invalid && (passControl.dirty || passControl.touched)" class="text-danger">
+      <div *ngIf="passControl.hasError('required')">Contraseña es requerida.</div>
+    </div>
+    <button class="button-secondary" [disabled]="!emailControl.valid || !passControl.valid">Login</button>
+    <a href="/signup">No tengo cuenta - Registrarme</a>
   </form>
-
 </div>
