@@ -1,15 +1,40 @@
 <div class="signup--component">
-
-  <img src="../../assets/img/signup.svg" alt="imagen página registro">
-
-  <form class="formulario--signup" #form="ngForm" (ngSubmit)="signup(form)">
-
-      <input type="nombre" name="nombre" id="nombre" placeholder="Nombre" required [(ngModel)]="data.nombre">
-      <input type="email" name="email" id="email"  placeholder="Email" required [(ngModel)]="data.email">
-      <input type="password" name="pass" id="pass" placeholder="Contraseña" required [(ngModel)]="data.pass">
-
-      <button class="button-secondary">Registrarme</button>
-
+  <img src="../../assets/img/signup.svg" alt="imagen página registro" />
+  <form class="formulario--signup" [formGroup]="signupForm" (ngSubmit)="signup()">
+    <input
+      type="text"
+      name="nombre"
+      id="nombre"
+      placeholder="Nombre"
+      formControlName="nombre"
+      [ngClass]="{ 'text-danger': signupForm.get('nombre')?.invalid && signupForm.get('nombre')?.touched }"
+    />
+    <div *ngIf="signupForm.get('nombre')?.invalid && signupForm.get('nombre')?.touched" class="text-danger">
+      <div *ngIf="signupForm.get('nombre')?.hasError('required')">Nombre es requerido.</div>
+    </div>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Email"
+      formControlName="email"
+      [ngClass]="{ 'text-danger': signupForm.get('email')?.invalid && signupForm.get('email')?.touched }"
+    />
+    <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="text-danger">
+      <div *ngIf="signupForm.get('email')?.hasError('required')">Email es requerido.</div>
+      <div *ngIf="signupForm.get('email')?.hasError('email')">Email de tipo inválido.</div>
+    </div>
+    <input
+      type="password"
+      name="pass"
+      id="pass"
+      placeholder="Contraseña"
+      formControlName="pass"
+      [ngClass]="{ 'text-danger': signupForm.get('pass')?.invalid && signupForm.get('pass')?.touched }"
+    />
+    <div *ngIf="signupForm.get('pass')?.invalid && signupForm.get('pass')?.touched" class="text-danger">
+      <div *ngIf="signupForm.get('pass')?.hasError('required')">Contraseña es requerida.</div>
+    </div>
+    <button class="button-secondary" [disabled]="signupForm.invalid">Registrarme</button>
   </form>
-
 </div>
