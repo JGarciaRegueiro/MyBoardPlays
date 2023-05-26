@@ -11,15 +11,22 @@ export class OrderByJuegosPipe implements PipeTransform {
     if(!Array.isArray(value)){
       return value;
     }
-    const [property, order ='asc']: string[] = args;
-    return value.sort((a, b) =>{
+  const [property, order = 'asc']: string[] = args;
+
+  if (property === 'id') {
+    return value.sort((a, b) => {
+      const idA = Number(a[property]);
+      const idB = Number(b[property]);
+      return order === 'asc' ? idA - idB : idB - idA;
+    });
+  } else {
+    return value.sort((a, b) => {
       const compare = a[property].localeCompare(b[property]);
-      return  order === 'asc' ? compare : -compare;
-    })
+      return order === 'asc' ? compare : -compare;
+    });
   }
-
+  }
 }
-
 
 
 

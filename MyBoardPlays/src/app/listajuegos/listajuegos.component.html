@@ -27,7 +27,8 @@
   <div class="row">
     <div class="col mt-2">
       <select class="form-select" [(ngModel)]="parameter1">
-        <option selected>Ordenar por...</option>
+        <option >Ordenar por...</option>
+        <option value="id">ID</option>
         <option value="nombre">Nombre</option>
         <option value="dificultad">Dificultad</option>
         <option value="descripcion">Descripción</option>
@@ -68,7 +69,9 @@
         <!--recorremos la lista de juegos y después llamamos a esos datos-->
         <td class="text-center">{{ juego.id}}</td>
         <td class="text-center">{{ juego.nombre }}</td>
-        <td class="text-center">{{ juego.descripcion }}</td>
+        <td class="">
+          <div class="descripcion-cortada">{{ juego.descripcion }}</div>
+        </td>
         <td class="text-center">{{ juego.minParticipantes }}</td>
         <td class="text-center">{{ juego.maxParticipantes }}</td>
         <td class="text-center">{{ juego.dificultad }}</td>

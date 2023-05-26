@@ -35,6 +35,13 @@ thead{
   background-color: #4741b5;
   width: 40px;
 }
+.descripcion-cortada {
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /*
 .dark-mode {
   background-color: #1f1f1f;
@@ -44,6 +51,5 @@ thead{
   background-color: #2d2d2d;
   color: #ffffff;
 }
+
 */
-
-

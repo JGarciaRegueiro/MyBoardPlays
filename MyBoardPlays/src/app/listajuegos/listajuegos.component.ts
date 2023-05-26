@@ -19,7 +19,7 @@ export class ListajuegosComponent implements OnInit {
 
   filterJuegos: String = '';
 
-  parameter1 = 'nombre';
+  parameter1 = 'id';
   parameter2 = 'asc';
 
   ngOnInit(): void {
