@@ -81,12 +81,11 @@ export class ListajuegosComponent implements OnInit {
     XLSX.writeFile(wb, 'lista_juegos.xlsx');
   }
   verDetallesJuego(id: number) {}
-/*
+
   darkMode: boolean = false;
 
   toggleDarkMode(): void {
     this.darkMode = !this.darkMode;
   }
-*/
 }
 

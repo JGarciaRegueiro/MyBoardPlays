@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MyBoardPlays';
+/*
+  darkMode: boolean = false;
+
+  toggleDarkMode(): void {
+    this.darkMode = !this.darkMode;
+  }
+  */
 }

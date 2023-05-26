@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Jugador } from '../jugador';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Juego } from '../juego';
 
 @Component({
   selector: 'app-mi-partida',
@@ -9,11 +10,10 @@ import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
   styleUrls: ['./mi-partida.component.css']
 })
 export class MiPartidaComponent implements OnInit {
-  
   participantes: number;
   jugadores: Jugador[] = [];
   fechaActual: string;
-  nombreJuego: string;
+  nombreJuego:string;
   creadorPartida: string;
   ubicacionPartida: string;
   fechaEscogida: Date;
@@ -54,7 +54,8 @@ export class MiPartidaComponent implements OnInit {
   agregarJugador() {
     this.jugadores.push({ nombre: '', email: '', ganador: false, puntuaciones: 0, orden: 0 });
   }
-  
+
+
   guardarPartida() {
     const partida = {
       nombreJuego: this.nombreJuego,
@@ -75,7 +76,7 @@ export class MiPartidaComponent implements OnInit {
       }
     );
   }
-  
+
 }
 
 
