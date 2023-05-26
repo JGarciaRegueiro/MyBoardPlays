@@ -33,6 +33,7 @@ const routes: Routes = [
   {path: 'mi-cuenta', component: MiCuentaComponent},
   {path: '', component: HomeComponent },
   {path: 'lista-partidas', component: ListaPartidasComponent},
+  {path: 'juegos', component: MisjuegosComponent},
 ];
 
 @NgModule({
