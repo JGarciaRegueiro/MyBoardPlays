@@ -67,7 +67,7 @@
     margin-top: 1.6rem;
     background-color: var(--colorContrasteLow);
     color: var(--colorBaseBlanco);
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: left;
 
 }
@@ -76,4 +76,32 @@
     width: 100%;
     font-size: 3rem;
     font-weight: bold;
+}
+
+@media (max-width:1200px){
+    .contenedor__herramientas--contenido{
+        flex-direction: column;
+        margin:0;
+    }
+    .contenedor__herramientas--contenido{
+        flex-direction: column;
+        margin-bottom: 5rem;
+
+    }
+    .contenedor__herramientas{
+        display:flex;
+        flex-direction: column;
+        
+        
+    }
+    .imagen{
+        width:100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+
+    }
+    .button__action{
+        font-size:1.5rem;
+    }
 }

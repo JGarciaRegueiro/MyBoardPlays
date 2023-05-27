@@ -34,12 +34,12 @@
         </div>
 
         <div class = contenedor__imagen>
-            <img src= "../../assets/img/dados.jpg" class=imagen-dados alt="dados altura">
+            <img src= "../../assets/img/dados.jpg" class=imagen alt="dados altura">
         </div>
     </div>
     <div class = "contenedor__herramientas--contenido">
         <div class = contenedor__imagen>
-            <img src= "../../assets/img/ruleta.jpg" alt="ruleta">
+            <img src= "../../assets/img/ruleta.jpg" class="imagen" alt="ruleta">
         </div>
 
         <div class = "mensaje-ruleta">
@@ -75,13 +75,16 @@
         <div class = "mensaje-timer">
             <h1 class="herramientas1">TIMER</h1>
             <br>
-            <p class =label--select>ELIGE EL TIEMPO PARA LA CUENTA ATRÁS.</p>
+            <p class =label--select>ELIGE EL TIEMPO PARA EL TEMPORIZADOR.</p>
+            <br>
             <form (ngSubmit)="iniciarCronometro()" #cronometroForm="ngForm" method="POST">
                 <fieldset>
                     <p class="label--select" >-HORAS:</p>
                     <input type="number" name="h"[(ngModel)]="objetivoHoras" class = "form__input2"  min="0" max=24 placeholder ="Horas"required>
+                    <br><br><br>
                     <p class="label--select" >-MINUTOS:</p>
                     <input type="number" name="m"[(ngModel)]="objetivoMinutos" class = "form__input2"  min="0" max=60 placeholder ="Minutos"required>
+                    <br><br><br>
                     <p class="label--select" >-SEGUNDOS:</p>
                     <input type="number"name="s"[(ngModel)]="objetivoSegundos" class = "form__input2"  min="0" max=60 placeholder ="Segundos"required>
                     <button class="button__action" type="submit" [disabled]="!cronometroForm.form.valid">PULSA EL TIMER</button>
@@ -92,7 +95,7 @@
         </div>
 
         <div class = contenedor__imagen>
-            <img src= "../../assets/img/timer.jpg" alt="timer">
+            <img src= "../../assets/img/timer.jpg" class= "imagen" alt="timer">
         </div>
     </div>
 
