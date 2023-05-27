@@ -34,3 +34,10 @@ a {
   text-decoration: none;
   color: var(--colorBaseNegro);
 }
+
+
+@media(max-width:799px){
+  .login--component{
+    flex-direction: column;
+  }
+}

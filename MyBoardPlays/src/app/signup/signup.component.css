@@ -34,3 +34,9 @@ a {
   text-decoration: none;
   color: var(--colorBaseNegro);
 }
+
+@media(max-width:799px){
+  .signup--component{
+    flex-direction: column;
+  }
+}
