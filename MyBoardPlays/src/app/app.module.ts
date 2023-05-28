@@ -26,6 +26,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { SignupComponent } from './signup/signup.component';
 import { HerramientasComponent } from './herramientas/herramientas.component';
 import { SharedDataService } from './shared-data.service';
+import { PartidaDetallesComponent } from './partida-detalles/partida-detalles.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { SharedDataService } from './shared-data.service';
     HomeComponent,
     SignupComponent,
     HerramientasComponent,
+    PartidaDetallesComponent,
   ],
   imports: [
     BrowserModule,
