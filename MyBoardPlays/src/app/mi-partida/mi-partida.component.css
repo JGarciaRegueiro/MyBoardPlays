@@ -101,14 +101,6 @@
     align-items: center;
   }
 
-
- .sorteo{
-    margin-left: 20px;
-    display: flex;
-    width: 100%;
-    align-items: center;
- }
-  
  
  .form-text {
     flex: 0 0 auto;
@@ -154,4 +146,87 @@ fieldset{
     border-radius: 15px;
     padding:1rem;
 
+  }
+
+  @media(max-width:800px){
+   .contenedor-mipartida{
+      padding:16px;
+   }
+   .form-button2{
+      margin-top:16px;
+   }
+   
+   .form-row{
+      padding:16px;
+      width:100%;
+      display:grid;
+      justify-content: center;
+      text-align: center;
+
+   }
+
+   .button__primario {
+      font-size: 2rem;
+      padding: 0;
+   }
+   .tabla{
+      width: 100%;
+      font-size: 2rem;
+      border: 1px solid #000;
+      flex-direction: column;
+  }
+
+   .mas-jugadores{
+      width: 80%;
+      font-size: 1.5rem;  
+   }
+  .form-text {
+    font-size: 1rem;
+    justify-content: center;
+ }
+   .form-text2 {
+      display: flex;
+    text-align: left;
+    font-size: 1rem;
+   }
+
+  .form-control {
+   flex: 1 1 auto;
+   flex-direction: column;
+   font-size: 2rem;
+   
+   }
+   .separacion-elemento{
+      flex-direction: column;
+      width: 100%;
+      margin:0;
+
+   }
+   .separacion-elemento2{
+      flex-direction: column;
+      width: 50%;
+      margin-left:0px;
+      align-items: left;
+   }
+   fieldset{
+      padding:16px;
+   }
+
+   .form-control{
+      display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    margin-left: 10px;
+    font-size: 2rem;
+   }
+   
+   .th1{
+      font-size: 1rem;
+
+   }
+   .form-text{
+    
+      text-align: left;
+      display: flex;
+   }
   }
