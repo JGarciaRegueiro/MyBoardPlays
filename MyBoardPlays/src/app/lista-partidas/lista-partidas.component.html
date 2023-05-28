@@ -1,31 +1,46 @@
 <div class="container table-responsive">
   <h3 class="text-lg-start mb-5">Lista de todas las partidas</h3>
-  <div class="row">
+  <div class="d-flex justify-content-end mb-2">
+    <button class="btn btn btn-outline-secondary mb-1" (click)="exportExcel()">
+      EXPORTAR EXCEL
+    </button>
+  </div>
+  <div class="row mt-3">
     <div class="col">
       <div class="form-group filter">
-        <input type="text" class="form-control mb-3" name="filterJuegos" placeholder="Buscar por....">
+        <input
+          type="text"
+          class="form-control mb-3"
+          name="filterPartidas"
+          placeholder="Buscar por (ubicación, dificultad o descripción)"
+          [(ngModel)]="filterPartidas"
+        />
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col mt-2">
-      <select class="form-select">
-        <option selected> Ordenar por...</option>
+      <select class="form-select" [(ngModel)]="parameter1">
+        <option>Ordenar por...</option>
+        <option value="id">Id</option>
         <option value="nombre">Creador</option>
         <option value="dificultad">Ubicación</option>
+        <option value="descripcion">Fecha</option>
       </select>
     </div>
     <div class="col mt-2">
-      <select class="form-select">
-        <option> ASC / DESC </option>
+      <select class="form-select" [(ngModel)]="parameter2">
         <option value="asc" selected>ASC</option>
         <option value="desc">DESC</option>
       </select>
     </div>
-</div>
-  <table class="table table-hover table-striped align-middle shadow p-3 mt-4 bg-body rounded">
-    <thead class="table fs-5"> <!--Cabecera de la tabla-->
+  </div>
+  <table
+    class="table table-hover table-striped align-middle shadow p-3 mt-4 bg-body rounded"
+  >
+    <thead class="table fs-5">
+      <!--Cabecera de la tabla-->
       <tr class="justify-content-center">
         <th class="text-center">ID</th>
         <th class="text-center">CREADOR</th>
@@ -36,31 +51,59 @@
         <th class="text-center">ACCIONES</th>
       </tr>
     </thead>
-    <tbody class="justify-content-center"> <!--cuerpo de la tabla-->
-      <tr> <!--recorremos la lista de juegos y después llamamos a esos datos-->
-        <td class="text-center"></td>
-        <td class="text-center"></td>
-        <td class="text-center"></td>
-        <td class="text-center"></td>
-        <td class="text-center"></td>
-        <td class="text-center"></td>
+    <tbody class="justify-content-center">
+      <!--cuerpo de la tabla-->
+      <tr
+        *ngFor="
+          let partida of partidas
+            | filter : filterPartidas
+            | orderByJuegos : parameter1 : parameter2
+            | paginate : { itemsPerPage: 10, currentPage: pageActual }
+        "
+      >
+        <td class="text-center">1</td>
+        <td class="text-center">1</td>
+        <td class="text-center">Madrid</td>
+        <td class="text-center">21-05-2023</td>
+        <td class="text-center">1</td>
+        <td class="text-center">30'</td>
         <td class="text-center">
-          <button (click)="eliminarPartida" class="btn btn-sm btn-success ">
-            <i class="fa-solid fa-info fa-xs" style="color: #ffffff;"></i>
-            DETALLES</button>
-          <button (click)="eliminarPartida" class="btn btn-sm btn-warning text-center ms-3" [routerLink]="['//',]">
-            <i class="fa-solid fa-pen-to-square fa-xs" style="color: #ffffff;"></i>
+          <button
+            (click)="verDetallesPartida()"
+            class="btn btn-sm btn-success"
+            [routerLink]="['/detalles-partida/']"
+          >
+            <i class="fa-solid fa-info fa-xs" style="color: #ffffff"></i>
+            DETALLES
+          </button>
+          <button
+            (click)="editarPartida()"
+            class="btn btn-sm btn-warning text-center ms-3"
+          >
+            <i
+              class="fa-solid fa-pen-to-square fa-xs"
+              style="color: #ffffff"
+            ></i>
             EDITAR
           </button>
-          <button (click)="eliminarPartida" class="btn btn-sm btn-danger text-center ms-3">
-            <i class="fa-solid fa-trash-can fa-xs" style="color: #ffffff;"></i>
-            ELIMINAR</button>
+          <button
+            (click)="eliminarPartida()"
+            class="btn btn-sm btn-danger text-center ms-3"
+          >
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ffffff"></i>
+            ELIMINAR
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
+
   <div class="mt-5 py-5 text-center">
-    <pagination-controls class="my-pagination"
-      (pageChange)="pageActual = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    <pagination-controls
+      class="my-pagination"
+      (pageChange)="pageActual = $event"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+    ></pagination-controls>
   </div>
-  </div>
+</div>

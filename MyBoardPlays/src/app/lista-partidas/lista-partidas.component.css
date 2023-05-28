@@ -16,3 +16,22 @@ thead{
   left: 10px;
   transform: translateY(-50%);
 }
+
+.btn-juego{
+  background-color: var(--colorContraste);
+  color:var(--colorBaseBlanco);
+  font-weight: bold;
+  font-size:small;
+  width: auto;
+  height:48px;
+  border-radius: 16px;
+}
+.my-pagination ::ng-deep .ngx-pagination .current{
+  background-color: #4741b5;
+  width: 32px;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .paginate{
+  background-color: #4741b5;
+  width: 40px;
+}
