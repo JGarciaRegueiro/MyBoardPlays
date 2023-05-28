@@ -31,12 +31,12 @@
         </div>
 
         <div class = contenedor__imagen>
-            <img src= "assets/img/faqs2.png" alt="faqs2">
+            <img src= "assets/img/faqs2.png" class="imagen" alt="faqs2">
         </div>
     </div>
     <div class = "contenedor__acercaDe--contenido">
         <div class = contenedor__imagen>
-            <img src= "assets/img/sobreNos.png" alt="sobreNos">
+            <img src= "assets/img/sobreNos.png" class="imagen" alt="sobreNos">
         </div>
 
         <div class = "mensaje-sobreNos">
@@ -72,19 +72,21 @@
             <h1 class="acerca">CONTACTA CON NOSOTROS</h1>
             <h2 class="acerca2">Formulario de contacto</h2>
             <br>
-            <form action="https://formspree.io/f/mzbqwnno" method="POST">
-              <fieldset class="form">
-                    <input class="form__input" type="text" name="nombre" placeholder="Nombre y apellidos*" required>
-                    <input class="form__input" type="email" name="email" placeholder="Email*" required>
-                    <label for="comments" class="comentario">Comentario:</label>
-                    <textarea class="form__input2" id= "comments" name="comments"></textarea>
+            <form (submit)="enviarCorreo()">              
+                <fieldset class="form">
+                    <input class="form__input" type="email" name="correo" [(ngModel)]="correo" placeholder="Tu email*" required>
+                    <input class="form__input" type="email" name="email" placeholder="contacta@myboardplays.com" disabled>
+                    <label for="comentario" class="comentario">Comentario:</label>
+                    <textarea class="form__input" id= "commentario" name="comentario "[(ngModel)]="comentario"></textarea>
                     <input class="button button__action" type="submit" value="Enviar">
+                    <br>
+                    <p class="label--select2" *ngIf="enviado" style="color: #40d205; font-weight: bold;"> <img src= "assets/img/tick.png" class="imagen2">RECARGA LA PÁGINA: {{ enviado }}</p>
                   </fieldset>
             </form>
         </div>
 
         <div class = contenedor__imagen>
-            <img src= "assets/img/contactanos.png" alt="contactanos">
+            <img src= "assets/img/contactanos.png" class="imagen" alt="contactanos">
         </div>
     </div>
 

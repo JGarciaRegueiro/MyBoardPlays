@@ -78,6 +78,13 @@
     font-weight: bold;
 }
 
+.label--select2{
+    width: 100%;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 2rem;
+}
+
 @media (max-width:1200px){
     .contenedor__herramientas--contenido{
         flex-direction: column;
@@ -104,4 +111,5 @@
     .button__action{
         font-size:1.5rem;
     }
+
 }

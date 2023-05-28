@@ -81,3 +81,42 @@
 .contenedor__imagen:hover {
   transform: scale(1.1); /* Aplica una escala del 120% a la imagen en el hover */
 }
+.imagen2{
+    width:24px;
+    height:24px;
+}
+
+@media (max-width:1200px){
+    .contenedor__acercaDe--contenido{
+        flex-direction: column;
+        margin:0;
+    }
+    .contenedor__acercaDe--contenido{
+        flex-direction: column;
+        margin-bottom: 5rem;
+
+    }
+    .contenedor__acercaDe{
+        display:flex;
+        flex-direction: column;
+        
+        
+    }
+    .imagen{
+        width:100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+
+    }
+    .form__input{
+       width: 100%;
+        margin-left: 0;
+    }
+    .button__action{
+        font-size:1.5rem;
+        margin-left: 0;
+
+    }
+
+}
