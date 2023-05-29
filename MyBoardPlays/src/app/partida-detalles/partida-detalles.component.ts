@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Partida } from '../partida';
 import { ActivatedRoute } from '@angular/router';
-import { PartidasService } from '../partida.service';
+import { PartidasService } from '../partidas.service';
 import swal from 'sweetalert2';
 
 @Component({

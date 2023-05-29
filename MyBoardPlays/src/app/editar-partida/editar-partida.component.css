@@ -1,0 +1,5 @@
+.btn-guardarpartida{
+    background-color: var(--colorContrasteLow);
+    color:var(--colorBaseBlanco);
+    font-weight: bold;
+  }

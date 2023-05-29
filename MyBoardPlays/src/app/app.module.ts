@@ -27,6 +27,7 @@ import { SignupComponent } from './signup/signup.component';
 import { HerramientasComponent } from './herramientas/herramientas.component';
 import { SharedDataService } from './shared-data.service';
 import { PartidaDetallesComponent } from './partida-detalles/partida-detalles.component';
+import { EditarPartidaComponent } from './editar-partida/editar-partida.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { PartidaDetallesComponent } from './partida-detalles/partida-detalles.co
     SignupComponent,
     HerramientasComponent,
     PartidaDetallesComponent,
+    EditarPartidaComponent,
   ],
   imports: [
     BrowserModule,
