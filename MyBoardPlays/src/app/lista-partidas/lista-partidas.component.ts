@@ -20,15 +20,24 @@ export class ListaPartidasComponent implements OnInit {
   partidas: Partida[];
 
 constructor(private partidasServicio: PartidasService, private router: Router) {}
-  ngOnInit(): void {}
-
-  private obtenerPartidas() {}
-
+  
+ngOnInit(): void {
+  this.partidasServicio.obtenerListaDePartidas().subscribe((partidas) => {
+    this.partidas = partidas;
+  });
+}
+obtenerPartidas() {
+  this.partidasServicio.obtenerListaDePartidas().subscribe((dato) => {
+    this.partidas = dato;
+  });
+}
   eliminarPartida() {}
 
   verDetallesPartida() {}
 
-  editarPartida() {}
+  editarPartida(id:number): void {
+    this.router.navigate(["editar-partida",id]);
+  }
 
   exportExcel(): void {
     const data: any[][] = [
