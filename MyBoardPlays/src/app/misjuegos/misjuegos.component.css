@@ -1,5 +1,11 @@
+.carousel-container {
+  height: 500px; /* Ajusta la altura deseada */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 100px; /* Ajusta el margen inferior para dejar espacio al footer */
+}
 .carousel-image {
-  height: 300px; /* Ajusta la altura deseada */
+  height: 350px; /* Ajusta la altura deseada */
   object-fit: cover;
   opacity: 0.9;
   cursor: pointer;
