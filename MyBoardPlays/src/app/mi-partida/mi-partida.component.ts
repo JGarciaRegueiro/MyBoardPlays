@@ -19,6 +19,7 @@ export class MiPartidaComponent implements OnInit {
   ubicacionPartida: string;
   fechaEscogida: Date;
   duracion: number;
+  ganador: number;
 
 
 
@@ -69,6 +70,7 @@ export class MiPartidaComponent implements OnInit {
       ubicacionPartida: this.ubicacionPartida,
       fechaEscogida: this.fechaEscogida,
       duracion: this.duracion,
+      ganador: this.ganador,
     };
 
     this.http.post('/apirest/partida/alta', partida).subscribe(

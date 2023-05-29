@@ -87,6 +87,16 @@
     margin-left:20px;
     align-items: center;
  }
+
+ .separacion-elemento3{
+   
+   width: 100%;
+   margin:20px;
+   align-items: left;
+   font-size: 3rem;
+   font-weight: bold;
+   color:black;
+}
  
   .form-control {
     flex: 1 1 100%;
@@ -102,10 +112,9 @@
   }
 
  
- .form-text {
-    flex: 0 0 auto;
-    text-align: center;
-    align-items: center;
+ .form-text3 {
+    margin-left: 16px;
+    margin-top:8px;
   }
   
 .form-button{

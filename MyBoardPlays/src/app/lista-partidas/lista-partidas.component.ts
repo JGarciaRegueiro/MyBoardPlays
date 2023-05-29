@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import * as XLSX from 'xlsx';
+import { Partida } from '../partida';
+import { Router } from '@angular/router';
+import { PartidasService } from '../partidas.service';
+
+
+
 
 @Component({
   selector: 'app-lista-partidas',
@@ -11,18 +17,27 @@ export class ListaPartidasComponent implements OnInit {
   parameter1 = 'id';
   parameter2 = 'asc';
   filterPartidas: String = '';
+  partidas: Partida[];
 
-  partidas:string = ''
-
-  ngOnInit(): void {}
-
-  private obtenerPartidas() {}
-
+constructor(private partidasServicio: PartidasService, private router: Router) {}
+  
+ngOnInit(): void {
+  this.partidasServicio.obtenerListaDePartidas().subscribe((partidas) => {
+    this.partidas = partidas;
+  });
+}
+obtenerPartidas() {
+  this.partidasServicio.obtenerListaDePartidas().subscribe((dato) => {
+    this.partidas = dato;
+  });
+}
   eliminarPartida() {}
 
   verDetallesPartida() {}
 
-  editarPartida() {}
+  editarPartida(id:number): void {
+    this.router.navigate(["editar-partida",id]);
+  }
 
   exportExcel(): void {
     const data: any[][] = [

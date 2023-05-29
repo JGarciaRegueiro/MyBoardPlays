@@ -27,7 +27,11 @@ import { SignupComponent } from './signup/signup.component';
 import { HerramientasComponent } from './herramientas/herramientas.component';
 import { SharedDataService } from './shared-data.service';
 import { PartidaDetallesComponent } from './partida-detalles/partida-detalles.component';
+<<<<<<< HEAD
 import { LogoutComponent } from './logout/logout.component';
+=======
+import { EditarPartidaComponent } from './editar-partida/editar-partida.component';
+>>>>>>> 45c7c297b065da2e7b9e026c32e54cbb82d4915d
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { LogoutComponent } from './logout/logout.component';
     SignupComponent,
     HerramientasComponent,
     PartidaDetallesComponent,
+<<<<<<< HEAD
     LogoutComponent,
+=======
+    EditarPartidaComponent,
+>>>>>>> 45c7c297b065da2e7b9e026c32e54cbb82d4915d
   ],
   imports: [
     BrowserModule,
