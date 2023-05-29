@@ -9,20 +9,31 @@ import swal from 'sweetalert2';
   styleUrls: ['./mi-cuenta.component.css']
 })
 export class MiCuentaComponent implements OnInit {
-  
-  usuario : Usuario = {
-    id:0,
-    nombre:"",
-    email:"",
-    pass:"",
-    fechaAlta:new Date,
-  }
+
+  usuario: any = {
+    id: 0,
+    nombre: '',
+    email: '',
+    pass: '',
+    fechaAlta: new Date()
+  };
 
 
   constructor(private usuarioServicio:ApiService){
-     
   }
+
+
   ngOnInit(): void {
+    const email=localStorage.getItem('user') || '';
+    this.usuarioServicio.consultarUsuario(email).subscribe((user) => {
+      this.usuario = user;
+    });
+
+
+  }
+
+  modificarUsuario(usuario:any){
+    this.usuarioServicio.modificarUsuario(usuario);
   }
 
 
@@ -43,7 +54,7 @@ export class MiCuentaComponent implements OnInit {
       if(!result.value){
         this.usuarioServicio.eliminarUsuario(id).subscribe(dato =>{
       console.log(dato);
-      
+
     })
     }
   })

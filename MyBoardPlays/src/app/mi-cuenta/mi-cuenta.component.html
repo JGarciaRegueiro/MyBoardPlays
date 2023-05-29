@@ -7,33 +7,33 @@
             <li><a href="#">Mis Partidas</a></li><br>
             <li><a href="#">Mis Estadísticas</a></li><br>
             <li class="hidden"><a (click)="eliminarUsuario(usuario.id)">Eliminar Cuenta</a></li><br>
-            <li class="hidden"><a href="#">Cerrar Sesión</a></li><br>
+            <li  class="hidden"><a href="logout">Cerrar Sesión</a></li><br>
         </ul>
     </div>
     <div class=contenedor__imagen2>
-        <form action=# method="POST" class="form2">
+        <form class="form2" (ngSubmit)="modificarUsuario(usuario)">
             <legend>EDITAR PERFIL</legend>
             <br><br><br><br><br><br><br><br><br>
             <div class="contenido--form">
                 <div class="row">
                     <label for="id">Id:</label>
-                    <input class="form__input" type="text" name="id" placeholder="Id" required>
+                    <input class="form__input" type="text" name="id" placeholder="{{ usuario.id }}" required disabled>
                 </div>
                 <div class="row">
                     <label for="nombre">Nombre:</label>
-                    <input class="form__input" type="text" name="nombre" placeholder="Nombre de usuario" required>
+                    <input class="form__input" type="text" name="nombre" value="{{ usuario.nombre }}" required>
                 </div>
                 <div class="row">
                     <label for="email">Email:</label>
-                    <input class="form__input" type="text" name="email" placeholder="Email" required>
+                    <input class="form__input" type="text" name="email" value="{{ usuario.email }}" required>
                 </div>
                 <div class="row">
                     <label for="pass">Password:</label>
-                    <input class="form__input" type="text" name="pass" placeholder="Password" required>
+                    <input class="form__input" type="text" name="pass" value="{{ usuario.pass }}" required>
                 </div>
                 <div class="row">
                     <label for="fechaAlta">Fecha de Alta:</label>
-                    <input class="form__input" type="date" name="fechaAlta" placeholder="Fecha de Alta" required>
+                    <input class="form__input" type="date" name="fechaAlta" value="{{ usuario.fechaAlta}}" required>
                 </div>
             </div>
             <p><input class="button button__action" type="submit" value="Guardar"></p>

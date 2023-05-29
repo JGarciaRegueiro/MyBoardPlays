@@ -43,9 +43,17 @@ export class ApiService {
     })
   }
 
+  consultarUsuario(email:String){
+    return this.http.get('http://localhost:8087/apirest/usuario/email/'+email);
+  }
 
   eliminarUsuario(id:number):Observable<Object>{
       return this.http.delete('http://localhost:8087/apirest/usuario/eliminar/'+id);
     }
+
+
+  modificarUsuario(usuario: Usuario){
+    return this.http.put('http://localhost:8087/apirest/usuario/modificar', usuario);
   }
 
+}

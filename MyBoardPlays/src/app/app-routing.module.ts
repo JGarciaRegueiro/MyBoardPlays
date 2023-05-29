@@ -17,6 +17,7 @@ import { ErrorGeneralComponent } from './error-general/error-general.component';
 import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
 import { EditarJuegoComponent } from './editar-juego/editar-juego.component';
 import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent },
   {path: 'lista-partidas', component: ListaPartidasComponent},
   {path: 'juegos', component: MisjuegosComponent},
+  {path: 'logout', component: LogoutComponent},
 ];
 
 @NgModule({
