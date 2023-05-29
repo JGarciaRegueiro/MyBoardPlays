@@ -21,10 +21,12 @@ export class ApiService {
       const body = response.body;
       const headers = response.headers;
 
+      const usuario = creds.email;
       const bearerToken = headers.get('Authorization')!;
       const token = bearerToken.replace('Bearer ', '');
 
       localStorage.setItem('token', token);
+      localStorage.setItem('user', usuario)
 
       return body;
 
@@ -44,6 +46,6 @@ export class ApiService {
 
   eliminarUsuario(id:number):Observable<Object>{
       return this.http.delete('http://localhost:8087/apirest/usuario/eliminar/'+id);
-    } 
+    }
   }
 
