@@ -5,7 +5,9 @@
         <tr>
             <td class = "form-row">
             <label for="name"  class ="form-text" disabled>Nombre del Juego:</label>
-            <input type="text" class="form-control" name="nombreJuego" [(ngModel)]="nombreJuego"  placeholder="Nombre del juego">
+            <select name="nombreJuego" id="">
+              <option *ngFor="let juego of juegos" value="{{ juego.id }}">{{ juego.nombre }}</option>
+            </select>
             </td>
         </tr>
         <tr>
@@ -46,9 +48,9 @@
             <!--<div class="separacion-elemento">
                 <div class="sorteo">
                     <label for="orden" class ="form-text" disabled>Sorteo de orden </label>
-                    <button type="button" class="form-button"> <img src="assets/img/orden.png" /></button> 
+                    <button type="button" class="form-button"> <img src="assets/img/orden.png" /></button>
                 </div>
-            </div>  -->     
+            </div>  -->
             </td>
         </tr>
     </table>
@@ -59,10 +61,10 @@
     <fieldset>
         <div class="separacion-elemento">
             <div class="mas-jugadores">
-                <button type="button" class="form-button2" (click)="agregarJugador()"> <img src="assets/img/mas.png" /></button> 
+                <button type="button" class="form-button2" (click)="agregarJugador()"> <img src="assets/img/mas.png" /></button>
                 <p class ="form-text2" style="font-weight: bold; color:black;">Añadir un jugador </p>
             </div>
-        </div> 
+        </div>
     <table class="tabla2">
         <thead>
             <th class="th1"></th>
@@ -117,7 +119,7 @@
                   </td>
                 </tr>
               </ng-container>
-           <!--{{ generarTabla('participantes') }}--> 
+           <!--{{ generarTabla('participantes') }}-->
         </tbody>
     </table>
     </fieldset>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Jugador } from '../jugador';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JuegosService } from '../juegos.service';
 import { Juego } from '../juego';
 
 @Component({
@@ -23,10 +24,12 @@ export class MiPartidaComponent implements OnInit {
 
   nombre: string;
   puntuacion: number;
+  juegos: Juego[];
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private juegosServicio: JuegosService
   ) {}
 
   ngOnInit() {
@@ -34,6 +37,9 @@ export class MiPartidaComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.participantes = Number(params['participantes']);
       this.generarFilas();
+    });
+    this.juegosServicio.obtenerListaDeJuegos().subscribe((dato) => {
+      this.juegos = dato;
     });
   }
 
@@ -76,6 +82,7 @@ export class MiPartidaComponent implements OnInit {
       }
     );
   }
+
 
 }
 
