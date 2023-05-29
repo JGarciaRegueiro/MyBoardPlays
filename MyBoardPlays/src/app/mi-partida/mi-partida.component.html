@@ -4,19 +4,20 @@
     <table class="tabla">
         <tr>
             <td class = "form-row">
-            <label for="name"  class ="form-text" disabled>Nombre del Juego:</label>
-            <select name="nombreJuego" id="">
-              <option *ngFor="let juego of juegos" value="{{ juego.id }}">{{ juego.nombre }}</option>
+            <label for="name"  class ="form-text">Selecciona un Juego:</label>
+            <select name="nombreJuego" class= "form-control">
+                <option selected>Selecciona un juego <img src="/assets/img/flecha.png" class="imagen"></option>
+              <option *ngFor="let juego of juegos" value="{{ juego.id }}" required>{{ juego.nombre }}</option>
             </select>
             </td>
         </tr>
         <tr>
             <td class = "form-row">
-            <label for="creador" class ="form-text"  disabled>Creador de la partida: </label>
+            <label for="creador" class ="form-text">Creador de la partida: </label>
             <input type="text"  class="form-control" name="creadorPartida" [(ngModel)]="creadorPartida" placeholder="Nombre del creador de la partida">
             <div class="separacion-elemento">
                 <div class="separacion-elemento2">
-                <label for="fecha"  class ="form-text" disabled>  Duración: </label>
+                <label for="fecha"  class ="form-text">  Duración: </label>
                 <input type="text" class="form-control" name="duracion" [(ngModel)]="duracion"  placeholder="Duración de la partida">
             </div>
             </div>
@@ -25,12 +26,12 @@
         <tr>
             <td class= "form-row">
             <div class="separacion-elemento">
-            <label for="ubicacion" class ="form-text" disabled>Ubicación de la partida: </label>
+            <label for="ubicacion" class ="form-text">Ubicación de la partida: </label>
             <input type="text" class="form-control" id="forma" name="ubicacionPartida" [(ngModel)]="ubicacionPartida" placeholder="Donde se disputa la partida">
             </div>
             <div class="separacion-elemento">
                 <div class="separacion-elemento2">
-                <label for="fecha"  class ="form-text" disabled>  Fecha: </label>
+                <label for="fecha"  class ="form-text">  Fecha: </label>
                 <input type="date" class="form-control" name="fechaEscogida" [(ngModel)]="fechaEscogida">
                 </div>
             </div>
@@ -38,91 +39,14 @@
         </tr>
     </table>
     <br><br><br>
-    <table class="tabla">
-        <tr>
-            <td class= "form-row">
-            <div class="separacion-elemento">
-            <label for="participantes" class ="form-text" disabled>Número de participantes: </label>
-            <input type="text" class="form-control" id="participantes" name="numParticipantes" placeholder="Número de participantes">
-            </div>
-            <!--<div class="separacion-elemento">
-                <div class="sorteo">
-                    <label for="orden" class ="form-text" disabled>Sorteo de orden </label>
-                    <button type="button" class="form-button"> <img src="assets/img/orden.png" /></button>
-                </div>
-            </div>  -->
-            </td>
-        </tr>
-    </table>
+    
+       
+    <div class= "separacion-elemento3">
+        <label for="participantes" class ="form-text">Ganador: </label>
+        <input type="checkbox" name="ganador" class="form-text3" [(ngModel)]="ganador">
+    </div>    
+     
     <br><br>
-
-    <h3>Lista de jugadores:</h3>
-
-    <fieldset>
-        <div class="separacion-elemento">
-            <div class="mas-jugadores">
-                <button type="button" class="form-button2" (click)="agregarJugador()"> <img src="assets/img/mas.png" /></button>
-                <p class ="form-text2" style="font-weight: bold; color:black;">Añadir un jugador </p>
-            </div>
-        </div>
-    <table class="tabla2">
-        <thead>
-            <th class="th1"></th>
-            <th class="th1">Nombre</th>
-            <th class="th1">Email</th>
-            <th class="th1">Ganador</th>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let jugador of jugadores; let i = index">
-          <tr class="tr1">
-            <td class="celda">
-              <label for="jugador{{ i }}" class="form-text">Jugador {{ i + 1 }}</label>
-            </td>
-            <td class="celda">
-              <input type="text" class="form-control" [name]="'nombre' + i" [(ngModel)]="jugador.nombre" />
-            </td>
-            <td class="celda">
-              <input type="text" class="form-control" [name]="'email' + i" [(ngModel)]="jugador.email" />
-            </td>
-            <td class="celda">
-              <input type="checkbox" name="ganador" value="1" [(ngModel)]="jugador.ganador" />
-            </td>
-          </tr>
-        </ng-container>
-        </tbody>
-    </table>
-    </fieldset>
-    <br>
-    <h3>Puntuaciones:</h3>
-    <fieldset>
-    <table class="tabla2">
-        <thead>
-            <th class="th1"></th>
-            <th class="th1">Nombre</th>
-            <th class="th1">Orden</th>
-            <th class="th1">Puntuaciones</th>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let jugador of jugadores; let i = index">
-                <tr class="tr1">
-                  <td class="celda">
-                    <label for="jugador{{ i }}" class="form-text">Jugador {{ i + 1 }}</label>
-                  </td>
-                  <td class="celda">
-                    <input type="text" class="form-control" [name]="'nombre' + i" [(ngModel)]="jugador.nombre" />
-                  </td>
-                  <td class="celda">
-                    <input type="text" class="form-control" [name]="'orden' + i" [(ngModel)]="jugador.email" />
-                  </td>
-                  <td class="celda">
-                    <input type="text" class="form-control" [name]="'puntuaciones' + i" [(ngModel)]="jugador.puntuaciones" />
-                  </td>
-                </tr>
-              </ng-container>
-           <!--{{ generarTabla('participantes') }}-->
-        </tbody>
-    </table>
-    </fieldset>
     <div class="mas-jugadores" >
     <p class ="form-button2"><input class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
     </div>
