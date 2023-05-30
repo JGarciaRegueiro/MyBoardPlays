@@ -4,6 +4,7 @@ import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JuegosService } from '../juegos.service';
 import { Juego } from '../juego';
 import { Usuario } from '../usuario';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-mi-partida',
@@ -22,15 +23,27 @@ export class MiPartidaComponent implements OnInit {
   nombre: string;
   puntuacion: number;
   juegos: Juego[];
-  usuarios: Usuario[]; 
+   
+  usuario: any = {
+    id: 0,
+    nombre: '',
+    email: '',
+    pass: '',
+    fechaAlta: new Date()
+  };
 
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    private juegosServicio: JuegosService
+    private juegosServicio: JuegosService,
+    private usuarioServicio: ApiService
   ) {}
 
   ngOnInit() {
+    const email=localStorage.getItem('user') || '';
+    this.usuarioServicio.consultarUsuario(email).subscribe((user) => {
+    this.usuario = user;
+    });
       this.route.queryParams.subscribe(params => {
       this.participantes = Number(params['participantes']);
       /*this.generarFilas();*/
