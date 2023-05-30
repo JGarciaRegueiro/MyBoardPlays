@@ -7,7 +7,7 @@
             <label for="name"  class ="form-text">Selecciona un Juego:</label>
             <select name="nombreJuego" class= "form-control">
                 <option selected>Selecciona un juego</option>
-              <option *ngFor="let juego of juegos" name="idJuego" value="{{ juego.id }}" required>{{ juego.nombre }} [disabled]="!isJuegoValido(juego)"></option>
+                <option *ngFor="let juego of juegos" name="idJuego" value="{{ juego.id }}" [disabled]="!isJuegoValido(juego)" required>{{ juego.nombre }} ></option>
             </select>
             </td>
         </tr>
@@ -48,6 +48,6 @@
      
     <br><br>
     <div class="mas-jugadores" >
-    <p class ="form-button2"><input class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
+    <p class ="form-button2"><input click="guardarPartida()" class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
     </div>
 </div>
