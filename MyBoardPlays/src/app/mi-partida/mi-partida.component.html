@@ -6,8 +6,8 @@
             <td class = "form-row">
             <label for="name"  class ="form-text">Selecciona un Juego:</label>
             <select name="nombreJuego" class= "form-control">
-                <option selected>Selecciona un juego <img src="/assets/img/flecha.png" class="imagen"></option>
-              <option *ngFor="let juego of juegos" value="{{ juego.id }}" required>{{ juego.nombre }}</option>
+                <option selected>Selecciona un juego</option>
+              <option *ngFor="let juego of juegos" name="idJuego" value="{{ juego.id }}" [disabled]="!isJuegoValido(juego)" required>{{ juego.nombre }} ></option>
             </select>
             </td>
         </tr>
@@ -43,7 +43,7 @@
        
     <div class= "separacion-elemento3">
         <label for="participantes" class ="form-text">Ganador: </label>
-        <input type="checkbox" name="ganador" class="form-text3" [(ngModel)]="ganador">
+        <input type="checkbox" name="ganador" value="1" class="form-text3" [(ngModel)]="ganador">
     </div>    
      
     <br><br>

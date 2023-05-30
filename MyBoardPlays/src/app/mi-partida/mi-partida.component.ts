@@ -14,15 +14,12 @@ export class MiPartidaComponent implements OnInit {
   participantes: number;
   jugadores: Jugador[] = [];
   fechaActual: string;
-  nombreJuego:string;
+  idJuego:number;
   creadorPartida: string;
   ubicacionPartida: string;
   fechaEscogida: Date;
   duracion: number;
   ganador: number;
-
-
-
   nombre: string;
   puntuacion: number;
   juegos: Juego[];
@@ -34,17 +31,18 @@ export class MiPartidaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.fechaActual = new Date().toISOString().split('T')[0]; // Asignar la fecha actual
-    this.route.queryParams.subscribe(params => {
+      this.route.queryParams.subscribe(params => {
       this.participantes = Number(params['participantes']);
-      this.generarFilas();
+      /*this.generarFilas();*/
     });
     this.juegosServicio.obtenerListaDeJuegos().subscribe((dato) => {
       this.juegos = dato;
     });
   }
-
-  generarFilas() {
+  isJuegoValido(juego: Juego): boolean {
+    return this.participantes >= juego.minParticipantes && this.participantes <= juego.maxParticipantes;
+  }
+  /*generarFilas() {
     this.jugadores = [];
     for (let i = 0; i < this.participantes; i++) {
       const jugador: Jugador = {
@@ -61,20 +59,19 @@ export class MiPartidaComponent implements OnInit {
   agregarJugador() {
     this.jugadores.push({ nombre: '', email: '', ganador: false, puntuaciones: 0, orden: 0 });
   }
+*/
 
+guardarPartida() {
+  const partida = {
+    idJuego: this.idJuego,
+    creadorPartida: this.creadorPartida,
+    ubicacionPartida: this.ubicacionPartida,
+    fechaEscogida: this.fechaEscogida,
+    duracion: this.duracion,
+    ganador: this.ganador,
+  };
 
-  guardarPartida() {
-    const partida = {
-      nombreJuego: this.nombreJuego,
-      creadorPartida: this.creadorPartida,
-      ubicacionPartida: this.ubicacionPartida,
-      fechaEscogida: this.fechaEscogida,
-      duracion: this.duracion,
-      ganador: this.ganador,
-    };
-
-    this.http.post('/apirest/partida/alta', partida).subscribe(
-      (response) => {
+    this.http.post('/apirest/partida/alta', partida).subscribe((response) => {
         console.log('Partida guardada correctamente');
         // Aquí puedes realizar alguna acción adicional después de guardar la partida
       },
