@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Jugador } from '../jugador';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JuegosService } from '../juegos.service';
 import { Juego } from '../juego';
+import { Usuario } from '../usuario';
 
 @Component({
   selector: 'app-mi-partida',
@@ -12,7 +12,6 @@ import { Juego } from '../juego';
 })
 export class MiPartidaComponent implements OnInit {
   participantes: number;
-  jugadores: Jugador[] = [];
   fechaActual: string;
   idJuego:number;
   creadorPartida: string;
@@ -23,6 +22,7 @@ export class MiPartidaComponent implements OnInit {
   nombre: string;
   puntuacion: number;
   juegos: Juego[];
+  usuarios: Usuario[]; 
 
   constructor(
     private route: ActivatedRoute,
