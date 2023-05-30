@@ -3,6 +3,7 @@ import * as XLSX from 'xlsx';
 import { Partida } from '../partida';
 import { Router } from '@angular/router';
 import { PartidasService } from '../partidas.service';
+import swal from 'sweetalert2';
 
 
 
@@ -20,7 +21,7 @@ export class ListaPartidasComponent implements OnInit {
   partidas: Partida[];
 
 constructor(private partidasServicio: PartidasService, private router: Router) {}
-  
+
 ngOnInit(): void {
   this.partidasServicio.obtenerListaDePartidas().subscribe((partidas) => {
     this.partidas = partidas;
@@ -31,7 +32,33 @@ obtenerPartidas() {
     this.partidas = dato;
   });
 }
-  eliminarPartida() {}
+eliminarPartida(id: number) {
+  swal({
+    title: '¿Estas seguro?',
+    text: 'Confirma si deseas eliminar la partida',
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText: 'Si, elimínala',
+    confirmButtonText: 'No, cancelar',
+    confirmButtonClass: 'btn btn-success me-4',
+    cancelButtonClass: 'btn btn-danger',
+    buttonsStyling: true,
+  }).then((result) => {
+    if (!result.value) {
+      this.partidasServicio.eliminarPartida(id).subscribe((dato) => {
+        console.log(dato);
+        this.obtenerPartidas();
+        swal(
+          'Partida eliminada',
+          'La partida ha sido eliminada con exito',
+          'success'
+        );
+      });
+    }
+  });
+}
 
   verDetallesPartida() {}
 

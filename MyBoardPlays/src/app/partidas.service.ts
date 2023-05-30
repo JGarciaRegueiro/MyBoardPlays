@@ -15,7 +15,7 @@ export class PartidasService {
 
   //Método obtener lista juegos. Retorna un observable de un array de juegos
   obtenerListaDePartidas():Observable<Partida[]>{
-   return this.httpClient.get<Partida[]>('http://localhost:8087/apirest/juegos');
+   return this.httpClient.get<Partida[]>('http://localhost:8087/apirest/partidas');
   }
 
   //Método para registrar un nuevo juego

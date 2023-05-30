@@ -12,7 +12,7 @@
           type="text"
           class="form-control mb-3"
           name="filterPartidas"
-          placeholder="Buscar por (ubicación, dificultad o descripción)"
+          placeholder="Buscar por (ubicación, fecha o duración)"
           [(ngModel)]="filterPartidas"
         />
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -24,9 +24,8 @@
       <select class="form-select" [(ngModel)]="parameter1">
         <option>Ordenar por...</option>
         <option value="id">Id</option>
-        <option value="nombre">Creador</option>
-        <option value="dificultad">Ubicación</option>
-        <option value="descripcion">Fecha</option>
+        <option value="ubicacion">Ubicación</option>
+        <option value="fecha">Fecha</option>
       </select>
     </div>
     <div class="col mt-2">
@@ -48,6 +47,7 @@
         <th class="text-center">FECHA</th>
         <th class="text-center">ID JUEGO</th>
         <th class="text-center">DURACIÓN</th>
+        <th class="text-center">GANADOR</th>
         <th class="text-center">ACCIONES</th>
       </tr>
     </thead>
@@ -56,17 +56,18 @@
       <tr
         *ngFor="
           let partida of partidas
-            | filter : filterPartidas
-            | orderByJuegos : parameter1 : parameter2
+            | filterPartidas : filterPartidas
+            | orderByPartidas: parameter1 : parameter2
             | paginate : { itemsPerPage: 10, currentPage: pageActual }
         "
       >
-        <td class="text-center">1</td>
-        <td class="text-center">1</td>
-        <td class="text-center">Madrid</td>
-        <td class="text-center">21-05-2023</td>
-        <td class="text-center">1</td>
-        <td class="text-center">30'</td>
+        <td class="text-center">{{partida.id}}</td>
+        <td class="text-center">{{partida.id}}</td>
+        <td class="text-center">{{partida.ubicacion}}</td>
+        <td class="text-center">{{partida.fecha}}</td>
+        <td class="text-center">{{partida.id}}</td>
+        <td class="text-center">{{partida.duracion}}</td>
+        <td class="text-center">{{partida.id}}</td>
         <td class="text-center">
           <button
             (click)="verDetallesPartida()"
@@ -87,7 +88,7 @@
             EDITAR
           </button>
           <button
-            (click)="eliminarPartida()"
+            (click)="eliminarPartida(partida.id)"
             class="btn btn-sm btn-danger text-center ms-3"
           >
             <i class="fa-solid fa-trash-can fa-xs" style="color: #ffffff"></i>
