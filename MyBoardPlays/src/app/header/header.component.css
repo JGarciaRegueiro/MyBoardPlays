@@ -42,6 +42,10 @@ a.active{
   font-weight: 600;
 }
 
+.imagen--logo {
+  height: 55px;
+}
+
 /* Mobile menu */
 .menu {
   display: flex;
@@ -115,6 +119,11 @@ a.active{
 }
 /* Desktop menu */
 @media all and (min-width: 900px) {
+  .div {
+    display: flex;
+    align-items: flex-end;
+  }
+
   .item {
     display: block;
     width: auto;
@@ -134,5 +143,9 @@ a.active{
 
   .menu li.button {
     padding-right: 0;
+  }
+
+  .imagen--logo {
+    height: auto;
   }
 }
