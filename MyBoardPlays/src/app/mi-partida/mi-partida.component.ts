@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JuegosService } from '../juegos.service';
 import { Juego } from '../juego';
-import { Usuario } from '../usuario';
+import { Jugador } from '../jugador';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -23,6 +23,7 @@ export class MiPartidaComponent implements OnInit {
   nombre: string;
   puntuacion: number;
   juegos: Juego[];
+  jugadores: Jugador[] = [];
    
   usuario: any = {
     id: 0,
@@ -46,7 +47,7 @@ export class MiPartidaComponent implements OnInit {
     });
       this.route.queryParams.subscribe(params => {
       this.participantes = Number(params['participantes']);
-      /*this.generarFilas();*/
+      this.generarFilas();
     });
     this.juegosServicio.obtenerListaDeJuegos().subscribe((dato) => {
       this.juegos = dato;
@@ -55,24 +56,22 @@ export class MiPartidaComponent implements OnInit {
   isJuegoValido(juego: Juego): boolean {
     return this.participantes >= juego.minParticipantes && this.participantes <= juego.maxParticipantes;
   }
-  /*generarFilas() {
+  generarFilas() {
     this.jugadores = [];
     for (let i = 0; i < this.participantes; i++) {
-      const jugador: Jugador = {
+      const jugador= {
         nombre: '',
         email: '',
         ganador: false,
-        puntuaciones: 0,
-        orden: 0,
       };
       this.jugadores.push(jugador);
     }
   }
 
   agregarJugador() {
-    this.jugadores.push({ nombre: '', email: '', ganador: false, puntuaciones: 0, orden: 0 });
-  }
-*/
+    this.jugadores.push({ nombre: '', email: '', ganador: false })
+}
+
 
 guardarPartida() {
   const partida = {

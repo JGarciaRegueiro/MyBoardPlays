@@ -5,9 +5,10 @@
         <tr>
             <td class = "form-row">
             <label for="name"  class ="form-text">Selecciona un Juego:</label>
-            <select name="nombreJuego" class= "form-control">
+            <select name="nombreJuego" class= "form-control" [(ngModel)]="idJuego" required>
                 <option selected>Selecciona un juego</option>
-                <option *ngFor="let juego of juegos" name="idJuego" value="{{ juego.id }}" [disabled]="!isJuegoValido(juego)" required>{{ juego.nombre }} ></option>
+                <option *ngFor="let juego of juegos" name="idJuego" value="{{ juego.id }}" [disabled]="!isJuegoValido(juego)" 
+                [ngClass]="{'option-disabled': !isJuegoValido(juego)}"required>{{ juego.nombre }} ></option>
             </select>
             </td>
         </tr>
@@ -39,15 +40,67 @@
         </tr>
     </table>
     <br><br><br>
-    
+    <table class="tabla">
+        <tr>
+            <td class= "form-row">
+            <div class="separacion-elemento">
+            <label for="participantes" class ="form-text" disabled>Número de participantes: </label>
+            <input type="text" class="form-control" id="participantes" name="numParticipantes" placeholder="Número de participantes">
+            </div>
+            <!--<div class="separacion-elemento">
+                <div class="sorteo">
+                    <label for="orden" class ="form-text" disabled>Sorteo de orden </label>
+                    <button type="button" class="form-button"> <img src="assets/img/orden.png" /></button>
+                </div>
+            </div>  -->
+            </td>
+        </tr>
+    </table>
        
     <div class= "separacion-elemento3">
         <label for="participantes" class ="form-text">Ganador: </label>
         <input type="checkbox" name="ganador" value="1" class="form-text3" [(ngModel)]="ganador">
     </div>    
-     
     <br><br>
+
+    <h3>Lista de jugadores:</h3>
+
+    <fieldset>
+        <div class="separacion-elemento">
+            <div class="mas-jugadores">
+                <button type="button" class="form-button2" (click)="agregarJugador()"> <img src="assets/img/mas.png" /></button>
+                <p class ="form-text2" style="font-weight: bold; color:black;">Añadir un jugador </p>
+            </div>
+        </div>
+    <table class="tabla2">
+        <thead>
+            <th class="th1"></th>
+            <th class="th1">Nombre</th>
+            <th class="th1">Email</th>
+           <!-- <th class="th1">Ganador</th>-->
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let jugador of jugadores; let i = index">
+          <tr class="tr1">
+            <td class="celda">
+              <label for="usuario{{ i }}" class="form-text">Jugador {{ i + 1 }}</label>
+            </td>
+            <td class="celda">
+              <input type="text" class="form-control" [name]="'nombre' + i" [(ngModel)]="usuario.nombre" />
+            </td>
+            <td class="celda">
+              <input type="text" class="form-control" [name]="'email' + i" [(ngModel)]="usuario.email" />
+            </td>
+           <!-- <td class="celda">
+              <input type="checkbox" name="ganador" value="1" [(ngModel)]="usuario.ganador" />
+            </td>-->
+          </tr>
+        </ng-container>
+        </tbody>
+    </table>
+    </fieldset>
+    <br>
     <div class="mas-jugadores" >
-    <p class ="form-button2"><input click="guardarPartida()" class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
+    <p class ="form-button2"><input (click)="guardarPartida()" class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
     </div>
 </div>
