@@ -7,6 +7,7 @@ import { Jugador } from '../jugador';
 import { ApiService } from '../api.service';
 import { Usuario } from '../usuario';
 import { Partida } from '../partida';
+import { PartidasService } from '../partidas.service';
 
 
 @Component({
@@ -45,6 +46,7 @@ export class MiPartidaComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
     private juegosServicio: JuegosService,
+    private partidasServicio: PartidasService,
     private usuarioServicio: ApiService
   ) {}
 
@@ -99,10 +101,11 @@ export class MiPartidaComponent implements OnInit {
   }
 
 
-guardarPartida() {
+guardarPartida(juego:Juego) {
   const partida: Partida = {
+
       id: 0,
-      juego: this.juego,
+      juego: juego,
       creador: this.usuario,
       ubicacion: this.ubicacionPartida,
       fecha: this.fechaEscogida,
@@ -110,16 +113,9 @@ guardarPartida() {
       
     }; 
     console.log(partida);
-  this.http.post('/apirest/partida/alta', partida).subscribe(
-    (response) => {
-      console.log('Partida guardada correctamente');
-      // Realizar acciones adicionales después de guardar la partida, si es necesario
-    },
-    (error) => {
-      console.error('Error al guardar la partida:', error);
-      // Manejar errores
-    }
-  );
+    this.partidasServicio.guardarNuevaPartida(partida).subscribe(dato =>{
+      console.log(dato);
+    },error => console.log(error));
   }
 
 
