@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Partida } from '../partida';
+import { Creador, Partida } from '../partida';
 import { ActivatedRoute } from '@angular/router';
 import { PartidasService } from '../partidas.service';
 import swal from 'sweetalert2';
@@ -12,12 +12,29 @@ import swal from 'sweetalert2';
 export class PartidaDetallesComponent implements OnInit{
 
     id:number;
-    partida : Partida={ id:0,
-    creador: '',
-    ubicacion:'',
-    fecha:new Date(),
-    id_juego:0,
-    duracion:0 };
+    partida: Partida = {
+      id: 0,
+      juego: {
+        id: 0,
+        descripcion: '',
+        dificultad: '',
+        maxParticipantes: 0,
+        minParticipantes: 0,
+        nombre: '',
+      },
+      creador: {
+        id: 0,
+        email: '',
+        fechaAlta: '',
+        nombre: '',
+        pass: '',
+        partidas: []
+      },
+      ubicacion: '',
+      fecha: new Date(),
+      duracion: 0
+    };
+
 
   constructor(private route:ActivatedRoute, private partidaServicio:PartidasService){}
 

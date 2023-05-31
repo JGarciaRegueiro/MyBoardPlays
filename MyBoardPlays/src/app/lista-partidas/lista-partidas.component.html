@@ -45,7 +45,7 @@
         <th class="text-center">CREADOR</th>
         <th class="text-center">UBICACIÓN</th>
         <th class="text-center">FECHA</th>
-        <th class="text-center">ID JUEGO</th>
+        <th class="text-center">JUEGO</th>
         <th class="text-center">DURACIÓN</th>
         <th class="text-center">GANADOR</th>
         <th class="text-center">ACCIONES</th>
@@ -62,10 +62,10 @@
         "
       >
         <td class="text-center">{{partida.id}}</td>
-        <td class="text-center">{{partida.id}}</td>
+        <td class="text-center">{{partida.creador?.nombre}}</td>
         <td class="text-center">{{partida.ubicacion}}</td>
         <td class="text-center">{{partida.fecha}}</td>
-        <td class="text-center">{{partida.id}}</td>
+        <td class="text-center">{{partida.juego?.nombre}}</td>
         <td class="text-center">{{partida.duracion}}</td>
         <td class="text-center">{{partida.id}}</td>
         <td class="text-center">
