@@ -84,23 +84,21 @@ export class MiPartidaComponent implements OnInit {
 
 guardarPartida() {
   const partida = {
-    idJuego: this.idJuego,
-    creadorPartida: this.creadorPartida,
-    ubicacionPartida: this.ubicacionPartida,
-    fechaEscogida: this.fechaEscogida,
-    duracion: this.duracion,
-    ganador: this.ganador,
+    juego: this.juegos.find(juego => juego.id === this.idJuego), // Obtener el juego completo buscándolo en la lista de juegos
+    creadorPartida: this.usuario, // Pasar todo el objeto del usuario creador
+    jugadores: this.jugadores.map(jugador => jugador.email) // Pasar una lista de correos electrónicos de los jugadores
   };
 
-    this.http.post('/apirest/partida/alta', partida).subscribe((response) => {
-        console.log('Partida guardada correctamente');
-        // Aquí puedes realizar alguna acción adicional después de guardar la partida
-      },
-      (error) => {
-        console.error('Error al guardar la partida:', error);
-        // Manejo de errores
-      }
-    );
+  this.http.post('/apirest/partida/alta', partida).subscribe(
+    (response) => {
+      console.log('Partida guardada correctamente');
+      // Realizar acciones adicionales después de guardar la partida, si es necesario
+    },
+    (error) => {
+      console.error('Error al guardar la partida:', error);
+      // Manejar errores
+    }
+  );
   }
 
 
