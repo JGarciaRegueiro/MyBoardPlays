@@ -5,6 +5,8 @@ import { JuegosService } from '../juegos.service';
 import { Juego } from '../juego';
 import { Jugador } from '../jugador';
 import { ApiService } from '../api.service';
+import { Usuario } from '../usuario';
+
 
 @Component({
   selector: 'app-mi-partida',
@@ -25,6 +27,8 @@ export class MiPartidaComponent implements OnInit {
   juegos: Juego[];
   jugadores: Jugador[] = [];
   selectedJuego: any;
+  usuarios: Usuario[] = [];
+
 
   usuario: any = {
     id: 0,
@@ -52,6 +56,9 @@ export class MiPartidaComponent implements OnInit {
     });
     this.juegosServicio.obtenerListaDeJuegos().subscribe((dato) => {
       this.juegos = dato;
+    });
+    this.usuarioServicio.obtenerListaDeUsuarios().subscribe((dato) => {
+      this.usuarios = dato;
     });
   }
   isJuegoValido(juego: Juego): boolean {

@@ -56,4 +56,8 @@ export class ApiService {
     return this.http.put('http://localhost:8087/apirest/usuario/modificar', usuario);
   }
 
+  obtenerListaDeUsuarios():Observable<Usuario[]>{
+    return this.http.get<Usuario[]>('http://localhost:8087/apirest/usuarios');
+   }
+
 }

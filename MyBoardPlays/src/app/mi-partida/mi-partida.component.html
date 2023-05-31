@@ -84,7 +84,11 @@
               <input type="text" class="form-control" [name]="'nombre' + i" [(ngModel)]="jugador.nombre" />
             </td>
             <td class="celda">
-              <input type="text" class="form-control" [name]="'email' + i" [(ngModel)]="jugador.email" />
+                <select [name]="'email' + i" class= "form-control" [(ngModel)]="jugador.email" required>
+                    <option selected>Selecciona el email de un usuario</option>
+                    <option *ngFor="let usuario of usuarios" name="email" value="{{ usuario.email }}"   
+                    required>{{ usuario.email }} ></option>
+                </select>
             </td>
            <td class="celda">
               <input type="checkbox" name="ganador" value="1" [(ngModel)]="usuario.ganador" />
