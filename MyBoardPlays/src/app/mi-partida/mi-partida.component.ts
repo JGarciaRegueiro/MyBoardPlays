@@ -24,7 +24,8 @@ export class MiPartidaComponent implements OnInit {
   puntuacion: number;
   juegos: Juego[];
   jugadores: Jugador[] = [];
-   
+  selectedJuego: any;
+
   usuario: any = {
     id: 0,
     nombre: '',
@@ -68,9 +69,17 @@ export class MiPartidaComponent implements OnInit {
     }
   }
 
+  canAgregarJugador(): boolean {
+    return !this.selectedJuego || this.jugadores.length < this.selectedJuego.maxJugadores;
+  }
+
   agregarJugador() {
+    if (this.selectedJuego && this.jugadores.length < this.selectedJuego.maxJugadores) {
+      // Agrega un nuevo jugador al arreglo de jugadores
     this.jugadores.push({ nombre: '', email: '', ganador: false })
-}
+    this.participantes=this.participantes + 1;
+    }
+  }
 
 
 guardarPartida() {
