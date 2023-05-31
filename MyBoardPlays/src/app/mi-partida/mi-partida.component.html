@@ -5,10 +5,10 @@
         <tr>
             <td class = "form-row">
             <label for="name"  class ="form-text">Selecciona un Juego:</label>
-            <select name="nombreJuego" class= "form-control" [(ngModel)]="idJuego" required>
+            <select name="nombreJuego" class= "form-control" [(ngModel)]="idJuego" required (change)="obtenerJuego()">
                 <option selected>Selecciona un juego</option>
-                <option *ngFor="let juego of juegos" name="idJuego" value="{{ juego.id }}" [disabled]="!isJuegoValido(juego)"  
-                [ngClass]="{'option-disabled': !isJuegoValido(juego)}"(click)="obtenerJuego()"required>{{ juego.nombre }} ></option>
+                <option *ngFor="let juego of juegos" name="idJuego" [value]="juego.id" [disabled]="!isJuegoValido(juego)"  
+                [ngClass]="{'option-disabled': !isJuegoValido(juego)}">{{ juego.nombre }} ></option>
             </select>
             </td>
         </tr>
@@ -100,6 +100,6 @@
     </fieldset>
     <br>
     <div class="mas-jugadores" >
-    <p class ="form-button2"><input (click)="guardarPartida()" class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
+    <p class ="form-button2"><input (click)="guardarPartida(juego)" class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
     </div>
 </div>
