@@ -6,6 +6,7 @@ import { Juego } from '../juego';
 import { Jugador } from '../jugador';
 import { ApiService } from '../api.service';
 import { Usuario } from '../usuario';
+import { Partida } from '../partida';
 
 
 @Component({
@@ -24,10 +25,12 @@ export class MiPartidaComponent implements OnInit {
   ganador: number;
   nombre: string;
   puntuacion: number;
+  juego:Juego;
   juegos: Juego[];
   jugadores: Jugador[] = [];
   selectedJuego: any;
   usuarios: Usuario[] = [];
+  partida:Partida;
 
 
   usuario: any = {
@@ -61,6 +64,13 @@ export class MiPartidaComponent implements OnInit {
       this.usuarios = dato;
     });
   }
+
+  obtenerJuego(){
+    this.juegosServicio.obtenerJuegoPorId(this.idJuego).subscribe((dato) => {
+      this.juego = dato;
+    });
+  }
+
   isJuegoValido(juego: Juego): boolean {
     return this.participantes >= juego.minParticipantes && this.participantes <= juego.maxParticipantes;
   }
@@ -90,12 +100,16 @@ export class MiPartidaComponent implements OnInit {
 
 
 guardarPartida() {
-  const partida = {
-    juego: this.juegos.find(juego => juego.id === this.idJuego), // Obtener el juego completo buscándolo en la lista de juegos
-    creadorPartida: this.usuario, // Pasar todo el objeto del usuario creador
-    jugadores: this.jugadores.map(jugador => jugador.email) // Pasar una lista de correos electrónicos de los jugadores
-  };
-
+  const partida: Partida = {
+      id: 0,
+      juego: this.juego,
+      creador: this.usuario,
+      ubicacion: this.ubicacionPartida,
+      fecha: this.fechaEscogida,
+      duracion: this.duracion
+      
+    }; 
+    console.log(partida);
   this.http.post('/apirest/partida/alta', partida).subscribe(
     (response) => {
       console.log('Partida guardada correctamente');
