@@ -6,12 +6,10 @@ import { Partida } from '../partida';
 })
 export class OrderByPartidasPipe implements PipeTransform {
 
-  transform(value: any[], ...args: any[]): Partida[] {
+  transform(value: any[], property: string, order: string): Partida[] {
     if (!Array.isArray(value)) {
       return value;
     }
-
-    const [property, order = 'asc']: string[] = args;
 
     return value.sort((a, b) => {
       let valueA = a[property];
@@ -23,6 +21,9 @@ export class OrderByPartidasPipe implements PipeTransform {
       } else if (property === 'fecha') {
         valueA = new Date(valueA);
         valueB = new Date(valueB);
+      } else if (property === 'creador' || property === 'juego') {
+        valueA = a[property]?.nombre.toLowerCase();
+        valueB = b[property]?.nombre.toLowerCase();
       }
 
       if (valueA < valueB) {
