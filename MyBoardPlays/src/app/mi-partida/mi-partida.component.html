@@ -15,7 +15,7 @@
         <tr>
             <td class = "form-row">
             <label for="creador" class ="form-text">Creador de la partida: </label>
-            <input type="text"  class="form-control" name="creadorPartida" value="{{ usuario.id }}" placeholder="Nombre del creador de la partida">
+            <input type="text"  class="form-control" name="creadorPartida" value="{{ usuario.id }}" placeholder="Nombre del creador de la partida" disabled>
             <div class="separacion-elemento">
                 <div class="separacion-elemento2">
                 <label for="fecha"  class ="form-text">  Duración: </label>
@@ -45,7 +45,7 @@
             <td class= "form-row">
             <div class="separacion-elemento">
             <label for="participantes" class ="form-text" disabled>Número de participantes: </label>
-            <input type="text" class="form-control" id="participantes" name="numParticipantes" value="{{ participantes }}"placeholder="Número de participantes">
+            <input type="text" class="form-control" id="participantes" name="numParticipantes" value="{{ participantes }}"placeholder="Número de participantes" disabled>
             </div>
             <!--<div class="separacion-elemento">
                 <div class="sorteo">

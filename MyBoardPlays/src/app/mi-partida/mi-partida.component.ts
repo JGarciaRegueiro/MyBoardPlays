@@ -23,7 +23,7 @@ export class MiPartidaComponent implements OnInit {
   ubicacionPartida: string;
   fechaEscogida: Date;
   duracion: number;
-  ganador: number;
+  ganador: string;
   nombre: string;
   puntuacion: number;
   juego:Juego;
@@ -102,8 +102,7 @@ export class MiPartidaComponent implements OnInit {
   }
   selectGanador(email: string) {
     if (this.ganador !== null) {
-      const selectedUsuario = this.usuarios[this.ganador];
-      this.emailGanador=email; // or do whatever you want with the email
+      this.emailGanador=email; 
     }
   }
 
