@@ -5,9 +5,6 @@ import { Router } from '@angular/router';
 import { PartidasService } from '../partidas.service';
 import swal from 'sweetalert2';
 
-
-
-
 @Component({
   selector: 'app-lista-partidas',
   templateUrl: './lista-partidas.component.html',
@@ -20,65 +17,59 @@ export class ListaPartidasComponent implements OnInit {
   filterPartidas: String = '';
   partidas: Partida[];
 
-constructor(private partidasServicio: PartidasService, private router: Router) {}
+  constructor(
+    private partidasServicio: PartidasService,
+    private router: Router
+  ) {}
 
-ngOnInit(): void {
-  this.partidasServicio.obtenerListaDePartidas().subscribe((partidas) => {
-    this.partidas = partidas;
-  });
-}
-obtenerPartidas() {
-  this.partidasServicio.obtenerListaDePartidas().subscribe((dato) => {
-    this.partidas = dato;
-  });
-}
-eliminarPartida(id: number) {
-  swal({
-    title: '¿Estas seguro?',
-    text: 'Confirma si deseas eliminar la partida',
-    type: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    cancelButtonText: 'Si, elimínala',
-    confirmButtonText: 'No, cancelar',
-    confirmButtonClass: 'btn btn-success me-4',
-    cancelButtonClass: 'btn btn-danger',
-    buttonsStyling: true,
-  }).then((result) => {
-    if (!result.value) {
-      this.partidasServicio.eliminarPartida(id).subscribe((dato) => {
-        console.log(dato);
-        this.obtenerPartidas();
-        swal(
-          'Partida eliminada',
-          'La partida ha sido eliminada con exito',
-          'success'
-        );
-      });
-    }
-  });
-}
+  ngOnInit(): void {
+    this.partidasServicio.obtenerListaDePartidas().subscribe((partidas) => {
+      this.partidas = partidas;
+    });
+  }
+  obtenerPartidas() {
+    this.partidasServicio.obtenerListaDePartidas().subscribe((dato) => {
+      this.partidas = dato;
+    });
+  }
+  eliminarPartida(id: number) {
+    swal({
+      title: '¿Estas seguro?',
+      text: 'Confirma si deseas eliminar la partida',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Si, elimínala',
+      confirmButtonText: 'No, cancelar',
+      confirmButtonClass: 'btn btn-success me-4',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: true,
+    }).then((result) => {
+      if (!result.value) {
+        this.partidasServicio.eliminarPartida(id).subscribe((dato) => {
+          console.log(dato);
+          this.obtenerPartidas();
+          swal(
+            'Partida eliminada',
+            'La partida ha sido eliminada con exito',
+            'success'
+          );
+        });
+      }
+    });
+  }
 
   verDetallesPartida() {}
 
-  editarPartida(id:number): void {
-    this.router.navigate(["editar-partida",id]);
+  editarPartida(id: number): void {
+    this.router.navigate(['editar-partida', id]);
   }
 
   exportExcel(): void {
     const data: any[][] = [
-      ['ID', 'CREADOR', 'UBICACION', 'FECHA', 'ID JUEGO', 'DURACION'],
-      /*
-      ...this.partidas.map((partidas) => [
-        juego.id,
-        juego.nombre,
-        juego.descripcion,
-        juego.minParticipantes,
-        juego.maxParticipantes,
-        juego.dificultad,
-      ]),
-      */
+      ['ID', 'CREADOR', 'UBICACION', 'FECHA', 'JUEGO', 'DURACION', 'GANADOR'],
+      ...this.getDatosExportar(),
     ];
 
     const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(data);
@@ -87,5 +78,15 @@ eliminarPartida(id: number) {
 
     // Generar el archivo Excel
     XLSX.writeFile(wb, 'lista_partidas.xlsx');
+  }
+  getDatosExportar(): any[][] {
+    return this.partidas.map((partida) => [
+      partida.id,
+      partida.creador?.nombre,
+      partida.ubicacion,
+      partida.fecha,
+      partida.juego?.nombre,
+      partida.duracion,
+    ]);
   }
 }
