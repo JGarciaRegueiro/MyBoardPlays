@@ -32,8 +32,20 @@ export class MiCuentaComponent implements OnInit {
 
   }
 
-  modificarUsuario(usuario:any){
-    this.usuarioServicio.modificarUsuario(usuario);
+  modificarUsuario(usuario: Usuario) {
+    this.usuarioServicio.modificarUsuario(usuario.id,usuario).subscribe(
+      (result) => {
+        console.log(result);
+        swal({
+          title: '¡Modificado!',
+          text: 'El perfil se ha modificado con éxito',
+          type: 'success'
+        });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
 

@@ -21,19 +21,19 @@
                 </div>
                 <div class="row">
                     <label for="nombre">Nombre:</label>
-                    <input class="form__input" type="text" name="nombre" value="{{ usuario.nombre }}" required>
+                    <input class="form__input" type="text" name="nombre" [value]="usuario.nombre" required [(ngModel)]="usuario.nombre">
                 </div>
                 <div class="row">
                     <label for="email">Email:</label>
-                    <input class="form__input" type="text" name="email" value="{{ usuario.email }}" required>
+                    <input class="form__input" type="text" name="email"   [value]="usuario.email" required [(ngModel)]="usuario.email">
                 </div>
                 <div class="row">
                     <label for="pass">Password:</label>
-                    <input class="form__input" type="text" name="pass" value="{{ usuario.pass }}" required>
+                    <input class="form__input" type="text"  name="pass" [value]="usuario.pass" required [(ngModel)]="usuario.pass">
                 </div>
                 <div class="row">
                     <label for="fechaAlta">Fecha de Alta:</label>
-                    <input class="form__input" type="date" name="fechaAlta" value="{{ usuario.fechaAlta}}" required>
+                    <input class="form__input" type="date" name="fechaAlta" [value]="usuario.fechaAlta" required [(ngModel)]="usuario.fechaAlta">
                 </div>
             </div>
             <p><input class="button button__action" type="submit" value="Guardar"></p>
