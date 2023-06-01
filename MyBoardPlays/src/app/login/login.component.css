@@ -35,9 +35,21 @@ a {
   color: var(--colorBaseNegro);
 }
 
+img{
+  width: 100%;
+}
+
 
 @media(max-width:799px){
   .login--component{
     flex-direction: column;
+  }
+
+  img{
+    width: 100%;
+  }
+
+  input {
+    width: auto;
   }
 }
