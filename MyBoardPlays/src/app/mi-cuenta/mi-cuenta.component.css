@@ -5,10 +5,13 @@
     padding: 96px;
     align-items: center;
 }
-
+a.active{
+  font-weight: bold;
+  color: #060165;
+}
 img{
     padding: 48px;
-}   
+}
 
 .hidden{
     color:var(--colorBaseGris);
@@ -18,7 +21,7 @@ ul {
 }
 a{
     text-decoration: none;
-    
+
 }
 
 .menu{
@@ -49,7 +52,7 @@ a{
     padding:96px;
     border-color: var(--colorBaseGris);
     border-style: solid;
-   
+
 
 }
 
@@ -94,7 +97,7 @@ label{
     .contenedor__miCuenta--contenido {
         flex-direction: column;
         padding:0;
-        
+
     }
     .contenedor__imagen2{
         width: 100%;
@@ -114,7 +117,7 @@ label{
     }
     .contenedor__imagen2{
         border:none;
-        
+
     }
     .form2{
         border-color: var(--colorBaseGris);
@@ -125,14 +128,14 @@ label{
     legend{
         font-size: 24px;
         font-weight: bold;
-    
+
     }
 
     .imagen{
         width:350px;
         height:350px;
     }
-  
+
   }
   @media (max-width:300px){
     .imagen{

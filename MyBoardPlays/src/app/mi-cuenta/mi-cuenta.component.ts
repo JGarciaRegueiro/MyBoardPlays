@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Usuario } from '../usuario';
 import swal from 'sweetalert2';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mi-cuenta',
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./mi-cuenta.component.css']
 })
 export class MiCuentaComponent implements OnInit {
+
+  editarPerfilActivo = false;
 
   usuario: any = {
     id: 0,
@@ -20,7 +22,7 @@ export class MiCuentaComponent implements OnInit {
   };
 
 
-  constructor(private usuarioServicio:ApiService, private router:Router){
+  constructor(private usuarioServicio:ApiService, private router:Router, private route:ActivatedRoute){
   }
 
 
