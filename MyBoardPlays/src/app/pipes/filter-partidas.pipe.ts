@@ -11,13 +11,15 @@ export class FilterPartidasPipe implements PipeTransform {
     }
 
     const durationFilter = Number(arg);
+    const searchValue = arg.toLowerCase();
 
     return value.filter(partida =>
-      partida.ubicacion.toLowerCase().includes(arg) ||
+      partida.ubicacion.toLowerCase().includes(searchValue) ||
       partida.duracion === durationFilter ||
-      partida.fecha.toString().toLowerCase().includes(arg)
+      partida.fecha.toString().toLowerCase().includes(searchValue) ||
+      partida.creador?.nombre.toLowerCase().includes(searchValue) ||
+      partida.juego?.nombre.toLowerCase().includes(searchValue)
     );
   }
-
 
 }
