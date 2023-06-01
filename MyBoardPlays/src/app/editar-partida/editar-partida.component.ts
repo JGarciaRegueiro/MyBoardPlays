@@ -7,6 +7,7 @@ import { Usuario } from '../usuario';
 import { Jugador } from '../jugador';
 import { Juego } from '../juego';
 import { JuegosService } from '../juegos.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-editar-partida',
@@ -24,7 +25,7 @@ export class EditarPartidaComponent {
   ubicacionPartida: string;
   fechaEscogida: Date;
   duracion: number;
-  ganador: number;
+  ganador: Usuario;
   nombre: string;
   puntuacion: number;
   juego:Juego;
@@ -41,28 +42,37 @@ export class EditarPartidaComponent {
     pass: '',
     fechaAlta: new Date()
   };
+  ganadorUsuario: any;
 
-  constructor(private partidaService:PartidasService,private router:Router,private route:ActivatedRoute, private juegosServicio:JuegosService) { }
+  constructor(private partidaService:PartidasService,private router:Router,private route:ActivatedRoute, private juegosServicio:JuegosService, private usuarioServicio: ApiService) { }
 
   ngOnInit(): void {
+    this.juegosServicio.obtenerListaDeJuegos().subscribe((dato) => {
+      this.juegos = dato;
+    });
+    this.usuarioServicio.obtenerListaDeUsuarios().subscribe((dato) => {
+      this.usuarios = dato;
+    });
     this.id = this.route.snapshot.params['id'];
     this.partidaService.obtenerPartidaPorId(this.id).subscribe(dato => {
       this.partida = dato;
-      // Asignar los datos de la partida a las variables correspondientes
-      this.idJuego = this.partida.juego;
-      this.creadorPartida = this.partida.creador?.id;
+      if (this.partida) {
+        this.idJuego = this.partida.juego?.id;
+      }
+      this.creadorPartida = this.partida.creador?.nombre
       this.ubicacionPartida = this.partida.ubicacion;
       this.fechaEscogida = this.partida.fecha;
       this.duracion = this.partida.duracion;
       this.participantes = this.jugadores.length;
-    }, error => console.log(error));
-  }
+
+      if (this.juegos) {
+        this.selectedJuego = this.juegos.find(juego => juego.id === this.idJuego);
+      }
+    }, error => console.log(error));}
 
 
   obtenerJuego(){
-    this.juegosServicio.obtenerJuegoPorId(this.idJuego).subscribe((dato) => {
-      this.juego = dato;
-    });
+    this.juego = this.selectedJuego;
   }
 
   isJuegoValido(juego: Juego): boolean {
@@ -80,8 +90,10 @@ export class EditarPartidaComponent {
     }
   }
 
-  canAgregarJugador(): boolean {
-    return !this.selectedJuego || this.jugadores.length < this.selectedJuego.maxJugadores;
+  consultarUsuario(){
+    this.usuarioServicio.consultarUsuario(this.usuario.email).subscribe(dato =>{
+      this.usuario = dato;
+    });
   }
 
   agregarJugador() {
@@ -103,6 +115,7 @@ export class EditarPartidaComponent {
     this.partida.ubicacion = this.ubicacionPartida;
     this.partida.fecha = this.fechaEscogida;
     this.partida.duracion = this.duracion;
+    ganador: this.ganadorUsuario
 
     this.partidaService.editarPartida(this.id, this.partida).subscribe(dato => {
       this.irAlaListaDePartidas();
