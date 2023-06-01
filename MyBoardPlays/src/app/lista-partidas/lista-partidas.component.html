@@ -73,9 +73,9 @@
         <td class="text-center">{{partida.id}}</td>
         <td class="text-center">
           <button
-            (click)="verDetallesPartida()"
+            (click)="verDetallesPartida(partida.id)"
             class="btn btn-sm btn-success"
-            [routerLink]="['/detalles-partida/']"
+            [routerLink]="['/detalles-partida/',partida.id]"
           >
             <i class="fa-solid fa-info fa-xs" style="color: #ffffff"></i>
             DETALLES

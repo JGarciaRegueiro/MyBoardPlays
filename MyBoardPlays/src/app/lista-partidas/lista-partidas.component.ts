@@ -60,7 +60,7 @@ export class ListaPartidasComponent implements OnInit {
     });
   }
 
-  verDetallesPartida() {}
+  verDetallesPartida(id:number) {}
 
   editarPartida(id: number): void {
     this.router.navigate(['editar-partida', id]);

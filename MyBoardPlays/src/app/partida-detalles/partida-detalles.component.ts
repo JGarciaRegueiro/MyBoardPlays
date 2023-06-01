@@ -40,9 +40,9 @@ export class PartidaDetallesComponent implements OnInit{
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    /*this.partidaServicio.obtenerPartidaPorId(this.id).subscribe(dato =>{
+    this.partidaServicio.obtenerPartidaPorId(this.id).subscribe(dato =>{
       this.partida = dato;
-    })*/
+    })
   }
 
 

@@ -11,7 +11,7 @@
           </div>
           <hr class="custom-hr">
           <div>
-            <label><b>Creador : </b>{{ partida.creador }}</label>
+            <label><b>Creador : </b>{{ partida.creador?.nombre }}</label>
           </div>
           <hr class="custom-hr">
           <div>
@@ -23,7 +23,7 @@
           </div>
           <hr class="custom-hr">
           <div>
-            <!--<label><b>ID del Juego : </b>{{ juego.id }}</label>-->
+            <label><b>Juego : </b>{{ partida.juego?.nombre }}</label>
           </div>
           <hr class="custom-hr">
           <div>
@@ -34,7 +34,7 @@
         <button
           type="text"
           class="btn btn-secondary me-3"
-          routerLink="/lista-juegos"
+          routerLink="/lista-partidas"
           style="font-weight: bold"
         >
           Volver
@@ -43,4 +43,3 @@
       </div>
     </div>
   </div>
-  
