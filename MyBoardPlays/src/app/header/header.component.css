@@ -1,3 +1,10 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+
 nav {
   padding: 5px 20px;
 }
@@ -16,20 +23,12 @@ a.active{
   color: #7887e6;
 }
 
-.logo a:hover {
-  text-decoration: none;
-}
 
 .menu li {
   font-size: 16px;
   padding: 16px;
   margin: 0 12px;
   white-space: nowrap;
-}
-
-.logo a,
-.toggle a {
-  font-size: 20px;
 }
 
 .button-primary a {
@@ -46,106 +45,20 @@ a.active{
   height: 55px;
 }
 
-/* Mobile menu */
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.toggle {
-  order: 1;
-}
-.item.button {
-  order: 2;
-}
-.item {
-  width: 100%;
-  text-align: center;
-  order: 3;
-  display: none;
-  color: var(--colorBaseNegro);
-}
-
-.item.active {
-  display: block;
-}
-
-.imagen--logo {
-  height: 55px;
-}
-
-/* Tablet menu */
-@media all and (min-width: 600px) {
-  .menu {
-    justify-content: center;
-  }
-  .logo {
-    flex: 1;
-  }
-  .toggle {
-    flex: 1;
-    text-align: right;
-  }
-  .item.button {
-    width: auto;
-    order: 1;
-    display: block;
-  }
-  .toggle {
-    order: 2;
-  }
-  .button.secondary {
-    border: 0;
-  }
-  .button a {
-    padding: 7.5px 15px;
-    background: teal;
-    border: 1px #006d6d solid;
-  }
-  .button.secondary a {
-    background: transparent;
-  }
-  .button a:hover {
-    text-decoration: none;
-  }
-  .button:not(.secondary) a:hover {
-    background: #006d6d;
-    border-color: #005959;
-  }
-  .button.secondary a:hover {
-    color: #ddd;
-  }
-}
-/* Desktop menu */
-@media all and (min-width: 900px) {
-  .div {
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .item {
-    display: block;
-    width: auto;
-  }
-  .toggle {
-    display: none;
-  }
-  .logo {
-    order: 0;
-  }
-  .item {
-    order: 1;
-  }
-  .button {
-    order: 2;
-  }
-
-  .menu li.button {
-    padding-right: 0;
-  }
+@media all and (min-width: 990px) {
 
   .imagen--logo {
-    height: auto;
+    height: 125px;
   }
+
+  nav{
+    display: flex!important;
+    justify-content: space-between!important;
+  }
+
+  .navbar-collapse{
+    flex-grow: unset;
+  }
+
+
 }
