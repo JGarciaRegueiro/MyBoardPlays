@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Usuario } from '../usuario';
 import swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mi-cuenta',
@@ -19,7 +20,7 @@ export class MiCuentaComponent implements OnInit {
   };
 
 
-  constructor(private usuarioServicio:ApiService){
+  constructor(private usuarioServicio:ApiService, private router:Router){
   }
 
 
@@ -47,8 +48,26 @@ export class MiCuentaComponent implements OnInit {
       }
     );
   }
-
-
+  confirmarCerrarSesion() {
+    swal({
+      title: 'Cerrar sesión',
+      text: '¿Estás seguro de que deseas cerrar sesión?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Cerrar sesión',
+      confirmButtonClass: 'btn btn-success me-4',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: true
+    }).then((result) => {
+      if (result.value) {
+        localStorage.clear();
+        this.router.navigate(['/'])
+      }
+    });
+  }
   eliminarUsuario(id:number) {
     swal({
       title: '¿Estas seguro?',
