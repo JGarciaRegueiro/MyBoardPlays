@@ -33,7 +33,13 @@ export class PartidaDetallesComponent implements OnInit{
       ubicacion: '',
       fecha: new Date(),
       duracion: 0,
-      ganador:''
+      ganador: {
+        id: 0,
+        email: '',
+        fechaAlta: new Date(),
+        nombre: '',
+        pass: '',
+      }
     };
 
 

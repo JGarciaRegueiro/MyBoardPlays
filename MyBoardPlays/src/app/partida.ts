@@ -1,4 +1,5 @@
 import { Juego } from "./juego";
+import { Usuario } from "./usuario";
 
 export interface Partida{
   id:number;
@@ -7,7 +8,7 @@ export interface Partida{
   fecha:Date;
   juego :Juego | null;
   duracion:number;
-  ganador:string;
+  ganador: Usuario;
 }
 
 export class Partida{
@@ -17,6 +18,7 @@ export class Partida{
   fecha:Date;
   juego :Juego | null;
   duracion:number;
+  ganador: Usuario;
 }
 
 
