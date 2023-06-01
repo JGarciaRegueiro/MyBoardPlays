@@ -6,13 +6,13 @@
   grid-template-rows: 1fr;
   padding: 20px 96px;
   margin-top: 40px;
+  gap:30px;
 }
 
 @media (min-width : 768px) {
   .footer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      justify-items: start;
   }
 }
 
