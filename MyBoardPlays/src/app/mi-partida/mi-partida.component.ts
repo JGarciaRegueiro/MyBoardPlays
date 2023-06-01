@@ -32,7 +32,8 @@ export class MiPartidaComponent implements OnInit {
   selectedJuego: any;
   usuarios: Usuario[] = [];
   partida:Partida;
-
+  emailGanador:string;
+  
 
   usuario: any = {
     id: 0,
@@ -99,9 +100,15 @@ export class MiPartidaComponent implements OnInit {
     this.participantes=this.participantes + 1;
     }
   }
-
+  selectGanador(email: string) {
+    if (this.ganador !== null) {
+      const selectedUsuario = this.usuarios[this.ganador];
+      this.emailGanador=email; // or do whatever you want with the email
+    }
+  }
 
 guardarPartida(juego:Juego) {
+  
   const partida: Partida = {
 
       id: 0,
@@ -109,7 +116,8 @@ guardarPartida(juego:Juego) {
       creador: this.usuario,
       ubicacion: this.ubicacionPartida,
       fecha: this.fechaEscogida,
-      duracion: this.duracion
+      duracion: this.duracion,
+      ganador: this.emailGanador
       
     }; 
     console.log(partida);
