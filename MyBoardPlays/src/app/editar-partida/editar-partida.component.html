@@ -1,1 +1,98 @@
-<p>editar-partida works!</p>
+<div class="contenedor-mipartida">
+  <h1>EDITAR MI PARTIDA</h1>
+  <br>
+  <form (submit)="onSubmit()">
+  <table class="tabla">
+      <tr>
+          <td class = "form-row">
+          <label for="name"  class ="form-text">Selecciona un Juego:</label>
+          <select name="nombreJuego" class= "form-control" [(ngModel)]="idJuego" required (change)="obtenerJuego()">
+              <option selected>Selecciona un juego</option>
+              <option *ngFor="let juego of juegos" name="idJuego" [value]="juego.id" [disabled]="!isJuegoValido(juego)"
+              [ngClass]="{'option-disabled': !isJuegoValido(juego)}">{{ juego.nombre }} ></option>
+          </select>
+          </td>
+      </tr>
+      <tr>
+          <td class = "form-row">
+          <label for="creador" class ="form-text">Creador de la partida: </label>
+          <input type="text"  class="form-control" [(ngModel)]="creadorPartida" placeholder="Nombre del creador de la partida">
+          <div class="separacion-elemento">
+              <div class="separacion-elemento2">
+              <label for="fecha"  class ="form-text">  Duración: </label>
+              <input type="text" class="form-control" name="duracion" [(ngModel)]="duracion"  placeholder="Duración de la partida">
+          </div>
+          </div>
+          </td>
+      </tr>
+      <tr>
+          <td class= "form-row">
+          <div class="separacion-elemento">
+          <label for="ubicacion" class ="form-text">Ubicación de la partida: </label>
+          <input type="text" class="form-control" id="forma" name="ubicacionPartida" [(ngModel)]="ubicacionPartida" placeholder="Donde se disputa la partida">
+          </div>
+          <div class="separacion-elemento">
+              <div class="separacion-elemento2">
+              <label for="fecha"  class ="form-text">  Fecha: </label>
+              <input type="date" class="form-control" name="fechaEscogida" [(ngModel)]="fechaEscogida">
+              </div>
+          </div>
+          </td>
+      </tr>
+  </table>
+  <br><br><br>
+  <table class="tabla">
+      <tr>
+          <td class= "form-row">
+          <div class="separacion-elemento">
+          <label for="participantes" class ="form-text" disabled>Número de participantes: </label>
+          <input type="text" class="form-control" id="participantes" name="numParticipantes" value="{{ participantes }}"placeholder="Número de participantes">
+          </div>
+          </td>
+      </tr>
+  </table>
+  <br><br>
+
+  <h3>Lista de jugadores:</h3>
+
+  <fieldset>
+      <div class="separacion-elemento">
+      </div>
+  <table class="tabla2">
+      <thead>
+          <th class="th1"></th>
+          <th class="th1">Nombre</th>
+          <th class="th1">Email</th>
+          <th class="th1">Ganador</th>
+      </thead>
+      <tbody>
+          <ng-container *ngFor="let jugador of jugadores; let i = index">
+        <tr class="tr1">
+          <td class="celda">
+            <label for="usuario{{ i }}" class="form-text">Jugador {{ i + 1 }}</label>
+          </td>
+          <td class="celda">
+            <input type="text" class="form-control" [name]="'nombre' + i" [(ngModel)]="jugador.nombre" />
+          </td>
+          <td class="celda">
+              <select [name]="'email' + i" class= "form-control" [(ngModel)]="jugador.email" required>
+                  <option selected>Selecciona el email de un usuario</option>
+                  <option *ngFor="let usuario of usuarios" name="email" value="{{ usuario.email }}"
+                  required>{{ usuario.email }} ></option>
+              </select>
+          </td>
+         <td class="celda">
+            <input type="checkbox" name="ganador" value="1" [(ngModel)]="usuario.ganador" />
+         </td>
+        </tr>
+      </ng-container>
+      </tbody>
+  </table>
+  </fieldset>
+  <br>
+  <div class="mas-jugadores" >
+  <p class ="form-button2"><input class="button button__primario button__sombras" type="submit" value="Guardar Partida"></p>
+  </div>
+</form>
+</div>
+

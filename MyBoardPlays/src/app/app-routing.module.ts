@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListajuegosComponent } from './listajuegos/listajuegos.component';
 import { NuevoJuegoComponent } from './nuevo-juego/nuevo-juego.component';
@@ -18,6 +18,7 @@ import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
 import { EditarJuegoComponent } from './editar-juego/editar-juego.component';
 import { ListaPartidasComponent } from './lista-partidas/lista-partidas.component';
 import { LogoutComponent } from './logout/logout.component';
+import { EditarPartidaComponent } from './editar-partida/editar-partida.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path: 'lista-partidas', component: ListaPartidasComponent},
   {path: 'juegos', component: MisjuegosComponent},
   {path: 'logout', component: LogoutComponent},
+  {path : 'editar-partida/:id', component:EditarPartidaComponent},
 ];
 
 @NgModule({

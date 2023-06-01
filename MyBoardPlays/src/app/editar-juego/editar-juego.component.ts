@@ -27,7 +27,7 @@ loading: any;
     },error => console.log(error));
   }
 
-  irAlaListaDeEmpleados(){
+  irAlaListaDeJuegos(){
     this.router.navigate(['/lista-juegos']);
     swal('Juego actualizado',`El juego   ${this.juego.nombre} ha sido actualizado con exito`,`success`);
   }
@@ -58,7 +58,7 @@ loading: any;
 
   onSubmit(){
     this.juegoService.editarJuego(this.id,this.juego).subscribe(dato => {
-      this.irAlaListaDeEmpleados();
+      this.irAlaListaDeJuegos();
     },error => console.log(error));
   }
 }
