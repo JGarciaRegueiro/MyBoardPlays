@@ -1,5 +1,9 @@
 <div class="container table-responsive">
   <h3 class="text-lg-start mb-5">Lista de todas las partidas</h3>
+  <button class="btn btn-juego btn mb-3" [routerLink]="['/iniciar-partida']" routerLinkActive="router-link-active">
+    <i class="fa-sharp fa-regular fa-circle-down" style="color: #fcfcfd"></i>
+    NUEVA PARTIDA
+  </button>
   <div class="d-flex justify-content-end mb-2">
     <button class="btn btn btn-outline-secondary mb-1" (click)="exportExcel()">
       EXPORTAR EXCEL
