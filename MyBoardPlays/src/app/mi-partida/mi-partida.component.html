@@ -70,29 +70,29 @@
     <table class="tabla2">
         <thead>
             <th class="th1"></th>
-            <th class="th1">Nombre</th>
+            <!--<th class="th1">Nombre</th>-->
             <th class="th1">Email</th>
             <th class="th1">Ganador</th>
         </thead>
         <tbody>
-            <ng-container *ngFor="let jugador of jugadores; let i = index">
-          <tr class="tr1">
+        <ng-container >
+          <tr class="tr1"*ngFor="let usuario of usuarios; let i = index" id="usuario{{i}}">
             <td class="celda">
               <label for="usuario{{ i }}" class="form-text">Jugador {{ i + 1 }}</label>
             </td>
-            <td class="celda">
+            <!--<td class="celda">
               <input type="text" class="form-control" [name]="'nombre' + i" [(ngModel)]="jugador.nombre" />
-            </td>
+            </td>-->
             <td class="celda">
-                <select [name]="'email' + i" class= "form-control" [(ngModel)]="jugador.email" required>
+                <select [name]="'email' + i" class= "form-control" [(ngModel)]="usuario.email" required>
                     <option selected>Selecciona el email de un usuario</option>
                     <option *ngFor="let usuario of usuarios" name="email" value="{{ usuario.email }}"   
-                    required>{{ usuario.email }} ></option>
+                    >{{ usuario.email }} ></option>
                 </select>
             </td>
            <td class="celda">
-              <input type="checkbox" name="ganador" value="1" [(ngModel)]="usuario.ganador" />
-           </td>
+            <input type="radio" name="ganador" [value]=i [(ngModel)]="ganador" (change)="selectGanador(usuario.email)"/>
+        </td>
           </tr>
         </ng-container>
         </tbody>

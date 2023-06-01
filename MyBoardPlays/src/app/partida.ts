@@ -7,6 +7,7 @@ export interface Partida{
   fecha:Date;
   juego :Juego | null;
   duracion:number;
+  ganador:string;
 }
 
 export class Partida{
@@ -17,6 +18,9 @@ export class Partida{
   juego :Juego | null;
   duracion:number;
 }
+
+
+
 export class Creador {
   id: number;
   email: string;
