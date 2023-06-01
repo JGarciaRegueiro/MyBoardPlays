@@ -1,10 +1,10 @@
 /*Footer*/
 .footer {
   background-color: var(--colorFondoNaranjaMid);
+  padding: 20px;
   display: grid;
-  justify-items: center;
   grid-template-rows: 1fr;
-  padding: 20px 96px;
+  padding: 40px;
   margin-top: 40px;
   gap:30px;
 }
@@ -13,7 +13,17 @@
   .footer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      padding: 40px 96px;
   }
+
+  h3 {
+  font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  padding: 38px 0px;
 }
 
 .footer__element {
@@ -66,6 +76,10 @@ p {
 .bloque--logo__footer {
   display: flex;
   align-items: center;
+}
+
+.bloque--logo__footer img {
+  height: 76px;
 }
 
 .logo--footer{

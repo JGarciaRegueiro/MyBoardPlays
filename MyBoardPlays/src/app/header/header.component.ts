@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit{
 
 
   ngOnInit():void {
-
     this.route.events.subscribe((value:any)=>{
       if(localStorage.getItem('token')){
       this.isLogged =true;

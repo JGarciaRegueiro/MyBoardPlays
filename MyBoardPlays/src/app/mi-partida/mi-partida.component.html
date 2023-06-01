@@ -7,7 +7,7 @@
             <label for="name"  class ="form-text">Selecciona un Juego:</label>
             <select name="nombreJuego" class= "form-control" [(ngModel)]="idJuego" required (change)="obtenerJuego()">
                 <option selected>Selecciona un juego</option>
-                <option *ngFor="let juego of juegos" name="idJuego" [value]="juego.id" [disabled]="!isJuegoValido(juego)"  
+                <option *ngFor="let juego of juegos" name="idJuego" [value]="juego.id" [disabled]="!isJuegoValido(juego)"
                 [ngClass]="{'option-disabled': !isJuegoValido(juego)}">{{ juego.nombre }} ></option>
             </select>
             </td>
@@ -86,8 +86,8 @@
             <td class="celda">
                 <select [name]="'email' + i" class= "form-control" [(ngModel)]="usuario.email" required>
                     <option selected>Selecciona el email de un usuario</option>
-                    <option *ngFor="let usuario of usuarios" name="email" value="{{ usuario.email }}"   
-                    >{{ usuario.email }} ></option>
+                    <option *ngFor="let usuario2 of usuarios" name="email" value="{{ usuario2.email }}"
+                    >{{ usuario2.email }} ></option>
                 </select>
             </td>
            <td class="celda">

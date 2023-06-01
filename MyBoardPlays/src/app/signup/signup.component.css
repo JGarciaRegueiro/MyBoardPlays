@@ -38,5 +38,14 @@ a {
 @media(max-width:799px){
   .signup--component{
     flex-direction: column;
+    padding: 40px;
+  }
+
+  img{
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
   }
 }

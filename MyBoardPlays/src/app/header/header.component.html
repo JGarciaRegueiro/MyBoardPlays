@@ -9,11 +9,11 @@
 
     <div class="navbar-collapse collapse" id="navbarSupportedContent" [ngClass]="{ show: !isNavbarCollapsed }">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ul">
-        <li class="nav-item active" *ngIf="isLogged"><a class="nav-link" routerLink="/lista-juegos" routerLinkActive="active">Mis Juegos</a></li>
-        <li class="nav-item" *ngIf="isLogged"><a class="nav-link" routerLink="/lista-partidas" routerLinkActive="active">Mis Partidas</a></li>
-        <li class="nav-item" *ngIf="isLogged"><a class="nav-link" routerLink="/mis-estadisticas" routerLinkActive="active">Mis Estadísticas</a></li>
-        <li class="nav-item" ><a class="nav-link" routerLink="/herramientas" routerLinkActive="active">Tools</a></li>
-        <li class="nav-item" *ngIf="isLogged"><a class="nav-link" routerLink="/mi-cuenta" routerLinkActive="active"><i class="fa-solid fa-user"></i></a></li>
+        <li class="nav-item active" (click)="toggleNavbar()" *ngIf="isLogged"><a class="nav-link" routerLink="/lista-juegos" routerLinkActive="active">Mis Juegos</a></li>
+        <li class="nav-item" (click)="toggleNavbar()" *ngIf="isLogged"><a class="nav-link" routerLink="/lista-partidas" routerLinkActive="active">Mis Partidas</a></li>
+        <li class="nav-item" (click)="toggleNavbar()" *ngIf="isLogged"><a class="nav-link" routerLink="/mis-estadisticas" routerLinkActive="active">Mis Estadísticas</a></li>
+        <li class="nav-item" (click)="toggleNavbar()" ><a class="nav-link" routerLink="/herramientas" routerLinkActive="active">Tools</a></li>
+        <li class="nav-item" (click)="toggleNavbar()" *ngIf="isLogged"><a class="nav-link" routerLink="/mi-cuenta" routerLinkActive="active"><i class="fa-solid fa-user"></i></a></li>
         <li class="nav-item button-secondary button-menu" *ngIf="isLogged"><a class="nav-link" routerLink="/iniciar-partida" routerLinkActive="active">Iniciar Partida</a></li>
         <li class="nav-item button-secondary button-menu" *ngIf="!isLogged"><a class="nav-link" routerLink="/login" routerLinkActive="active">Iniciar sesión</a></li>
         <li class="nav-item button-primary button-menu" *ngIf="!isLogged"><a class="nav-link" routerLink="/signup" routerLinkActive="active">Regístrate</a></li>

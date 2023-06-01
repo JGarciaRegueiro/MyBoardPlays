@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: 'mi-cuenta', component: MiCuentaComponent, canActivate: [AuthGuard]},
   {path: '', component: HomeComponent },
   {path: 'lista-partidas', component: ListaPartidasComponent, canActivate: [AuthGuard]},
-  {path: 'juegos', component: MisjuegosComponent, canActivate: [AuthGuard]},
+  {path: 'juegos', component: MisjuegosComponent},
   {path: 'logout', component: LogoutComponent, canActivate: [AuthGuard]},
   {path : 'editar-partida/:id', component:EditarPartidaComponent, canActivate: [AuthGuard]},
 ];
