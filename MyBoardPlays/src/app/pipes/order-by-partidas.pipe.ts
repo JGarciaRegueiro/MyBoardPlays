@@ -10,7 +10,6 @@ export class OrderByPartidasPipe implements PipeTransform {
     if (!Array.isArray(value)) {
       return value;
     }
-
     return value.sort((a, b) => {
       let valueA = a[property];
       let valueB = b[property];
@@ -21,9 +20,9 @@ export class OrderByPartidasPipe implements PipeTransform {
       } else if (property === 'fecha') {
         valueA = new Date(valueA);
         valueB = new Date(valueB);
-      } else if (property === 'creador' || property === 'juego') {
-        valueA = a[property]?.nombre.toLowerCase();
-        valueB = b[property]?.nombre.toLowerCase();
+      } else if (property === 'creador' || property === 'juego' || property === 'ganador') {
+        valueA = a[property]?.nombre?.toLowerCase();
+        valueB = b[property]?.nombre?.toLowerCase();
       }
 
       if (valueA < valueB) {
