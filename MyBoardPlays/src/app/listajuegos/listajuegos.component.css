@@ -41,3 +41,6 @@ thead{
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.custom-table thead tr th {
+  background-color: #f9b375 !important;
+}

@@ -35,3 +35,7 @@ thead{
   background-color: #4741b5;
   width: 40px;
 }
+
+.custom-table thead tr th {
+  background-color: #f9b375 !important;
+}
