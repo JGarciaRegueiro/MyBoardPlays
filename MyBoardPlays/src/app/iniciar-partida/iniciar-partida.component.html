@@ -1,8 +1,6 @@
 <div class="contenedor-iniciarPartida">
-    <div class="contenedor__imagen">
         <img src="assets/img/iniciarPartida.png" class="images" alt="iniciarPartida">
-    </div>
-    <div class="contenedor__iniciarPartida--contenido">
+    
         <form (ngSubmit)="iniciarPartida()" #iniciarPartidaForm="ngForm">
             <fieldset class="form">
                 <label for="addPart" class="addParticipantes">Elige el número de participantes:</label>
@@ -11,5 +9,4 @@
             </fieldset>
             <button type="submit" [disabled]="!iniciarPartidaForm.valid" class="button__action">Iniciar partida</button>
         </form>
-    </div>
 </div>
