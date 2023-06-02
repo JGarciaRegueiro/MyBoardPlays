@@ -23,8 +23,8 @@ export class PartidasService {
     return this.httpClient.post('http://localhost:8087/apirest/partida/alta',partida);
   }
  //Método para editar un nuevo juego
-  editarPartida(id:number,partida:Partida): Observable<Object>{
-    return this.httpClient.put<Partida>('http://localhost:8087/apirest/partida/modificar/'+partida.id ,partida);
+  editarPartida(partida:Partida): Observable<Object>{
+    return this.httpClient.put<Partida>('http://localhost:8087/apirest/partida/modificar/',partida);
   }
 
   //Obtener un juego por Id
