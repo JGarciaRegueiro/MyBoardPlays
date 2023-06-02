@@ -33,6 +33,7 @@
         <option value="fecha">Fecha</option>
         <option value="juego">Juego</option>
         <option value="duracion">Duración</option>
+        <option value="ganador.nombre">Ganador</option>
       </select>
     </div>
     <div class="col mt-2">
@@ -74,7 +75,7 @@
         <td class="text-center">{{partida.fecha}}</td>
         <td class="text-center">{{partida.juego?.nombre}}</td>
         <td class="text-center">{{partida.duracion}}</td>
-        <td class="text-center">{{partida.id}}</td>
+        <td class="text-center">{{partida.ganador.nombre}}</td>
         <td class="text-center">
           <button
             (click)="verDetallesPartida(partida.id)"

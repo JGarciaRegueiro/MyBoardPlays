@@ -87,6 +87,7 @@ export class ListaPartidasComponent implements OnInit {
       partida.fecha,
       partida.juego?.nombre,
       partida.duracion,
+      partida.ganador.nombre
     ]);
   }
 }
