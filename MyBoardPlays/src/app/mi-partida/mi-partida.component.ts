@@ -90,9 +90,6 @@ export class MiPartidaComponent implements OnInit {
     }
   }
 
-  canAgregarJugador(): boolean {
-    return !this.selectedJuego || this.jugadores.length < this.selectedJuego.maxJugadores;
-  }
 
   agregarJugador() {
     if (this.selectedJuego && this.jugadores.length < this.selectedJuego.maxJugadores) {

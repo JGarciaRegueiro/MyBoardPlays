@@ -110,12 +110,13 @@ export class EditarPartidaComponent {
   }
 
   onSubmit(){
+    
     this.partida.juego = this.idJuego;
     this.partida.creador = this.creadorPartida;
     this.partida.ubicacion = this.ubicacionPartida;
     this.partida.fecha = this.fechaEscogida;
     this.partida.duracion = this.duracion;
-    ganador: this.ganadorUsuario
+    this.ganador= this.ganadorUsuario
 
     this.partidaService.editarPartida(this.id, this.partida).subscribe(dato => {
       this.irAlaListaDePartidas();

@@ -45,10 +45,7 @@
   <fieldset>
       <div class="separacion-elemento">
       </div>
-  <table class="tabla2">
-      <thead>
-          <th class="th1">Email</th>
-      </thead>
+  
       <table class="tabla2">
         <thead>
             <th class="th1"></th>
@@ -62,7 +59,7 @@
               <label for="usuario" class="form-text">Jugador</label>
             </td>
             <td class="celda">
-                <select [name]="'email'" class= "form-control" [(ngModel)]="usuario.email" required (change)="consultarUsuario()">
+                <select [name]="'email'" class= "form-control" [(ngModel)]="partida.ganador.email" required (change)="consultarUsuario()">
                     <option selected>Selecciona el email de un usuario</option>
                     <option *ngFor="let ganador of usuarios" name="email" value="{{ganador.email}}"
                     >{{ ganador.email }} ></option>
@@ -74,7 +71,6 @@
         </ng-container>
         </tbody>
     </table>
-  </table>
   </fieldset>
   <br>
   <div class="mas-jugadores" >
