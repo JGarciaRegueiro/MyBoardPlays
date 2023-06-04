@@ -5,4 +5,7 @@
     border-top: 1px solid #c5c3c3;
     margin: 16px 0;
   }
-  
+
+  .contenedor-main {
+    padding: 200px 0;
+  }
