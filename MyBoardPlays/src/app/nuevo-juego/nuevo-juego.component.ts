@@ -3,6 +3,8 @@ import { Juego } from '../juego';
 import { JuegosService } from '../juegos.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Usuario } from '../usuario';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-nuevo-juego',
@@ -17,17 +19,22 @@ export class NuevoJuegoComponent  implements OnInit{
     minParticipantes:0,
     maxParticipantes:0,
     dificultad:'' };
+    usuario : any;
 
-    constructor(private juegosServicio: JuegosService, private router:Router, private fb:FormBuilder) { }
+    constructor(private juegosServicio: JuegosService, private router:Router, private fb:FormBuilder, private apiService: ApiService,) { }
 
     ngOnInit(): void {
-
+      const email=localStorage.getItem('user') || '';
+      this.apiService.consultarUsuario(email).subscribe((user) => {
+      this.usuario = user;
+      });
     }
 
     crearNuevoJuego(){
       this.loading =true;
-      this.juegosServicio.guardarNuevoJuego(this.juego).subscribe(dato =>{
+      this.juegosServicio.guardarNuevoJuego(this.juego, this.usuario).subscribe(dato =>{
         console.log(dato);
+        console.log(this.usuario)
         this.irListaJuegos();
         this.loading =false;
       },error => console.log(error));

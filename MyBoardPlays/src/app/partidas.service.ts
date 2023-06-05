@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Partida } from './partida';
+import { Usuario } from './usuario';
 
 
 @Injectable({
@@ -14,8 +15,8 @@ export class PartidasService {
   constructor(private httpClient : HttpClient) { }
 
   //Método obtener lista juegos. Retorna un observable de un array de juegos
-  obtenerListaDePartidas():Observable<Partida[]>{
-   return this.httpClient.get<Partida[]>('http://localhost:8087/apirest/partidas');
+  obtenerListaDePartidas(id:number):Observable<Partida[]>{
+   return this.httpClient.get<Partida[]>('http://localhost:8087/apirest/partidas/'+id);
   }
 
   //Método para registrar un nuevo juego
@@ -32,8 +33,11 @@ export class PartidasService {
     return this.httpClient.get<Partida>('http://localhost:8087/apirest/partida/consultar/'+id);
   }
   //Método para eliminar un Juego
-  eliminarPartida(id:number):Observable<Object>{
-    return this.httpClient.delete('http://localhost:8087/apirest/partida/eliminar/'+id);
+  eliminarPartida(id:number, usuario:Usuario):Observable<Object>{
+    const options = {
+      body: usuario
+    };
+    return this.httpClient.delete('http://localhost:8087/apirest/partida/eliminar/'+id, options);
   }
 
 }

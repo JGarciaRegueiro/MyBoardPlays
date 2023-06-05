@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JuegosService } from '../juegos.service';
 import { Juego } from '../juego';
@@ -8,6 +8,8 @@ import { ApiService } from '../api.service';
 import { Usuario } from '../usuario';
 import { Partida } from '../partida';
 import { PartidasService } from '../partidas.service';
+import swal from 'sweetalert2';
+
 
 
 @Component({
@@ -23,7 +25,7 @@ export class MiPartidaComponent implements OnInit {
   ubicacionPartida: string;
   fechaEscogida: Date;
   duracion: number;
-  ganador: string;
+  idGanador: number;
   nombre: string;
   puntuacion: number;
   juego:Juego;
@@ -49,7 +51,8 @@ export class MiPartidaComponent implements OnInit {
     private http: HttpClient,
     private juegosServicio: JuegosService,
     private partidasServicio: PartidasService,
-    private usuarioServicio: ApiService
+    private usuarioServicio: ApiService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -61,7 +64,7 @@ export class MiPartidaComponent implements OnInit {
       this.participantes = Number(params['participantes']);
       this.generarFilas();
     });
-    this.juegosServicio.obtenerListaDeJuegos().subscribe((dato) => {
+    this.juegosServicio.obtenerListaDeJuegos(this.usuario.id).subscribe((dato) => {
       this.juegos = dato;
     });
     this.usuarioServicio.obtenerListaDeUsuarios().subscribe((dato) => {
@@ -106,16 +109,21 @@ export class MiPartidaComponent implements OnInit {
       const partida: Partida = {
         id: 0,
         juego: juego,
-        creador: this.usuario,
+        creador: this.usuario.id,
         ubicacion: this.ubicacionPartida,
         fecha: this.fechaEscogida,
         duracion: this.duracion,
-        ganador: this.ganadorUsuario
+        idGanador: this.ganadorUsuario.id
       };
 
       this.partidasServicio.guardarNuevaPartida(partida).subscribe(
         dato => {
-          console.log(dato);
+          console.log(partida);
+          swal('Partida Actualizada', `La partida ha sido actualizada con éxito`, 'success')
+          .then(() => {
+            // Redirigir a la lista de partidas
+            this.router.navigate(['/lista-partidas']);
+          });
         },
         error => {
           console.log(error);

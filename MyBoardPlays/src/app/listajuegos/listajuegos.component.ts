@@ -4,6 +4,8 @@ import swal from 'sweetalert2';
 import { Juego } from '../juego';
 import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
+import { ApiService } from '../api.service';
+import { Usuario } from '../usuario';
 
 
 @Component({
@@ -14,8 +16,9 @@ import * as XLSX from 'xlsx';
 export class ListajuegosComponent implements OnInit {
   pageActual: number = 1;
   juegos: Juego[];
+  usuario : any;
 
-  constructor(private juegosServicio: JuegosService, private router: Router) {}
+  constructor(private juegosServicio: JuegosService, private router: Router, private apiService:ApiService) {}
 
   filterJuegos: String = '';
 
@@ -23,14 +26,20 @@ export class ListajuegosComponent implements OnInit {
   parameter2 = 'asc';
 
   ngOnInit(): void {
-    this.juegosServicio.obtenerListaDeJuegos().subscribe((juegos) => {
+    const email=localStorage.getItem('user') || '';
+        this.apiService.consultarUsuario(email).subscribe((user) => {
+        this.usuario = user;
+        console.log(this.usuario);
+    });
+    this.juegosServicio.obtenerListaDeJuegos(this.usuario.id).subscribe((juegos) => {
       this.juegos = juegos;
+      console.log(juegos);
     });
   }
 
   //método para conseguir la lista de juegos que nos la proporcionará el servicio
   obtenerJuegos() {
-    this.juegosServicio.obtenerListaDeJuegos().subscribe((dato) => {
+    this.juegosServicio.obtenerListaDeJuegos(this.usuario.id).subscribe((dato) => {
       this.juegos = dato;
     });
   }
@@ -54,8 +63,9 @@ export class ListajuegosComponent implements OnInit {
       buttonsStyling: true,
     }).then((result) => {
       if (!result.value) {
-        this.juegosServicio.eliminarJuego(id).subscribe((dato) => {
+        this.juegosServicio.eliminarJuego(id, this.usuario).subscribe((dato) => {
           console.log(dato);
+          this.irListaJuegos();
           this.obtenerJuegos();
           swal(
             'Juego eliminado',
@@ -86,6 +96,10 @@ export class ListajuegosComponent implements OnInit {
 
   toggleDarkMode(): void {
     this.darkMode = !this.darkMode;
+  }
+
+  irListaJuegos(){
+    this.router.navigate(['/lista-juegos']);
   }
 }
 

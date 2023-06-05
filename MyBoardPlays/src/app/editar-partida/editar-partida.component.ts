@@ -25,7 +25,7 @@ export class EditarPartidaComponent {
   ubicacionPartida: string;
   fechaEscogida: Date;
   duracion: number;
-  ganador: Usuario;
+  idGanador: Usuario;
   nombre: string;
   puntuacion: number;
   juego:Juego;
@@ -47,7 +47,7 @@ export class EditarPartidaComponent {
   constructor(private partidaService:PartidasService,private router:Router,private route:ActivatedRoute, private juegosServicio:JuegosService, private usuarioServicio: ApiService) { }
 
   ngOnInit(): void {
-    this.juegosServicio.obtenerListaDeJuegos().subscribe((dato) => {
+    this.juegosServicio.obtenerListaDeJuegos(this.usuario.id).subscribe((dato) => {
       this.juegos = dato;
     });
     this.usuarioServicio.obtenerListaDeUsuarios().subscribe((dato) => {
@@ -116,7 +116,7 @@ export class EditarPartidaComponent {
     this.partida.ubicacion = this.ubicacionPartida;
     this.partida.fecha = this.fechaEscogida;
     this.partida.duracion = this.duracion;
-    this.ganador= this.ganadorUsuario
+    this.idGanador= this.ganadorUsuario
 
     this.partidaService.editarPartida(this.partida).subscribe(dato => {
       this.irAlaListaDePartidas();

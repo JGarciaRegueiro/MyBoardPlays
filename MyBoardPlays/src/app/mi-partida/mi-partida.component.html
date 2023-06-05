@@ -7,7 +7,7 @@
             <label for="name"  class ="form-text">Selecciona un Juego:</label>
             <select name="nombreJuego" class= "form-control" [(ngModel)]="idJuego" required (change)="obtenerJuego()">
                 <option selected>Selecciona un juego</option>
-                <option *ngFor="let juego of juegos" name="idJuego" [value]="juego.id" [disabled]="!isJuegoValido(juego)"
+                <option *ngFor="let juego of usuario.juegos" name="idJuego" [value]="juego.id" [disabled]="!isJuegoValido(juego)"
                 [ngClass]="{'option-disabled': !isJuegoValido(juego)}">{{ juego.nombre }} ></option>
             </select>
             </td>

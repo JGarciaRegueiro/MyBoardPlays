@@ -62,7 +62,7 @@
       <!--cuerpo de la tabla-->
       <tr
       *ngFor="
-        let juego of juegos
+        let juego of usuario.juegos
           | filter : filterJuegos
           | orderByJuegos : parameter1 : parameter2
           | paginate : { itemsPerPage: 10, currentPage: pageActual }

@@ -4,6 +4,8 @@ import { Partida } from '../partida';
 import { Router } from '@angular/router';
 import { PartidasService } from '../partidas.service';
 import swal from 'sweetalert2';
+import { ApiService } from '../api.service';
+import { Usuario } from '../usuario';
 
 @Component({
   selector: 'app-lista-partidas',
@@ -16,19 +18,29 @@ export class ListaPartidasComponent implements OnInit {
   parameter2 = 'asc';
   filterPartidas: String = '';
   partidas: Partida[];
+  usuario:any;
 
   constructor(
     private partidasServicio: PartidasService,
+    private apiService: ApiService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.partidasServicio.obtenerListaDePartidas().subscribe((partidas) => {
+    const email=localStorage.getItem('user') || '';
+
+    this.apiService.consultarUsuario(email).subscribe((user) => {
+      this.usuario = user;
+      console.log(this.usuario);
+    })
+
+    this.partidasServicio.obtenerListaDePartidas(this.usuario.id).subscribe((partidas) => {
       this.partidas = partidas;
     });
   }
+
   obtenerPartidas() {
-    this.partidasServicio.obtenerListaDePartidas().subscribe((dato) => {
+    this.partidasServicio.obtenerListaDePartidas(this.usuario.id).subscribe((dato) => {
       this.partidas = dato;
     });
   }
@@ -47,14 +59,17 @@ export class ListaPartidasComponent implements OnInit {
       buttonsStyling: true,
     }).then((result) => {
       if (!result.value) {
-        this.partidasServicio.eliminarPartida(id).subscribe((dato) => {
-          console.log(dato);
-          this.obtenerPartidas();
+        this.partidasServicio.eliminarPartida(id, this.usuario).subscribe((dato) => {
+          console.log(this.usuario);
           swal(
             'Partida eliminada',
             'La partida ha sido eliminada con exito',
             'success'
-          );
+          )
+          .then(() => {
+            // Redirigir a la lista de partidas
+            this.router.navigate(['/lista-partidas']);
+          });
         });
       }
     });
@@ -87,7 +102,7 @@ export class ListaPartidasComponent implements OnInit {
       partida.fecha,
       partida.juego?.nombre,
       partida.duracion,
-      partida.ganador.nombre
+      partida.idGanador.nombre
     ]);
   }
 }

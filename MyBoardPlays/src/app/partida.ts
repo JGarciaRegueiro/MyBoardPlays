@@ -8,7 +8,7 @@ export interface Partida{
   fecha:Date;
   juego :Juego | null;
   duracion:number;
-  ganador: Usuario;
+  idGanador: Usuario;
 }
 
 export class Partida{
@@ -18,7 +18,7 @@ export class Partida{
   fecha:Date;
   juego :Juego | null;
   duracion:number;
-  ganador: Usuario;
+  idGanador: Usuario;
 }
 
 

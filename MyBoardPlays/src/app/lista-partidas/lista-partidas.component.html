@@ -63,19 +63,19 @@
       <!--cuerpo de la tabla-->
       <tr
         *ngFor="
-          let partida of partidas
+          let partida of usuario.partidas
             | filterPartidas : filterPartidas
             | orderByPartidas: parameter1 : parameter2
             | paginate : { itemsPerPage: 10, currentPage: pageActual }
         "
       >
         <td class="text-center">{{partida.id}}</td>
-        <td class="text-center">{{partida.creador?.nombre}}</td>
+        <td class="text-center">{{partida.creador}}</td>
         <td class="text-center">{{partida.ubicacion}}</td>
         <td class="text-center">{{partida.fecha}}</td>
         <td class="text-center">{{partida.juego?.nombre}}</td>
         <td class="text-center">{{partida.duracion}}</td>
-        <td class="text-center">{{partida.ganador.nombre}}</td>
+        <td class="text-center">{{partida.idGanador}}</td>
         <td class="text-center">
           <button
             (click)="verDetallesPartida(partida.id)"
