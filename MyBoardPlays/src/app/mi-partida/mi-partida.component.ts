@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 import { Usuario } from '../usuario';
 import { Partida } from '../partida';
 import { PartidasService } from '../partidas.service';
+import swal from 'sweetalert2';
 
 
 @Component({
@@ -49,7 +50,8 @@ export class MiPartidaComponent implements OnInit {
     private http: HttpClient,
     private juegosServicio: JuegosService,
     private partidasServicio: PartidasService,
-    private usuarioServicio: ApiService
+    private usuarioServicio: ApiService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -116,6 +118,12 @@ export class MiPartidaComponent implements OnInit {
       this.partidasServicio.guardarNuevaPartida(partida).subscribe(
         dato => {
           console.log(dato);
+          // Mostrar SweetAlert y redirigir a la lista de partidas
+          swal('Partida Actualizada', `La partida ha sido actualizada con éxito`, 'success')
+            .then(() => {
+              // Redirigir a la lista de partidas
+              this.router.navigate(['/lista-partidas']);
+            });
         },
         error => {
           console.log(error);

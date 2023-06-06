@@ -7,8 +7,8 @@
           <td class = "form-row">
           <label for="name" class ="form-text">Selecciona un Juego:</label>
           <select name="nombreJuego" class= "form-control" [(ngModel)]="selectedJuego" required (change)="obtenerJuego()">
-              <option value="{{partida.juego?.id}}" selected>Selecciona un juego</option>
-              <option *ngFor="let juego of juegos" [ngValue]="juego">{{ juego.nombre }} ></option>
+              <option value="{{usuario.juego?.id}}" selected>Selecciona un juego</option>
+              <option *ngFor="let juego of usuario.juegos" [ngValue]="juego">{{ juego.nombre }} ></option>
           </select>
           </td>
       </tr>

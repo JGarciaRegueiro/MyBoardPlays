@@ -82,6 +82,7 @@ export class ListaPartidasComponent implements OnInit {
   }
 
   exportExcel(): void {
+
     const data: any[][] = [
       ['ID', 'CREADOR', 'UBICACION', 'FECHA', 'JUEGO', 'DURACION', 'GANADOR'],
       ...this.getDatosExportar(),
@@ -95,7 +96,7 @@ export class ListaPartidasComponent implements OnInit {
     XLSX.writeFile(wb, 'lista_partidas.xlsx');
   }
   getDatosExportar(): any[][] {
-    return this.partidas.map((partida) => [
+    return this.usuario.partidas.map((partida: { id: any; creador: { nombre: any; }; ubicacion: any; fecha: any; juego: { nombre: any; }; duracion: any; idGanador: { nombre: any; }; }) => [
       partida.id,
       partida.creador?.nombre,
       partida.ubicacion,

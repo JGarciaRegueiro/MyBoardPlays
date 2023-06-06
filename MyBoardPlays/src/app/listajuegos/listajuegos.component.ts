@@ -77,10 +77,11 @@ export class ListajuegosComponent implements OnInit {
     });
   }
   exportExcel(): void {
+
     const data: any[][] = [
       ['ID', 'NOMBRE', 'DESCRIPCIÓN', 'MIN JUGADORES', 'MÁX JUGADORES', 'DIFICULTAD'],
       // Agregar las filas de datos
-      ...this.juegos.map(juego => [juego.id, juego.nombre, juego.descripcion, juego.minParticipantes, juego.maxParticipantes, juego.dificultad])
+      ...this.usuario.juegos.map((juego: { id: any; nombre: any; descripcion: any; minParticipantes: any; maxParticipantes: any; dificultad: any; }) => [juego.id, juego.nombre, juego.descripcion, juego.minParticipantes, juego.maxParticipantes, juego.dificultad])
     ];
 
     const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(data);

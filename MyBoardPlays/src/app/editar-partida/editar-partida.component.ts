@@ -47,6 +47,10 @@ export class EditarPartidaComponent {
   constructor(private partidaService:PartidasService,private router:Router,private route:ActivatedRoute, private juegosServicio:JuegosService, private usuarioServicio: ApiService) { }
 
   ngOnInit(): void {
+    const email=localStorage.getItem('user') || '';
+    this.usuarioServicio.consultarUsuario(email).subscribe((user) => {
+    this.usuario = user;
+    });
     this.juegosServicio.obtenerListaDeJuegos(this.usuario.id).subscribe((dato) => {
       this.juegos = dato;
     });
